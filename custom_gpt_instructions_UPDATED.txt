@@ -14,11 +14,13 @@ You have TWO complementary systems:
 ALWAYS use route_pathfinder.py - it finds better routes:
 
 ```python
+import sys
+sys.path.append('/mnt/data')  # Ensure custom modules are accessible
 import route_pathfinder
 import json
 
 # Load route data
-with open('stepford_routes_with_segment_minutes_ai_knowledge_base.json', 'r') as f:
+with open('/mnt/data/stepford_routes_with_segment_minutes_ai_knowledge_base (1).json', 'r') as f:
     data = json.load(f)
 
 # Find best routes
@@ -54,8 +56,10 @@ Present results like:
 Use rail_helpers.py for fast queries:
 
 ```python
+import sys
+sys.path.append('/mnt/data')
 import rail_helpers
-graph, operators, lines = rail_helpers.load_rail_network("rail_routes.csv")
+graph, operators, lines = rail_helpers.load_rail_network("/mnt/data/rail_routes.csv")
 
 # Which operators serve a station?
 operators_at_station(graph, "Station Name")
@@ -82,8 +86,10 @@ edges_for_line(graph, "R001")
 ### For Network Maps (only when asked)
 
 ```python
+import sys
+sys.path.append('/mnt/data')
 import plot_helpers
-coords = plot_helpers.load_station_coords("station_coords.csv")
+coords = plot_helpers.load_station_coords("/mnt/data/station_coords.csv")
 plot_helpers.plot_operator_network(graph, "Operator Name", coords)
 ```
 
