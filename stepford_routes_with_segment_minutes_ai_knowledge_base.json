@@ -12249,12 +12249,11 @@
         "up": "18 minutes",
         "down": "18 minutes"
       },
-      "stops": 10,
+      "stops": 9,
       "stations": [
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
-        "Angel Pass",
         "Bodin",
         "Coxly",
         "Benton",
@@ -12349,10 +12348,11 @@
         "up": "22 minutes",
         "down": "21 minutes"
       },
-      "stops": 11,
+      "stops": 12,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
+        "City Hospital",
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
@@ -12374,15 +12374,13 @@
         "up": "21 minutes",
         "down": "21 minutes"
       },
-      "stops": 13,
+      "stops": 11,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
         "City Hospital",
         "Stepford Central",
-        "Four Ways",
         "Stepford East",
-        "Stepford High Street",
         "St Helens Bridge",
         "Angel Pass",
         "Bodin",
@@ -12421,14 +12419,13 @@
         "up": "19 minutes",
         "down": "19 minutes"
       },
-      "stops": 12,
+      "stops": 11,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
         "City Hospital",
         "Stepford Central",
         "Four Ways",
-        "Stepford East",
         "Stepford High Street",
         "St Helens Bridge",
         "New Harrow",
@@ -12450,6 +12447,7 @@
       "stops": 14,
       "stations": [
         "Stepford Victoria",
+        "Financial Quarter",
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
@@ -12459,7 +12457,6 @@
         "Benton Bridge",
         "Hampton Hargate",
         "Water Newton",
-        "Rocket Parade",
         "Leighton Stepford Road",
         "Leighton City",
         "Edgemead"
@@ -12469,7 +12466,7 @@
       "operator": "Stepford Connect",
       "origin": "Stepford Central",
       "destination": "Whitefield",
-      "route_type": "Whitefield Connect",
+      "route_type": "Stepford Local",
       "price": "450 Points",
       "travel_time": {
         "up": "9 minutes",
@@ -12865,13 +12862,13 @@
       "operator": "Stepford Connect",
       "origin": "Willowfield",
       "destination": "Llyn-by-the-Sea",
-      "route_type": "Regional Two",
+      "route_type": "Regional",
       "price": "600 Points",
       "travel_time": {
         "up": "45 minutes",
         "down": "44 minutes"
       },
-      "stops": 18,
+      "stops": 27,
       "stations": [
         "Willowfield",
         "Beechley",
@@ -12903,14 +12900,16 @@
         "up": "18 minutes",
         "down": "16 minutes"
       },
-      "stops": 8,
+      "stops": 10,
       "stations": [
         "Leighton City",
         "Edgemead",
         "Faymere",
         "Westercoast",
+        "Millcastle Racecourse",
         "Millcastle",
         "Westwyvern",
+        "Starryloch",
         "Northshore",
         "Llyn-by-the-Sea"
       ]
@@ -13063,7 +13062,7 @@
       "operator": "Stepford Connect",
       "origin": "Stepford Victoria",
       "destination": "Leighton City",
-      "route_type": "Regional One",
+      "route_type": "Regional",
       "price": "Free",
       "travel_time": {
         "up": "26 minutes",
@@ -13739,7 +13738,7 @@
       "operator": "AirLink",
       "origin": "Stepford Central",
       "destination": "Airport Terminal 2",
-      "route_type": "Terminal 1 & 2 Link",
+      "route_type": "Terminal Link",
       "price": "Free",
       "travel_time": {
         "up": "12 minutes",
@@ -13757,7 +13756,7 @@
       "operator": "AirLink",
       "origin": "Stepford Central",
       "destination": "Airport Terminal 2",
-      "route_type": "Terminal 1 & 2 Link",
+      "route_type": "Terminal Link",
       "price": "Free",
       "travel_time": {
         "up": "15 minutes",
@@ -13778,7 +13777,7 @@
       "operator": "AirLink",
       "origin": "Stepford Central",
       "destination": "Stepford Airport Central",
-      "route_type": "Speed Link",
+      "route_type": "AirLink",
       "price": "Free",
       "travel_time": {
         "up": "11 minutes",
@@ -13817,7 +13816,7 @@
       "operator": "AirLink",
       "origin": "Stepford Airport Central",
       "destination": "Leighton Stepford Road",
-      "route_type": "Leighton Link",
+      "route_type": "AirLink",
       "price": "300 Points",
       "travel_time": {
         "up": "7 minutes",
@@ -13834,7 +13833,7 @@
       "operator": "AirLink",
       "origin": "Airport Terminal 3",
       "destination": "Leighton Stepford Road",
-      "route_type": "Leighton Link",
+      "route_type": "Terminal Link",
       "price": "450 Points",
       "travel_time": {
         "up": "14 minutes",
@@ -13853,7 +13852,7 @@
       "operator": "AirLink",
       "origin": "Stepford Central",
       "destination": "Airport Terminal 3",
-      "route_type": "Terminal Loop Link",
+      "route_type": "Terminal Link",
       "price": "450 Points",
       "travel_time": {
         "up": "12 minutes",
@@ -13910,10 +13909,10 @@
       ]
     },
     "R061": {
-      "operator": "AirLink",
+      "operator": "AirLink (Removed)",
       "origin": "Stepford Airport Central",
       "destination": "Llyn-by-the-Sea",
-      "route_type": "N/A",
+      "route_type": "REMOVED - April Fools Route",
       "price": "Free",
       "travel_time": {
         "up": "19 minutes",
@@ -13932,10 +13931,10 @@
       ]
     },
     "R062": {
-      "operator": "AirLink",
+      "operator": "AirLink (Removed)",
       "origin": "Airport Terminal 3",
       "destination": "Llyn-by-the-Sea",
-      "route_type": "N/A",
+      "route_type": "REMOVED - April Fools Route",
       "price": "Free",
       "travel_time": {
         "up": "23 minutes",
@@ -13964,9 +13963,10 @@
         "up": "5 minutes",
         "down": "5 minutes"
       },
-      "stops": 2,
+      "stops": 3,
       "stations": [
         "Stepford Central",
+        "St Helens Bridge",
         "Benton"
       ]
     },
@@ -14084,7 +14084,7 @@
       "stops": 3,
       "stations": [
         "Stepford Central",
-        "Morganstown",
+        "Leighton City",
         "Llyn-by-the-Sea"
       ]
     },
@@ -14098,13 +14098,12 @@
         "up": "20 minutes",
         "down": "20 minutes"
       },
-      "stops": 7,
+      "stops": 6,
       "stations": [
         "Stepford Central",
         "Elsemere Junction",
         "Morganstown",
         "Leighton Stepford Road",
-        "Leighton City",
         "Edgemead",
         "Westwyvern"
       ]
