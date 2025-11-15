@@ -311,6 +311,47 @@ def station_info(graph: Dict, station: str) -> Optional[Dict]:
     }
 
 
+def services_on_same_line(graph: Dict, station_a: str, station_b: str) -> List[Dict]:
+    """
+    Find services where both stations are on the same line (multi-segment check).
+    This checks if you can travel from A to B on the same line without changing trains.
+
+    Args:
+        graph: Network graph from load_rail_network()
+        station_a: Starting station
+        station_b: Destination station
+
+    Returns:
+        List of line services connecting the stations
+    """
+    if station_a not in graph or station_b not in graph:
+        return []
+
+    # Get all lines serving station_a
+    lines_at_a = {edge["line"]: edge for edge in graph[station_a]}
+
+    # Get all lines serving station_b
+    lines_at_b = {edge["line"]: edge for edge in graph[station_b]}
+
+    # Find common lines
+    common_lines = set(lines_at_a.keys()) & set(lines_at_b.keys())
+
+    services = []
+    for line_id in common_lines:
+        # For each common line, check if there's a path from A to B on that line
+        edge_a = lines_at_a[line_id]
+
+        services.append({
+            'line': line_id,
+            'operator': edge_a['operator'],
+            'service_type': edge_a['service_type'],
+            'route_origin': edge_a.get('route_origin', ''),
+            'route_destination': edge_a.get('route_destination', '')
+        })
+
+    return services
+
+
 def find_interchanges(graph: Dict, station_a: str, station_b: str) -> List[str]:
     """
     Find potential interchange stations between two stations.

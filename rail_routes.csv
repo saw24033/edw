@@ -545,32 +545,32 @@ Stepford Express,R080,Northshore,Llyn-by-the-Sea,2.7,Llyn via Morganstown (fast)
 Stepford Express,R080,St Helens Bridge,Morganstown,2.7,Llyn via Morganstown (fast),Stepford Central,Llyn-by-the-Sea
 Stepford Express,R080,Stepford Central,St Helens Bridge,2.7,Llyn via Morganstown (fast),Stepford Central,Llyn-by-the-Sea
 Stepford Express,R080,Westwyvern,Northshore,2.7,Llyn via Morganstown (fast),Stepford Central,Llyn-by-the-Sea
-Stepford Express,R081,Morganstown,Llyn-by-the-Sea,8.0,Llyn via Morganstown,Stepford Central,Llyn-by-the-Sea
-Stepford Express,R081,Stepford Central,Morganstown,8.0,Llyn via Morganstown,Stepford Central,Llyn-by-the-Sea
+Stepford Express,R081,Leighton City,Llyn-by-the-Sea,8.5,Llyn (super fast),Stepford Central,Llyn-by-the-Sea
+Stepford Express,R081,Stepford Central,Leighton City,8.5,Llyn (super fast),Stepford Central,Llyn-by-the-Sea
 Stepford Express,R082,Edgemead,Westwyvern,3.3,Westwyvern Express,Stepford Central,Westwyvern
 Stepford Express,R082,Elsemere Junction,Morganstown,3.3,Westwyvern Express,Stepford Central,Westwyvern
 Stepford Express,R082,Leighton City,Edgemead,3.3,Westwyvern Express,Stepford Central,Westwyvern
 Stepford Express,R082,Leighton Stepford Road,Leighton City,3.3,Westwyvern Express,Stepford Central,Westwyvern
 Stepford Express,R082,Morganstown,Leighton Stepford Road,3.3,Westwyvern Express,Stepford Central,Westwyvern
 Stepford Express,R082,Stepford Central,Elsemere Junction,3.3,Westwyvern Express,Stepford Central,Westwyvern
-Stepford Express,R083,Benton,Morganstown,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Leighton City,Westercoast,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Leighton Stepford Road,Leighton City,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Morganstown,Leighton Stepford Road,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Newry,Benton,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Northshore,Llyn-by-the-Sea,3.3,Newry Express,Newry,Llyn-by-the-Sea
-Stepford Express,R083,Westercoast,Northshore,3.3,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Benton,Morganstown,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Leighton City,Westercoast,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Leighton Stepford Road,Leighton City,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Morganstown,Leighton Stepford Road,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Newry,Benton,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Northshore,Llyn-by-the-Sea,3.4,Newry Express,Newry,Llyn-by-the-Sea
+Stepford Express,R083,Westercoast,Northshore,3.4,Newry Express,Newry,Llyn-by-the-Sea
 Stepford Express,R084,Benton,Leighton Stepford Road,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
 Stepford Express,R084,Leighton City,Westwyvern,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
 Stepford Express,R084,Leighton Stepford Road,Leighton City,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
 Stepford Express,R084,Newry,Benton,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
 Stepford Express,R084,Newry Harbour,Newry,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
 Stepford Express,R084,Westwyvern,Llyn-by-the-Sea,4.3,Newry Express,Newry Harbour,Llyn-by-the-Sea
-Stepford Express,R085,Benton,Morganstown,3.8,Benton Express,Benton,Llyn-by-the-Sea
-Stepford Express,R085,Leighton City,Northshore,3.8,Benton Express,Benton,Llyn-by-the-Sea
-Stepford Express,R085,Leighton Stepford Road,Leighton City,3.8,Benton Express,Benton,Llyn-by-the-Sea
-Stepford Express,R085,Morganstown,Leighton Stepford Road,3.8,Benton Express,Benton,Llyn-by-the-Sea
-Stepford Express,R085,Northshore,Llyn-by-the-Sea,3.8,Benton Express,Benton,Llyn-by-the-Sea
+Stepford Express,R085,Benton,Morganstown,4.0,Benton to Llyn,Benton,Llyn-by-the-Sea
+Stepford Express,R085,Leighton City,Northshore,4.0,Benton to Llyn,Benton,Llyn-by-the-Sea
+Stepford Express,R085,Leighton Stepford Road,Leighton City,4.0,Benton to Llyn,Benton,Llyn-by-the-Sea
+Stepford Express,R085,Morganstown,Leighton Stepford Road,4.0,Benton to Llyn,Benton,Llyn-by-the-Sea
+Stepford Express,R085,Northshore,Llyn-by-the-Sea,4.0,Benton to Llyn,Benton,Llyn-by-the-Sea
 Stepford Express,R086,Benton,Leighton Stepford Road,3.2,Newry Shuttle,Newry,Leighton City
 Stepford Express,R086,Eden Quay,Benton,3.2,Newry Shuttle,Newry,Leighton City
 Stepford Express,R086,Leighton Stepford Road,Leighton City,3.2,Newry Shuttle,Newry,Leighton City
