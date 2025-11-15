@@ -42,13 +42,26 @@ class RoutePathfinder:
             segments = len(stations) - 1
             time_per_segment = total_time / segments if segments > 0 else 0
 
-            # Add edges for consecutive stations
+            # Add BIDIRECTIONAL edges for consecutive stations
+            # Trains can run in both directions!
             for i in range(len(stations) - 1):
                 from_station = stations[i]
                 to_station = stations[i + 1]
 
+                # Forward direction (A → B)
                 graph[from_station].append({
                     'to': to_station,
+                    'time': time_per_segment,
+                    'route': route_code,
+                    'operator': route_data['operator'],
+                    'type': route_data['route_type'],
+                    'price': route_data['price'],
+                    'total_route_time': total_time
+                })
+
+                # Reverse direction (B → A)
+                graph[to_station].append({
+                    'to': from_station,
                     'time': time_per_segment,
                     'route': route_code,
                     'operator': route_data['operator'],
@@ -64,15 +77,25 @@ class RoutePathfinder:
         Find all routes from start to end with up to max_transfers
         Returns sorted list of routes (best first)
         """
-        # BFS to find all paths
-        queue = deque([(start, [start], [], None, 0)])  # (station, path, routes_used, current_route, transfers)
+        # BFS to find all paths with optimizations
+        queue = deque([(start, [start], [], None, 0, 0.0)])  # (station, path, routes_used, current_route, transfers, time)
         all_paths = []
         visited_states = set()
+        best_time_by_transfers = {}  # Track best time for each transfer count
 
         while queue:
-            current, path, routes_used, current_route, transfers = queue.popleft()
+            current, path, routes_used, current_route, transfers, current_time = queue.popleft()
 
-            # Create state signature to avoid revisiting
+            # Early stopping: only prune if there's a route with SAME OR FEWER transfers that's faster
+            should_prune = False
+            for t in range(transfers + 1):  # Check all transfer counts <= current
+                if t in best_time_by_transfers and current_time > best_time_by_transfers[t] * 1.5:
+                    should_prune = True
+                    break
+            if should_prune:
+                continue
+
+            # Create state signature to avoid revisiting same situation
             state = (current, tuple(r['route'] for r in routes_used), transfers)
             if state in visited_states:
                 continue
@@ -87,15 +110,25 @@ class RoutePathfinder:
                     'path': path,
                     'routes': routes_used
                 })
+                # Update best time for this transfer count
+                if transfers not in best_time_by_transfers or total_time < best_time_by_transfers[transfers]:
+                    best_time_by_transfers[transfers] = total_time
                 continue
 
-            # Stop if too many transfers or path too long
-            if transfers > max_transfers or len(path) > 20:
+            # Stop if too many transfers or path too long or visited same station twice
+            if transfers > max_transfers or len(path) > 15:
                 continue
+
+            # Avoid revisiting same station (prevents loops)
+            visited_in_path = set(path)
 
             # Explore neighbors
             for edge in self.graph.get(current, []):
                 next_station = edge['to']
+
+                # Skip if already visited in this path
+                if next_station in visited_in_path:
+                    continue
 
                 # Check if route changed (transfer)
                 new_transfers = transfers
@@ -105,11 +138,16 @@ class RoutePathfinder:
                 if new_transfers <= max_transfers:
                     new_path = path + [next_station]
                     new_routes = routes_used + [edge]
-                    queue.append((next_station, new_path, new_routes, edge['route'], new_transfers))
+                    new_time = current_time + edge['time']
+                    queue.append((next_station, new_path, new_routes, edge['route'], new_transfers, new_time))
+
+            # Limit results to prevent memory explosion
+            if len(all_paths) > 1000:
+                break
 
         # Sort: fewer transfers first, then by time
         all_paths.sort(key=lambda x: (x['transfers'], x['time']))
-        return all_paths
+        return all_paths[:100]  # Return top 100 routes max
 
     def format_route(self, route_info: Dict, verbose: bool = False) -> str:
         """Format a route for display"""
