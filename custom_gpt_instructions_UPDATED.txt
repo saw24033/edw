@@ -25,12 +25,12 @@ with open('/mnt/data/stepford_routes_with_segment_minutes_ai_knowledge_base (1).
 
 # Find best routes
 pathfinder = route_pathfinder.RoutePathfinder(data)
-routes = pathfinder.find_routes("Origin Station", "Destination Station", top_n=5, max_transfers=2)
+routes = pathfinder.find_routes("Origin Station", "Destination Station", max_transfers=2)
 
 # Show top 3 options
-print(f"🚄 Routes from Origin to Destination:\n")
 for i, route in enumerate(routes[:3], 1):
-    print(f"{i}. {pathfinder.format_route(route, verbose=True)}\n")
+    formatted = pathfinder.format_route(route, verbose=True)
+    print(f"{i}. {formatted}\n")
 ```
 
 Present results like:
