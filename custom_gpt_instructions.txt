@@ -20,12 +20,13 @@ Then use appropriate functions:
 - `operators_at_station(graph, "Station Name")` - which operators serve a station
 - `lines_at_station(graph, "Station Name")` - which lines serve a station
 - `direct_services_between(graph, "A", "B")` - direct trains between stations
+- `shortest_path(graph, "A", "B")` - find best route with any number of interchanges
+- `format_journey(journey)` - format shortest_path result for display
 - `edges_for_operator(graph, "Operator")` - all routes for an operator
 - `edges_for_line(graph, "R001")` - all segments for a line
 - `station_info(graph, "Station")` - comprehensive station data
 - `station_connections(graph, "Station")` - directly connected stations
 - `search_stations(graph, "query")` - fuzzy search for stations
-- `find_interchanges(graph, "A", "B")` - potential transfer points
 
 For visualization (only when asked):
 ```python
@@ -74,7 +75,8 @@ Benton is a major hub with 42 lines."
 When user asks... → Use this:
 - "Which operators at X?" → `operators_at_station()`
 - "What lines at X?" → `lines_at_station()`
-- "Train from A to B?" → `direct_services_between()`
+- "How do I get from A to B?" → `shortest_path()` + `format_journey()`
+- "Train from A to B?" → `shortest_path()` (handles direct + interchanges)
 - "Routes for operator Y?" → `edges_for_operator()`
 - "Stations on line R001?" → `edges_for_line()`
 - "Tell me about station X" → `station_info()`
@@ -89,10 +91,10 @@ If station not found:
 2. Suggest corrections
 3. Offer to list all stations
 
-If no direct service:
-1. Say so clearly
-2. Run `find_interchanges()` to suggest transfer options
-3. Explain the route with interchange
+For journey planning:
+1. Always use `shortest_path()` - it handles direct routes AND interchanges automatically
+2. Use `format_journey()` to display the result in a passenger-friendly format
+3. If no route found, suggest checking station names with `search_stations()`
 
 ## DATA SCOPE
 

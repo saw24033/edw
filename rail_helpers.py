@@ -336,6 +336,180 @@ def find_interchanges(graph: Dict, station_a: str, station_b: str) -> List[str]:
     return sorted(interchanges)
 
 
+def shortest_path(graph: Dict, start: str, end: str) -> Optional[Dict]:
+    """
+    Find the shortest path between two stations using Dijkstra's algorithm.
+    Handles any number of interchanges automatically.
+
+    Args:
+        graph: Network graph from load_rail_network()
+        start: Starting station name
+        end: Destination station name
+
+    Returns:
+        Dict with path details or None if no path exists:
+        {
+            'stations': ['Station A', 'Station B', ...],
+            'total_time': 25.5,  # minutes including interchange penalties
+            'num_interchanges': 2,
+            'legs': [
+                {
+                    'from': 'Station A',
+                    'to': 'Station B',
+                    'operator': 'AirLink',
+                    'line': 'R001',
+                    'time': 5.0,
+                    'service_type': 'Express'
+                },
+                ...
+            ]
+        }
+    """
+    import heapq
+
+    if start not in graph or end not in graph:
+        return None
+
+    if start == end:
+        return {
+            'stations': [start],
+            'total_time': 0,
+            'num_interchanges': 0,
+            'legs': []
+        }
+
+    # Dijkstra's algorithm with priority queue
+    # State: (cumulative_time, counter, current_station, path_of_stations, legs, num_changes)
+    # Counter is used as tiebreaker to avoid comparing dicts/lists
+    counter = 0
+    pq = [(0, counter, start, [start], [], 0)]
+    visited = {}  # station -> best_time_so_far
+
+    INTERCHANGE_PENALTY = 4.0  # minutes for each interchange
+
+    while pq:
+        current_time, _, current_station, path, legs, num_changes = heapq.heappop(pq)
+
+        # If we've reached the destination
+        if current_station == end:
+            return {
+                'stations': path,
+                'total_time': current_time,
+                'num_interchanges': num_changes,
+                'legs': legs
+            }
+
+        # Skip if we've already found a better path to this station
+        if current_station in visited and visited[current_station] <= current_time:
+            continue
+        visited[current_station] = current_time
+
+        # Explore neighbors
+        for edge in graph[current_station]:
+            next_station = edge["to"]
+            travel_time = edge["time"]
+
+            # Calculate interchange penalty
+            # Add penalty if we're changing from a previous line
+            interchange_time = 0
+            if legs:  # Not the first leg
+                last_line = legs[-1]["line"]
+                current_line = edge["line"]
+                if last_line != current_line:
+                    interchange_time = INTERCHANGE_PENALTY
+                    new_num_changes = num_changes + 1
+                else:
+                    new_num_changes = num_changes
+            else:
+                new_num_changes = 0
+
+            new_time = current_time + travel_time + interchange_time
+            new_path = path + [next_station]
+            new_legs = legs + [{
+                'from': current_station,
+                'to': next_station,
+                'operator': edge["operator"],
+                'line': edge["line"],
+                'time': travel_time,
+                'service_type': edge["service_type"]
+            }]
+
+            # Only add to queue if we haven't visited or found a better route
+            if next_station not in visited or visited[next_station] > new_time:
+                counter += 1
+                heapq.heappush(pq, (new_time, counter, next_station, new_path, new_legs, new_num_changes))
+
+    # No path found
+    return None
+
+
+def format_journey(journey: Dict) -> str:
+    """
+    Format a journey from shortest_path() into a readable string.
+
+    Args:
+        journey: Journey dict from shortest_path()
+
+    Returns:
+        Formatted string describing the journey
+    """
+    if not journey:
+        return "No route found."
+
+    if journey['num_interchanges'] == 0 and len(journey['legs']) == 0:
+        return "You are already at the destination."
+
+    output = []
+    output.append(f"Journey: {journey['stations'][0]} → {journey['stations'][-1]}")
+    output.append(f"Total time: {journey['total_time']:.1f} minutes")
+    output.append(f"Interchanges: {journey['num_interchanges']}")
+    output.append("")
+
+    current_line = None
+    leg_group = []
+
+    for i, leg in enumerate(journey['legs']):
+        # Group consecutive legs on the same line
+        if leg['line'] != current_line:
+            # Print previous group if exists
+            if leg_group:
+                first_leg = leg_group[0]
+                last_leg = leg_group[-1]
+                total_leg_time = sum(l['time'] for l in leg_group)
+                stations_on_line = [first_leg['from']] + [l['to'] for l in leg_group]
+
+                output.append(f"• Take {first_leg['operator']} {first_leg['line']} ({first_leg['service_type']})")
+                output.append(f"  From: {first_leg['from']}")
+                output.append(f"  To: {last_leg['to']}")
+                output.append(f"  Time: {total_leg_time:.1f} minutes")
+                output.append(f"  Stops: {' → '.join(stations_on_line)}")
+
+                if i < len(journey['legs']):  # Not the last leg
+                    output.append(f"\n  ⚠️  Change trains at {last_leg['to']} (allow 4 minutes)")
+                output.append("")
+
+            # Start new group
+            leg_group = [leg]
+            current_line = leg['line']
+        else:
+            leg_group.append(leg)
+
+    # Print final group
+    if leg_group:
+        first_leg = leg_group[0]
+        last_leg = leg_group[-1]
+        total_leg_time = sum(l['time'] for l in leg_group)
+        stations_on_line = [first_leg['from']] + [l['to'] for l in leg_group]
+
+        output.append(f"• Take {first_leg['operator']} {first_leg['line']} ({first_leg['service_type']})")
+        output.append(f"  From: {first_leg['from']}")
+        output.append(f"  To: {last_leg['to']}")
+        output.append(f"  Time: {total_leg_time:.1f} minutes")
+        output.append(f"  Stops: {' → '.join(stations_on_line)}")
+
+    return "\n".join(output)
+
+
 # Optional: Simple text-based network visualization
 def print_operator_routes(graph: Dict, operator_name: str) -> None:
     """
@@ -428,3 +602,12 @@ if __name__ == "__main__":
     print("Example 3: Station info for Benton")
     print("="*60)
     print_station_summary(graph, "Benton")
+
+    print("\n" + "="*60)
+    print("Example 4: Journey planning - Benton to Llyn-by-the-Sea")
+    print("="*60)
+    journey = shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+    if journey:
+        print(format_journey(journey))
+    else:
+        print("No route found")
