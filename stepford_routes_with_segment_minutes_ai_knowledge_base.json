@@ -12249,12 +12249,11 @@
         "up": "18 minutes",
         "down": "18 minutes"
       },
-      "stops": 10,
+      "stops": 9,
       "stations": [
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
-        "Angel Pass",
         "Bodin",
         "Coxly",
         "Benton",
@@ -12349,10 +12348,11 @@
         "up": "22 minutes",
         "down": "21 minutes"
       },
-      "stops": 11,
+      "stops": 12,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
+        "City Hospital",
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
@@ -12374,15 +12374,13 @@
         "up": "21 minutes",
         "down": "21 minutes"
       },
-      "stops": 13,
+      "stops": 11,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
         "City Hospital",
         "Stepford Central",
-        "Four Ways",
         "Stepford East",
-        "Stepford High Street",
         "St Helens Bridge",
         "Angel Pass",
         "Bodin",
@@ -12421,14 +12419,13 @@
         "up": "19 minutes",
         "down": "19 minutes"
       },
-      "stops": 12,
+      "stops": 11,
       "stations": [
         "Stepford Victoria",
         "Financial Quarter",
         "City Hospital",
         "Stepford Central",
         "Four Ways",
-        "Stepford East",
         "Stepford High Street",
         "St Helens Bridge",
         "New Harrow",
@@ -13910,10 +13907,10 @@
       ]
     },
     "R061": {
-      "operator": "AirLink",
+      "operator": "AirLink (Removed)",
       "origin": "Stepford Airport Central",
       "destination": "Llyn-by-the-Sea",
-      "route_type": "N/A",
+      "route_type": "REMOVED - April Fools Route",
       "price": "Free",
       "travel_time": {
         "up": "19 minutes",
@@ -13932,10 +13929,10 @@
       ]
     },
     "R062": {
-      "operator": "AirLink",
+      "operator": "AirLink (Removed)",
       "origin": "Airport Terminal 3",
       "destination": "Llyn-by-the-Sea",
-      "route_type": "N/A",
+      "route_type": "REMOVED - April Fools Route",
       "price": "Free",
       "travel_time": {
         "up": "23 minutes",
