@@ -8,7 +8,7 @@ This GPT uses **Code Interpreter** to run real Python code that analyzes train n
 
 Your GPT can answer:
 - "Which operators serve Stepford Central?"
-- "Is there a direct train from A to B?"
+- "How do I get from Benton to Llyn-by-the-Sea?" (automatically finds best route with interchanges)
 - "Show me all routes operated by AirLink"
 - "Draw the Metro network map"
 - "Find stations with 'Airport' in the name"
@@ -116,7 +116,43 @@ The fastest option is Line R078 at 4 minutes.
 
 ---
 
-### Query 3: Network Visualization
+### Query 3: Complex Journey Planning ⭐ NEW
+```
+"How do I get from Benton to Llyn-by-the-Sea?"
+```
+
+**GPT Response:**
+```
+Journey: Benton → Llyn-by-the-Sea
+Total time: 15.3 minutes
+Interchanges: 1
+
+• Take Stepford Express R083 (Newry Express)
+  From: Benton
+  To: Morganstown
+  Time: 3.3 minutes
+  Stops: Benton → Morganstown
+
+  ⚠️ Change trains at Morganstown (allow 4 minutes)
+
+• Take Stepford Express R081 (Llyn via Morganstown)
+  From: Morganstown
+  To: Llyn-by-the-Sea
+  Time: 8.0 minutes
+  Stops: Morganstown → Llyn-by-the-Sea
+```
+
+**Behind the scenes (Python):**
+```python
+import rail_helpers
+graph, operators, lines = rail_helpers.load_rail_network("rail_routes.csv")
+journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+print(rail_helpers.format_journey(journey))
+```
+
+---
+
+### Query 4: Network Visualization
 ```
 "Draw the AirLink network map"
 ```
@@ -178,6 +214,13 @@ No hallucinations. No fake routes. Just real data.
 - No hallucinations or made-up routes
 - Always queries actual CSV data
 
+### Journey Planning (NEW!)
+- **Automatic multi-hop routing** with Dijkstra's algorithm
+- Handles unlimited interchanges automatically
+- 4-minute interchange penalty factored in
+- Finds fastest route between any two stations
+- Clear step-by-step journey instructions
+
 ### Operator & Line Analysis
 - Find all operators serving a station
 - Show complete network for any operator
@@ -228,6 +271,8 @@ Each row = one direct train segment between two stations.
 
 Core query functions:
 - `load_rail_network(path)` → Load CSV into graph structure
+- `shortest_path(graph, start, end)` → Find best route with Dijkstra's algorithm ⭐ NEW
+- `format_journey(journey)` → Format route into passenger-friendly text ⭐ NEW
 - `operators_at_station(graph, station)` → List operators serving a station
 - `lines_at_station(graph, station)` → List lines serving a station
 - `direct_services_between(graph, a, b)` → Find direct trains between stations
@@ -283,25 +328,27 @@ Use GPT Actions to call external APIs:
 Test your GPT with these queries:
 
 1. **Station operators:** "Which operators serve Stepford Central?"
-2. **Direct routes:** "Is there a direct train from Stepford Central to Benton?"
-3. **Operator networks:** "Show me all routes operated by AirLink"
-4. **Station search:** "Find stations with 'Airport' in the name"
-5. **Station info:** "Tell me about Benton station"
-6. **Visualization:** "Draw the Metro network map"
-7. **Line details:** "What stations are on line R001?"
-8. **Edge case:** "How do I get to FakeStation?" (should suggest corrections)
+2. **Complex journey:** "How do I get from Benton to Llyn-by-the-Sea?" ⭐ NEW
+3. **Direct routes:** "Is there a direct train from Stepford Central to Benton?"
+4. **Operator networks:** "Show me all routes operated by AirLink"
+5. **Station search:** "Find stations with 'Airport' in the name"
+6. **Station info:** "Tell me about Benton station"
+7. **Visualization:** "Draw the Metro network map"
+8. **Line details:** "What stations are on line R001?"
+9. **Edge case:** "How do I get to FakeStation?" (should suggest corrections)
 
 ## 📈 Future Enhancements
 
 Potential additions:
-- **Multi-hop routing** – Dijkstra's algorithm for complex journeys
 - **Live data integration** – Real-time delays via GPT Actions
+- **Alternative routes** – Show multiple journey options (fastest, fewest changes, etc.)
 - **Fare calculator** – Total journey costs with transfers
 - **Accessibility routing** – Step-free route planning
 - **Peak time analysis** – Crowding and frequency data
 - **Station facilities** – Parking, cafes, accessibility info
 - **Historical analysis** – Usage patterns and statistics
 - **Multi-modal planning** – Integrate bus/tram connections
+- **Time-based routing** – Find routes departing after a specific time
 
 ## ⚠️ Limitations
 
@@ -312,10 +359,11 @@ Potential additions:
 - Can't install additional packages
 
 ### Current Functionality
-- No multi-transfer journey planning (yet)
+- ✅ Multi-hop routing now supported! (using Dijkstra's algorithm)
 - No real-time schedule information
 - No ticket pricing (except route metadata)
 - No accessibility information
+- No alternative route suggestions (only fastest route shown)
 - Coordinates are generated (not real geographic data)
 
 ### Data Constraints
