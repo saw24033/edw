@@ -7559,6 +7559,14 @@
         "route_type": "Benton Line",
         "travel_time_minutes": 3,
         "direction": "forward"
+      },
+      {
+        "to_station": "Financial Quarter",
+        "route_code": "R006",
+        "operator": "Metro",
+        "route_type": "Benton Line",
+        "travel_time_minutes": 1.8,
+        "direction": "forward"
       }
     ],
     "Financial Quarter": [
@@ -7673,6 +7681,22 @@
         "route_type": "Benton Line",
         "travel_time_minutes": 3,
         "direction": "backward"
+      },
+      {
+        "to_station": "Stepford Victoria",
+        "route_code": "R006",
+        "operator": "Metro",
+        "route_type": "Benton Line",
+        "travel_time_minutes": 1.8,
+        "direction": "backward"
+      },
+      {
+        "to_station": "City Hospital",
+        "route_code": "R006",
+        "operator": "Metro",
+        "route_type": "Benton Line",
+        "travel_time_minutes": 1.8,
+        "direction": "forward"
       }
     ],
     "City Hospital": [
@@ -7842,6 +7866,14 @@
         "operator": "Metro",
         "route_type": "Benton Line",
         "travel_time_minutes": 2,
+        "direction": "backward"
+      },
+      {
+        "to_station": "Financial Quarter",
+        "route_code": "R006",
+        "operator": "Metro",
+        "route_type": "Benton Line",
+        "travel_time_minutes": 1.8,
         "direction": "backward"
       }
     ],
@@ -12265,6 +12297,7 @@
       "stops": 11,
       "stations": [
         "Stepford Victoria",
+        "Financial Quarter",
         "City Hospital",
         "Stepford Central",
         "Stepford East",
