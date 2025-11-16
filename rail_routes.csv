@@ -68,13 +68,11 @@ Metro,R006,Benton,Port Benton,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Bodin,Coxly,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,City Hospital,Stepford Central,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Coxly,Benton,1.8,Benton Line,Stepford Victoria,Port Benton
-Metro,R006,Financial Quarter,City Hospital,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Four Ways,Stepford East,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,St Helens Bridge,Angel Pass,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Stepford Central,Four Ways,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Stepford East,Stepford High Street,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R006,Stepford High Street,St Helens Bridge,1.8,Benton Line,Stepford Victoria,Port Benton
-Metro,R006,Stepford Victoria,Financial Quarter,1.8,Benton Line,Stepford Victoria,Port Benton
 Metro,R008,City Hospital,Stepford Central,1.7,Morganstown Line,Stepford Victoria,Berrily
 Metro,R008,Elsemere Junction,Berrily,1.7,Morganstown Line,Stepford Victoria,Berrily
 Metro,R008,Elsemere Pond,Elsemere Junction,1.7,Morganstown Line,Stepford Victoria,Berrily
@@ -448,20 +446,17 @@ Stepford Connect,R044,Leighton Stepford Road,Leighton City,1.9,Leighton Connect,
 Stepford Connect,R044,Rocket Parade,Leighton Stepford Road,1.9,Leighton Connect,Benton,Leighton West
 Stepford Connect,R044,Upper Staploe,Water Newton,1.9,Leighton Connect,Benton,Leighton West
 Stepford Connect,R044,Water Newton,Rocket Parade,1.9,Leighton Connect,Benton,Leighton West
-Stepford Connect,R045,Angel Pass,Bodin,1.6,Regional One,Stepford Victoria,Leighton City
+Stepford Connect,R045,Stepford Victoria,Stepford Central,1.6,Regional One,Stepford Victoria,Leighton City
+Stepford Connect,R045,St Helens Bridge,Bodin,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Benton,Benton Bridge,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Benton Bridge,Hampton Hargate,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Bodin,Coxly,1.6,Regional One,Stepford Victoria,Leighton City
-Stepford Connect,R045,City Hospital,Stepford Central,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Coxly,Benton,1.6,Regional One,Stepford Victoria,Leighton City
-Stepford Connect,R045,Financial Quarter,City Hospital,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Hampton Hargate,Upper Staploe,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Leighton Stepford Road,Leighton City,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Rocket Parade,Leighton Stepford Road,1.6,Regional One,Stepford Victoria,Leighton City
-Stepford Connect,R045,St Helens Bridge,Angel Pass,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Stepford Central,Stepford East,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Stepford East,St Helens Bridge,1.6,Regional One,Stepford Victoria,Leighton City
-Stepford Connect,R045,Stepford Victoria,Financial Quarter,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Upper Staploe,Water Newton,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R045,Water Newton,Rocket Parade,1.6,Regional One,Stepford Victoria,Leighton City
 Stepford Connect,R046,Benton,Benton Bridge,2.2,Airport Connect,Stepford Victoria,Airport Terminal 2
@@ -482,8 +477,9 @@ Stepford Connect,R048,Coxly,Benton,2.3,Airport Connect,St Helens Bridge,Airport 
 Stepford Connect,R048,St Helens Bridge,Bodin,2.3,Airport Connect,St Helens Bridge,Airport Terminal 2
 Stepford Connect,R048,Stepford Airport Central,Airport Terminal 2,2.3,Airport Connect,St Helens Bridge,Airport Terminal 2
 Stepford Connect,R048,Stepford Airport Parkway,Stepford Airport Central,2.3,Airport Connect,St Helens Bridge,Airport Terminal 2
-Stepford Connect,R049,Carnalea Bridge,Edgemead,2.5,Leighton Connect,Rayleigh Bay,Edgemead
-Stepford Connect,R049,Rayleigh Bay,Carnalea Bridge,2.5,Leighton Connect,Rayleigh Bay,Edgemead
+Stepford Connect,R049,Carnalea Bridge,Aslockby,1.0,Leighton Connect,Rayleigh Bay,Edgemead
+Stepford Connect,R049,Aslockby,Edgemead,1.0,Leighton Connect,Rayleigh Bay,Edgemead
+Stepford Connect,R049,Rayleigh Bay,Carnalea Bridge,2.0,Leighton Connect,Rayleigh Bay,Edgemead
 Stepford Connect,R050,Aslockby,Edgemead,1.9,Leighton Connect,Rayleigh Bay,Llyn-by-the-Sea
 Stepford Connect,R050,Carnalea Bridge,Aslockby,1.9,Leighton Connect,Rayleigh Bay,Llyn-by-the-Sea
 Stepford Connect,R050,Edgemead,Faymere,1.9,Leighton Connect,Rayleigh Bay,Llyn-by-the-Sea

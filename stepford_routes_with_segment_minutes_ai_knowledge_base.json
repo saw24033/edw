@@ -1881,14 +1881,6 @@
         "direction": "forward"
       },
       {
-        "to_station": "City Hospital",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
         "to_station": "Stepford East",
         "route_code": "R046",
         "operator": "Stepford Connect",
@@ -2949,14 +2941,6 @@
         "direction": "backward"
       },
       {
-        "to_station": "Angel Pass",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
         "to_station": "Stepford East",
         "route_code": "R045",
         "operator": "Stepford Connect",
@@ -3304,22 +3288,6 @@
       },
       {
         "to_station": "Bodin",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "St Helens Bridge",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
-        "to_station": "Bodin",
         "route_code": "R132",
         "operator": "Metro",
         "route_type": "Barton Loop",
@@ -3615,14 +3583,6 @@
         "route_type": "Regional One",
         "travel_time_minutes": 2,
         "direction": "forward"
-      },
-      {
-        "to_station": "Angel Pass",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "backward"
       },
       {
         "to_station": "Coxly",
@@ -7530,14 +7490,6 @@
       },
       {
         "to_station": "Financial Quarter",
-        "route_code": "R006",
-        "operator": "Metro",
-        "route_type": "Benton Line",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Financial Quarter",
         "route_code": "R008",
         "operator": "Metro",
         "route_type": "Morganstown Line",
@@ -7585,14 +7537,6 @@
         "direction": "forward"
       },
       {
-        "to_station": "Financial Quarter",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 3,
-        "direction": "forward"
-      },
-      {
         "to_station": "City Hospital",
         "route_code": "R046",
         "operator": "Stepford Connect",
@@ -7636,22 +7580,6 @@
       },
       {
         "to_station": "City Hospital",
-        "route_code": "R006",
-        "operator": "Metro",
-        "route_type": "Benton Line",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Stepford Victoria",
-        "route_code": "R006",
-        "operator": "Metro",
-        "route_type": "Benton Line",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
-        "to_station": "City Hospital",
         "route_code": "R008",
         "operator": "Metro",
         "route_type": "Morganstown Line",
@@ -7712,22 +7640,6 @@
         "operator": "Metro",
         "route_type": "Willowfield Shuttle",
         "travel_time_minutes": 1,
-        "direction": "backward"
-      },
-      {
-        "to_station": "City Hospital",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Stepford Victoria",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 3,
         "direction": "backward"
       },
       {
@@ -7773,14 +7685,6 @@
         "direction": "forward"
       },
       {
-        "to_station": "Financial Quarter",
-        "route_code": "R006",
-        "operator": "Metro",
-        "route_type": "Benton Line",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
         "to_station": "Stepford Central",
         "route_code": "R008",
         "operator": "Metro",
@@ -7857,22 +7761,6 @@
         "route_code": "R034",
         "operator": "Metro",
         "route_type": "Morganstown Line",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
-        "to_station": "Stepford Central",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Financial Quarter",
-        "route_code": "R045",
-        "operator": "Stepford Connect",
-        "route_type": "Regional One",
         "travel_time_minutes": 2,
         "direction": "backward"
       },
@@ -12377,7 +12265,6 @@
       "stops": 11,
       "stations": [
         "Stepford Victoria",
-        "Financial Quarter",
         "City Hospital",
         "Stepford Central",
         "Stepford East",
@@ -13069,12 +12956,9 @@
       "stops": 14,
       "stations": [
         "Stepford Victoria",
-        "Financial Quarter",
-        "City Hospital",
         "Stepford Central",
         "Stepford East",
         "St Helens Bridge",
-        "Angel Pass",
         "Bodin",
         "Coxly",
         "Benton",
@@ -13171,6 +13055,7 @@
       "stations": [
         "Rayleigh Bay",
         "Carnalea Bridge",
+        "Aslockby",
         "Edgemead"
       ]
     },
