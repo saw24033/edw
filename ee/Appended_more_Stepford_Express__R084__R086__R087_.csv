@@ -1,0 +1,29 @@
+,operator,route_code,direction,origin,terminus,from_station,to_station,segment_minutes,cumulative_minutes,source_url
+572,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Newry Harbour,Newry,2,2.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+573,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Newry,Benton,5,7.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+574,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Benton,Leighton Stepford Road,8,15.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+575,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Leighton Stepford Road,Leighton City,2,17.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+576,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Leighton City,Westwyvern,4,21.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+577,Stepford Express,R084,down,Newry Harbour,Llyn-by-the-Sea,Westwyvern,Llyn-by-the-Sea,5,26.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+578,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Newry,Newry Harbour,2,2.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+579,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Benton,Newry,5,7.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+580,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Leighton Stepford Road,Benton,8,15.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+581,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Leighton City,Leighton Stepford Road,2,17.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+582,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Westwyvern,Leighton City,4,21.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+583,Stepford Express,R084,up,Llyn-by-the-Sea,Newry Harbour,Llyn-by-the-Sea,Westwyvern,5,26.0,https://scr.fandom.com/wiki/List_of_Routes/R084
+584,Stepford Express,R086,down,Newry,Leighton City,Newry,Eden Quay,2,2.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+585,Stepford Express,R086,down,Newry,Leighton City,Eden Quay,Benton,3,5.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+586,Stepford Express,R086,down,Newry,Leighton City,Benton,Leighton Stepford Road,6,11.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+587,Stepford Express,R086,down,Newry,Leighton City,Leighton Stepford Road,Leighton City,2,13.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+588,Stepford Express,R086,up,Leighton City,Newry,Eden Quay,Newry,2,2.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+589,Stepford Express,R086,up,Leighton City,Newry,Benton,Eden Quay,3,5.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+590,Stepford Express,R086,up,Leighton City,Newry,Leighton Stepford Road,Benton,6,11.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+591,Stepford Express,R086,up,Leighton City,Newry,Leighton City,Leighton Stepford Road,2,13.0,https://scr.fandom.com/wiki/List_of_Routes/R086
+592,Stepford Express,R087,down,Rayleigh Bay,Llyn-by-the-Sea,Rayleigh Bay,Edgemead,5,5.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+593,Stepford Express,R087,down,Rayleigh Bay,Llyn-by-the-Sea,Edgemead,Westwyvern,5,10.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+594,Stepford Express,R087,down,Rayleigh Bay,Llyn-by-the-Sea,Westwyvern,Northshore,3,13.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+595,Stepford Express,R087,down,Rayleigh Bay,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,3,16.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+596,Stepford Express,R087,up,Llyn-by-the-Sea,Rayleigh Bay,Edgemead,Rayleigh Bay,4,4.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+597,Stepford Express,R087,up,Llyn-by-the-Sea,Rayleigh Bay,Westwyvern,Edgemead,5,9.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+598,Stepford Express,R087,up,Llyn-by-the-Sea,Rayleigh Bay,Northshore,Westwyvern,3,12.0,https://scr.fandom.com/wiki/List_of_Routes/R087
+599,Stepford Express,R087,up,Llyn-by-the-Sea,Rayleigh Bay,Llyn-by-the-Sea,Northshore,3,15.0,https://scr.fandom.com/wiki/List_of_Routes/R087

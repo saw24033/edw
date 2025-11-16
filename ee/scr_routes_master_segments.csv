@@ -1,0 +1,487 @@
+route_code,operator,direction,origin,terminus,from_station,to_station,segment_minutes,cumulative_minutes
+R003,Stepford Connect,down,Stepford Central,Leighton City,Angel Pass,Bodin,1,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Benton,Benton Bridge,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Benton Bridge,Hampton Hargate,1,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Bodin,Coxly,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Coxly,Benton,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Hampton Hargate,Upper Staploe,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Leighton Stepford Road,Leighton City,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Rocket Parade,Leighton Stepford Road,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,St Helens Bridge,Angel Pass,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Stepford Central,Stepford East,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Stepford East,St Helens Bridge,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Upper Staploe,Water Newton,2,
+R003,Stepford Connect,down,Stepford Central,Leighton City,Water Newton,Rocket Parade,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Angel Pass,St Helens Bridge,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Benton,Coxly,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Benton Bridge,Benton,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Bodin,Angel Pass,1,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Coxly,Bodin,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Hampton Hargate,Benton Bridge,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Leighton City,Leighton Stepford Road,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Leighton Stepford Road,Rocket Parade,1,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Rocket Parade,Water Newton,1,
+R003,Stepford Connect,up,Leighton City,Stepford Central,St Helens Bridge,Stepford East,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Stepford East,Stepford Central,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Upper Staploe,Hampton Hargate,2,
+R003,Stepford Connect,up,Leighton City,Stepford Central,Water Newton,Upper Staploe,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Benton,Benton Bridge,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Benton Bridge,Hampton Hargate,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Bodin,Coxly,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Coxly,Benton,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Hampton Hargate,Water Newton,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Leighton City,Edgemead,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Leighton Stepford Road,Leighton City,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,St Helens Bridge,Bodin,2,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Water Newton,Leighton Stepford Road,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Benton,Coxly,1,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Benton Bridge,Benton,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Bodin,St Helens Bridge,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Coxly,Bodin,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Edgemead,Leighton City,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Hampton Hargate,Benton Bridge,1,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Leighton City,Leighton Stepford Road,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Leighton Stepford Road,Water Newton,2,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Water Newton,Hampton Hargate,2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Benton,Benton Bridge,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Benton Bridge,Stepford Airport Parkway,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Bodin,Coxly,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Coxly,Benton,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Financial Quarter,Stepford Central,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,St Helens Bridge,Bodin,-3,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Stepford Central,Stepford East,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Stepford East,St Helens Bridge,-2,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,Stepford Victoria,Financial Quarter,-3,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Benton,Coxly,-2,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Benton Bridge,Benton,-2,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Bodin,St Helens Bridge,-3,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Coxly,Bodin,-2,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Financial Quarter,Stepford Victoria,-1,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,St Helens Bridge,Stepford East,-2,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Stepford Airport Central,Stepford Airport Parkway,-3,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Stepford Airport Parkway,Benton Bridge,-1,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Stepford Central,Financial Quarter,-3,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,Stepford East,Stepford Central,-2,
+R007,Stepford Connect,down,Stepford Central,Morganstown,Berrily,Morganstown,3,
+R007,Stepford Connect,down,Stepford Central,Morganstown,Elsemere Junction,Berrily,2,
+R007,Stepford Connect,down,Stepford Central,Morganstown,St Helens Bridge,Elsemere Junction,3,
+R007,Stepford Connect,down,Stepford Central,Morganstown,Stepford Central,Stepford East,2,
+R007,Stepford Connect,down,Stepford Central,Morganstown,Stepford East,St Helens Bridge,2,
+R007,Stepford Connect,up,Morganstown,Stepford Central,Berrily,Elsemere Junction,2,
+R007,Stepford Connect,up,Morganstown,Stepford Central,Elsemere Junction,St Helens Bridge,2,
+R007,Stepford Connect,up,Morganstown,Stepford Central,Morganstown,Berrily,3,
+R007,Stepford Connect,up,Morganstown,Stepford Central,St Helens Bridge,Stepford East,2,
+R007,Stepford Connect,up,Morganstown,Stepford Central,Stepford East,Stepford Central,2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Benton,Benton Bridge,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Benton Bridge,Hampton Hargate,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Bodin,Coxly,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Coxly,Benton,-1,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Hampton Hargate,Water Newton,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Leighton City,Edgemead,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Leighton Stepford Road,Leighton City,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Rocket Parade,Leighton Stepford Road,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,St Helens Bridge,Bodin,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Stepford Central,Stepford East,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Stepford East,St Helens Bridge,-2,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Stepford Victoria,Stepford Central,-3,
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,Water Newton,Rocket Parade,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Benton,Coxly,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Benton Bridge,Benton,-3,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Bodin,St Helens Bridge,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Coxly,Bodin,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Edgemead,Leighton City,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Hampton Hargate,Benton Bridge,-3,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Leighton City,Leighton Stepford Road,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Leighton Stepford Road,Rocket Parade,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Rocket Parade,Water Newton,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,St Helens Bridge,Stepford East,-1,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Stepford Central,Stepford Victoria,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Stepford East,Stepford Central,-2,
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,Water Newton,Hampton Hargate,-2,
+R020,Stepford Connect,down,Stepford Central,Whitefield,Houghton Rake,Whitefield,-2,
+R020,Stepford Connect,down,Stepford Central,Whitefield,Stepford Central,Stepford East,-2,
+R020,Stepford Connect,down,Stepford Central,Whitefield,Stepford East,Stepford United Football Club,-3,
+R020,Stepford Connect,down,Stepford Central,Whitefield,Stepford United Football Club,Woodhead Lane,-1,
+R020,Stepford Connect,down,Stepford Central,Whitefield,Woodhead Lane,Houghton Rake,-1,
+R020,Stepford Connect,up,Whitefield,Stepford Central,Houghton Rake,Woodhead Lane,-1,
+R020,Stepford Connect,up,Whitefield,Stepford Central,Stepford East,Stepford Central,-2,
+R020,Stepford Connect,up,Whitefield,Stepford Central,Stepford United Football Club,Stepford East,-3,
+R020,Stepford Connect,up,Whitefield,Stepford Central,Whitefield,Houghton Rake,-2,
+R020,Stepford Connect,up,Whitefield,Stepford Central,Woodhead Lane,Stepford United Football Club,-1,
+R022,Stepford Connect,down,Beechley,Whitefield,Beechley,Stepford Central,-1,
+R022,Stepford Connect,down,Beechley,Whitefield,Stepford Central,Stepford East,-2,
+R022,Stepford Connect,down,Beechley,Whitefield,Stepford East,Stepford United Football Club,-2,
+R022,Stepford Connect,down,Beechley,Whitefield,Stepford United Football Club,Woodhead Lane,-1,
+R022,Stepford Connect,down,Beechley,Whitefield,Woodhead Lane,Whitefield,-1,
+R022,Stepford Connect,up,Whitefield,Beechley,Stepford Central,Beechley,-1,
+R022,Stepford Connect,up,Whitefield,Beechley,Stepford East,Stepford Central,-2,
+R022,Stepford Connect,up,Whitefield,Beechley,Stepford United Football Club,Stepford East,-2,
+R022,Stepford Connect,up,Whitefield,Beechley,Whitefield,Woodhead Lane,-2,
+R022,Stepford Connect,up,Whitefield,Beechley,Woodhead Lane,Stepford United Football Club,-1,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Benton,Benton Bridge,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Benton Bridge,Hampton Hargate,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Bodin,Coxly,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Coxly,Benton,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Edgemead,Faymere,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Faymere,Westercoast,3,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Hampton Hargate,Water Newton,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Leighton City,Edgemead,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Leighton Stepford Road,Leighton City,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Millcastle,Westwyvern,3,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,4,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Rocket Parade,Leighton Stepford Road,3,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,St Helens Bridge,Bodin,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Starryloch,Northshore,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Stepford Central,Stepford East,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Stepford East,St Helens Bridge,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Water Newton,Rocket Parade,3,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Westercoast,Millcastle,2,
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,Westwyvern,Starryloch,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Benton,Coxly,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Benton Bridge,Benton,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Bodin,St Helens Bridge,3,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Coxly,Bodin,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Edgemead,Leighton City,3,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Faymere,Edgemead,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Hampton Hargate,Benton Bridge,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Leighton City,Leighton Stepford Road,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Leighton Stepford Road,Rocket Parade,3,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Llyn-by-the-Sea,Northshore,3,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Millcastle,Westercoast,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Northshore,Starryloch,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Rocket Parade,Water Newton,3,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,St Helens Bridge,Stepford East,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Starryloch,Westwyvern,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Stepford East,Stepford Central,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Water Newton,Hampton Hargate,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Westercoast,Faymere,2,
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,Westwyvern,Millcastle,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Benton,Benton Bridge,3,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Benton Bridge,Hampton Hargate,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Bodin,Coxly,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Coxly,Benton,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Edgemead,Faymere,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Faymere,Westercoast,3,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Hampton Hargate,Upper Staploe,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Leighton City,Edgemead,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Leighton Stepford Road,Leighton City,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Millcastle,Westwyvern,4,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Millcastle Racecourse,Millcastle,1,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Rocket Parade,Leighton Stepford Road,1,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,St Helens Bridge,Bodin,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Upper Staploe,Water Newton,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Water Newton,Rocket Parade,2,
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,Westercoast,Millcastle Racecourse,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Benton,Coxly,1,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Benton Bridge,Benton,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Bodin,St Helens Bridge,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Coxly,Bodin,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Edgemead,Leighton City,3,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Faymere,Edgemead,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Hampton Hargate,Benton Bridge,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Leighton City,Leighton Stepford Road,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Leighton Stepford Road,Rocket Parade,1,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Millcastle,Millcastle Racecourse,1,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Millcastle Racecourse,Westercoast,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Rocket Parade,Water Newton,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Upper Staploe,Hampton Hargate,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Water Newton,Upper Staploe,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Westercoast,Faymere,2,
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,Westwyvern,Millcastle,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Benton,Hampton Hargate,4,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Bodin,Coxly,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Coxly,Benton,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Edgemead,Westercoast,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Hampton Hargate,Water Newton,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Leighton City,Edgemead,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Leighton Stepford Road,Leighton City,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Millcastle,Westwyvern,3,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,5,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,St Helens Bridge,Bodin,3,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Stepford Central,Stepford East,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Stepford East,St Helens Bridge,2,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Stepford Victoria,Stepford Central,3,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Water Newton,Leighton Stepford Road,3,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Westercoast,Millcastle,3,
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,Westwyvern,Northshore,3,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Benton,Coxly,1,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Bodin,St Helens Bridge,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Coxly,Bodin,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Edgemead,Leighton City,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Hampton Hargate,Benton,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Leighton City,Leighton Stepford Road,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Leighton Stepford Road,Water Newton,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Llyn-by-the-Sea,Northshore,3,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Millcastle,Westercoast,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Northshore,Westwyvern,3,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,St Helens Bridge,Stepford East,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Stepford Central,Stepford Victoria,3,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Stepford East,Stepford Central,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Water Newton,Hampton Hargate,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Westercoast,Edgemead,2,
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,Westwyvern,Millcastle,3,
+R032,Stepford Connect,down,Willowfield,Port Benton,Beechley,Stepford Central,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,Benton,Port Benton,1,
+R032,Stepford Connect,down,Willowfield,Port Benton,Bodin,Coxly,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,Coxly,Benton,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,St Helens Bridge,Bodin,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,Stepford Central,Stepford East,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,Stepford East,St Helens Bridge,2,
+R032,Stepford Connect,down,Willowfield,Port Benton,Willowfield,Beechley,3,
+R032,Stepford Connect,up,Port Benton,Willowfield,Beechley,Willowfield,3,
+R032,Stepford Connect,up,Port Benton,Willowfield,Benton,Coxly,2,
+R032,Stepford Connect,up,Port Benton,Willowfield,Bodin,St Helens Bridge,2,
+R032,Stepford Connect,up,Port Benton,Willowfield,Coxly,Bodin,2,
+R032,Stepford Connect,up,Port Benton,Willowfield,Port Benton,Benton,1,
+R032,Stepford Connect,up,Port Benton,Willowfield,St Helens Bridge,Stepford East,2,
+R032,Stepford Connect,up,Port Benton,Willowfield,Stepford Central,Beechley,2,
+R032,Stepford Connect,up,Port Benton,Willowfield,Stepford East,Stepford Central,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Beechley,Stepford Central,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Benton,Benton Bridge,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Benton Bridge,Stepford Airport Parkway,1,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Bodin,Coxly,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Coxly,Benton,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,St Helens Bridge,Bodin,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,3,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Stepford Central,Stepford East,2,
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,Stepford East,St Helens Bridge,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Benton,Coxly,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Benton Bridge,Benton,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Bodin,St Helens Bridge,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Coxly,Bodin,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,St Helens Bridge,Stepford East,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Stepford Airport Central,Stepford Airport Parkway,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Stepford Airport Parkway,Benton Bridge,2,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Stepford Central,Beechley,3,
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,Stepford East,Stepford Central,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Beechley,Stepford Central,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Benton,Benton Bridge,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Benton Bridge,Hampton Hargate,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Bodin,Coxly,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Coxly,Benton,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Edgemead,Faymere,3,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Faymere,Westercoast,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Hampton Hargate,Water Newton,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Leighton City,Edgemead,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Leighton Stepford Road,Leighton City,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Millcastle,Westwyvern,4,
+R035,Stepford Connect,down,Willowfield,Westwyvern,St Helens Bridge,Bodin,2,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Stepford Central,Stepford East,1,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Stepford East,St Helens Bridge,1,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Water Newton,Leighton Stepford Road,3,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Westercoast,Millcastle,3,
+R035,Stepford Connect,down,Willowfield,Westwyvern,Willowfield,Beechley,3,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Beechley,Willowfield,3,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Benton,Coxly,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Benton Bridge,Benton,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Bodin,St Helens Bridge,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Coxly,Bodin,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Edgemead,Leighton City,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Faymere,Edgemead,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Hampton Hargate,Benton Bridge,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Leighton City,Leighton Stepford Road,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Leighton Stepford Road,Water Newton,3,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Millcastle,Westercoast,3,
+R035,Stepford Connect,up,Westwyvern,Willowfield,St Helens Bridge,Stepford East,1,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Stepford Central,Beechley,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Stepford East,Stepford Central,1,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Water Newton,Hampton Hargate,2,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Westercoast,Faymere,3,
+R035,Stepford Connect,up,Westwyvern,Willowfield,Westwyvern,Millcastle,4,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Beechley,Stepford Central,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Benton,Hampton Hargate,4,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Bodin,Coxly,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Coxly,Benton,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Edgemead,Westercoast,3,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Hampton Hargate,Water Newton,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Leighton City,Edgemead,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Leighton Stepford Road,Leighton City,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Millcastle,Westwyvern,3,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,4,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,St Helens Bridge,Bodin,3,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Stepford Central,Stepford East,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Stepford East,St Helens Bridge,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Water Newton,Leighton Stepford Road,3,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Westercoast,Millcastle,2,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Westwyvern,Northshore,3,
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,Willowfield,Beechley,3,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Beechley,Willowfield,3,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Benton,Coxly,1,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Bodin,St Helens Bridge,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Coxly,Bodin,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Edgemead,Leighton City,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Hampton Hargate,Benton,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Leighton City,Leighton Stepford Road,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Leighton Stepford Road,Water Newton,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Llyn-by-the-Sea,Northshore,3,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Millcastle,Westercoast,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Northshore,Westwyvern,3,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,St Helens Bridge,Stepford East,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Stepford Central,Beechley,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Stepford East,Stepford Central,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Water Newton,Hampton Hargate,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Westercoast,Edgemead,2,
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,Westwyvern,Millcastle,2,
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Edgemead,Faymere,2,4.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Faymere,Westercoast,3,7.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Leighton City,Edgemead,2,2.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Millcastle,Westwyvern,3,12.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,4,18.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Westercoast,Millcastle,2,9.0
+R037,Stepford Connect,down,Leighton City,Llyn-by-the-Sea,Westwyvern,Northshore,2,14.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Edgemead,Leighton City,3,16.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Faymere,Edgemead,2,13.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Llyn-by-the-Sea,Northshore,3,3.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Millcastle,Westercoast,2,9.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Northshore,Westwyvern,2,5.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Westercoast,Faymere,2,11.0
+R037,Stepford Connect,up,Leighton City,Llyn-by-the-Sea,Westwyvern,Millcastle,2,7.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Edgemead,Faymere,2,4.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Faymere,Westercoast,3,7.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Leighton City,Edgemead,2,2.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Millcastle,Westwyvern,4,14.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Millcastle Racecourse,Millcastle,1,10.0
+R038,Stepford Connect,down,Leighton City,Westwyvern,Westercoast,Millcastle Racecourse,2,9.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Edgemead,Leighton City,3,12.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Faymere,Edgemead,2,9.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Millcastle,Millcastle Racecourse,1,3.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Millcastle Racecourse,Westercoast,2,5.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Westercoast,Faymere,2,7.0
+R038,Stepford Connect,up,Leighton City,Westwyvern,Westwyvern,Millcastle,2,2.0
+R043,Stepford Connect,down,Leighton West,Leighton City,Leighton West,Leighton City,2,2.0
+R043,Stepford Connect,up,Leighton West,Leighton City,Leighton City,Leighton West,3,3.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Benton,Benton Bridge,2,10.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Benton Bridge,Stepford Airport Parkway,2,12.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Bodin,Coxly,3,6.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Coxly,Benton,2,8.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,St Helens Bridge,Bodin,3,3.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Stepford Airport Central,Airport Terminal 2,2,16.0
+R048,Stepford Connect,down,St Helens Bridge,Airport Terminal 2,Stepford Airport Parkway,Stepford Airport Central,2,14.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Airport Terminal 2,Stepford Airport Central,2,2.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Benton,Coxly,2,10.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Benton Bridge,Benton,3,8.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Bodin,St Helens Bridge,3,16.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Coxly,Bodin,3,13.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Stepford Airport Central,Stepford Airport Parkway,2,4.0
+R048,Stepford Connect,up,St Helens Bridge,Airport Terminal 2,Stepford Airport Parkway,Benton Bridge,1,5.0
+R049,Stepford Connect,down,Rayleigh Bay,Edgemead,Aslockby,Edgemead,1,4.0
+R049,Stepford Connect,down,Rayleigh Bay,Edgemead,Carnalea Bridge,Aslockby,1,3.0
+R049,Stepford Connect,down,Rayleigh Bay,Edgemead,Rayleigh Bay,Carnalea Bridge,2,2.0
+R049,Stepford Connect,up,Rayleigh Bay,Edgemead,Aslockby,Carnalea Bridge,1,2.0
+R049,Stepford Connect,up,Rayleigh Bay,Edgemead,Carnalea Bridge,Rayleigh Bay,2,4.0
+R049,Stepford Connect,up,Rayleigh Bay,Edgemead,Edgemead,Aslockby,1,1.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Aslockby,Edgemead,1,4.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Carnalea Bridge,Aslockby,1,3.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Edgemead,Faymere,2,6.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Faymere,Westercoast,2,8.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Millcastle,Westwyvern,2,14.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Millcastle Racecourse,Millcastle,2,12.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,3,20.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Rayleigh Bay,Carnalea Bridge,2,2.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Starryloch,Northshore,1,17.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Westercoast,Millcastle Racecourse,2,10.0
+R050,Stepford Connect,down,Rayleigh Bay,Llyn-by-the-Sea,Westwyvern,Starryloch,2,16.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Aslockby,Carnalea Bridge,1,18.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Carnalea Bridge,Rayleigh Bay,2,20.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Edgemead,Aslockby,1,17.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Faymere,Edgemead,2,16.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Llyn-by-the-Sea,Northshore,3,3.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Millcastle,Millcastle Racecourse,2,10.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Millcastle Racecourse,Westercoast,2,12.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Northshore,Starryloch,1,4.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Starryloch,Westwyvern,2,6.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Westercoast,Faymere,2,14.0
+R050,Stepford Connect,up,Rayleigh Bay,Llyn-by-the-Sea,Westwyvern,Millcastle,2,8.0
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Airport Terminal 1,Airport Terminal 2,4,
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Airport Central,Airport Terminal 1,1,
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Central,Stepford Airport Central,7,
+R052,AirLink,up,Airport Terminal 2,Stepford Central,Stepford Airport Central,Stepford Central,8,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Airport Terminal 1,Airport Terminal 2,4,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Elsemere Junction,Morganstown,3,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Morganstown,Stepford Airport Central,3,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Airport Central,Airport Terminal 1,1,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Central,Stepford East,1,
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford East,Elsemere Junction,3,
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Elsemere Junction,Stepford East,3,
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Morganstown,Elsemere Junction,3,
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Stepford Airport Central,Morganstown,3,
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Stepford East,Stepford Central,2,
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Berrily,Stepford Airport Parkway,3,
+R054,AirLink,down,Stepford Central,Stepford Airport Central,St Helens Bridge,Berrily,3,
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,2,
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Stepford Central,St Helens Bridge,2,
+R054,AirLink,up,Stepford Airport Central,Stepford Central,St Helens Bridge,Stepford Central,4,
+R054,AirLink,up,Stepford Airport Central,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,2,
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Airport Terminal 2,Airport Terminal 3,3,
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Central,Airport Terminal 2,3,
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Parkway,Stepford Airport Central,2,
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Central,Stepford East,2,
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford East,Stepford Airport Parkway,5,
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 2,Stepford Airport Central,2,
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 3,Airport Terminal 2,3,
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,2,
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Parkway,Stepford East,6,
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford East,Stepford Central,2,
+R056,AirLink,down,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Central,Stepford Airport Parkway,1,
+R056,AirLink,down,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Parkway,Leighton Stepford Road,6,
+R056,AirLink,up,Leighton Stepford Road,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Parkway,5,
+R056,AirLink,up,Leighton Stepford Road,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,2,
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Airport Terminal 2,Stepford Airport Central,4,
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Airport Terminal 3,Airport Terminal 2,3,
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Stepford Airport Central,Water Newton,5,
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Water Newton,Leighton Stepford Road,2,
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Airport Terminal 2,Airport Terminal 3,3,
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Leighton Stepford Road,Water Newton,2,
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Stepford Airport Central,Airport Terminal 2,4,
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Water Newton,Stepford Airport Central,5,
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Morganstown,Stepford Airport Central,3,
+R058,AirLink,down,Stepford Central,Airport Terminal 3,St Helens Bridge,Morganstown,4,
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Central,Airport Terminal 1,1,
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Central,St Helens Bridge,2,
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 3,Airport Terminal 2,3,
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Morganstown,St Helens Bridge,4,
+R058,AirLink,up,Airport Terminal 3,Stepford Central,St Helens Bridge,Stepford Central,3,
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Central,Morganstown,3,
+R081,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,Leighton City,Llyn-by-the-Sea,7,
+R081,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,Stepford Central,Leighton City,9,
+R081,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,Leighton City,Stepford Central,9,
+R081,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,Llyn-by-the-Sea,Leighton City,7,
+R100,Stepford Connect,down,Rayleigh Bay,Leighton West,Aslockby,Edgemead,1,4.0
+R100,Stepford Connect,down,Rayleigh Bay,Leighton West,Carnalea Bridge,Aslockby,1,3.0
+R100,Stepford Connect,down,Rayleigh Bay,Leighton West,Edgemead,Leighton West,2,6.0
+R100,Stepford Connect,down,Rayleigh Bay,Leighton West,Rayleigh Bay,Carnalea Bridge,2,2.0
+R100,Stepford Connect,up,Rayleigh Bay,Leighton West,Aslockby,Carnalea Bridge,1,4.0
+R100,Stepford Connect,up,Rayleigh Bay,Leighton West,Carnalea Bridge,Rayleigh Bay,2,6.0
+R100,Stepford Connect,up,Rayleigh Bay,Leighton West,Edgemead,Aslockby,1,3.0
+R100,Stepford Connect,up,Rayleigh Bay,Leighton West,Leighton West,Edgemead,2,2.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Aslockby,Edgemead,2,6.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Carnalea Bridge,Aslockby,2,4.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Edgemead,Faymere,2,8.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Faymere,Westercoast,2,10.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Millcastle,Westwyvern,4,18.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Millcastle Racecourse,Millcastle,2,14.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Rayleigh Bay,Carnalea Bridge,2,2.0
+R102,Stepford Connect,down,Rayleigh Bay,Westwyvern,Westercoast,Millcastle Racecourse,2,12.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Aslockby,Carnalea Bridge,2,15.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Carnalea Bridge,Rayleigh Bay,2,17.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Edgemead,Aslockby,1,13.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Faymere,Edgemead,2,12.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Millcastle,Millcastle Racecourse,2,6.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Millcastle Racecourse,Westercoast,2,8.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Westercoast,Faymere,2,10.0
+R102,Stepford Connect,up,Rayleigh Bay,Westwyvern,Westwyvern,Millcastle,4,4.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Beechley,Stepford Central,1,4.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Houghton Rake,Whitefield,2,13.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Stepford Central,Stepford East,2,6.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Stepford East,Stepford United Football Club,3,9.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Stepford United Football Club,Woodhead Lane,1,10.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Willowfield,Beechley,3,3.0
+R103,Stepford Connect,down,Willowfield,Whitefield,Woodhead Lane,Houghton Rake,1,11.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Beechley,Willowfield,3,13.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Houghton Rake,Woodhead Lane,1,3.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Stepford Central,Beechley,1,10.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Stepford East,Stepford Central,2,9.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Stepford United Football Club,Stepford East,3,7.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Whitefield,Houghton Rake,2,2.0
+R103,Stepford Connect,up,Willowfield,Whitefield,Woodhead Lane,Stepford United Football Club,1,4.0

@@ -1,0 +1,1268 @@
+route_code,operator,direction,origin,terminus,seq,station,stops,cumulative_minutes
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,1,Stepford Central,True,0.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,2,Stepford East,True,2.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,3,St Helens Bridge,True,4.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,4,Angel Pass,True,6.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,5,Bodin,True,7.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,6,Coxly,True,9.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,7,Benton,True,11.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,8,Benton Bridge,True,14.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,9,Stepford Airport Parkway,True,16.0
+R001,Stepford Connect,down,Stepford Central,Stepford Airport Central,10,Stepford Airport Central,True,18.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,1,Stepford Airport Central,True,0.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,2,Stepford Airport Parkway,True,3.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,3,Benton Bridge,True,4.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,4,Benton,True,6.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,5,Coxly,True,8.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,6,Bodin,True,10.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,7,Angel Pass,True,11.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,8,St Helens Bridge,True,13.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,9,Stepford East,True,15.0
+R001,Stepford Connect,up,Stepford Airport Central,Stepford Central,10,Stepford Central,True,17.0
+R002,Metro,down,Stepford Central,Port Benton,1,Stepford Central,True,0.0
+R002,Metro,down,Stepford Central,Port Benton,2,Four Ways,True,1.0
+R002,Metro,down,Stepford Central,Port Benton,3,Stepford East,True,3.0
+R002,Metro,down,Stepford Central,Port Benton,4,Stepford High Street,True,4.0
+R002,Metro,down,Stepford Central,Port Benton,5,St Helens Bridge,True,6.0
+R002,Metro,down,Stepford Central,Port Benton,6,Angel Pass,True,8.0
+R002,Metro,down,Stepford Central,Port Benton,7,Bodin,True,9.0
+R002,Metro,down,Stepford Central,Port Benton,8,Coxly,True,11.0
+R002,Metro,down,Stepford Central,Port Benton,9,Benton,True,13.0
+R002,Metro,down,Stepford Central,Port Benton,10,Port Benton,True,16.0
+R002,Metro,up,Port Benton,Stepford Central,1,Port Benton,True,0.0
+R002,Metro,up,Port Benton,Stepford Central,2,Benton,True,2.0
+R002,Metro,up,Port Benton,Stepford Central,3,Coxly,True,4.0
+R002,Metro,up,Port Benton,Stepford Central,4,Bodin,True,6.0
+R002,Metro,up,Port Benton,Stepford Central,5,Angel Pass,True,7.0
+R002,Metro,up,Port Benton,Stepford Central,6,St Helens Bridge,True,9.0
+R002,Metro,up,Port Benton,Stepford Central,7,Stepford High Street,True,10.0
+R002,Metro,up,Port Benton,Stepford Central,8,Stepford East,True,12.0
+R002,Metro,up,Port Benton,Stepford Central,9,Four Ways,True,13.0
+R002,Metro,up,Port Benton,Stepford Central,10,Stepford Central,True,15.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,1,Stepford Central,True,0.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,2,Stepford East,True,2.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,3,St Helens Bridge,True,4.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,4,Angel Pass,True,6.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,5,Bodin,True,7.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,6,Coxly,True,9.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,7,Benton,True,11.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,8,Benton Bridge,True,13.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,9,Hampton Hargate,True,15.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,10,Upper Staploe,True,17.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,11,Water Newton,True,19.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,12,Rocket Parade,True,20.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,13,Leighton Stepford Road,True,21.0
+R003,Stepford Connect,down,Stepford Central,Leighton City,14,Leighton City,True,23.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,1,Leighton City,True,0.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,2,Leighton Stepford Road,True,2.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,3,Rocket Parade,True,4.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,4,Water Newton,True,6.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,5,Upper Staploe,True,8.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,6,Hampton Hargate,True,10.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,7,Benton Bridge,True,11.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,8,Benton,True,13.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,9,Coxly,True,15.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,10,Bodin,True,17.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,11,Angel Pass,True,18.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,12,St Helens Bridge,True,20.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,13,Stepford East,True,22.0
+R003,Stepford Connect,up,Leighton City,Stepford Central,14,Stepford Central,True,24.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,1,St Helens Bridge,True,0.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,2,Angel Pass,False,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,3,Bodin,True,2.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,4,Coxly,True,4.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,5,Benton,True,5.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,6,Benton Bridge,True,7.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,7,Hampton Hargate,True,8.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,8,Water Newton,True,10.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,9,Rocket Parade,False,
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,10,Leighton Stepford Road,True,12.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,11,Leighton City,True,14.0
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,12,Edgemead,True,16.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,1,Edgemead,True,0.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,2,Leighton City,True,2.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,3,Leighton Stepford Road,True,4.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,4,Water Newton,True,6.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,5,Rocket Parade,False,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,6,Hampton Hargate,True,8.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,7,Benton Bridge,True,10.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,8,Benton,True,12.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,9,Coxly,True,14.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,10,Bodin,True,16.0
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,11,Angel Pass,False,
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,12,St Helens Bridge,True,18.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,1,Stepford Victoria,True,0.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,2,Financial Quarter,True,3.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,3,City Hospital,False,
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,4,Stepford Central,True,5.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,5,Stepford East,True,7.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,6,St Helens Bridge,True,9.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,7,Bodin,True,12.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,8,Coxly,True,14.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,9,Benton,True,16.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,10,Benton Bridge,True,18.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,11,Stepford Airport Parkway,True,20.0
+R005,Stepford Connect,down,Stepford Victoria,Stepford Airport Central,12,Stepford Airport Central,True,22.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,1,Stepford Airport Central,True,0.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,2,Stepford Airport Parkway,True,3.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,3,Benton Bridge,True,4.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,4,Benton,True,6.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,5,Coxly,True,8.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,6,Bodin,True,10.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,7,St Helens Bridge,True,13.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,8,Stepford East,True,15.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,9,Stepford Central,True,17.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,10,City Hospital,False,
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,11,Financial Quarter,True,20.0
+R005,Stepford Connect,up,Stepford Airport Central,Stepford Victoria,12,Stepford Victoria,True,21.0
+R006,Metro,down,Stepford Victoria,Port Benton,1,Stepford Victoria,True,0.0
+R006,Metro,down,Stepford Victoria,Port Benton,2,City Hospital,True,2.0
+R006,Metro,down,Stepford Victoria,Port Benton,3,Stepford Central,True,4.0
+R006,Metro,down,Stepford Victoria,Port Benton,4,Four Ways,True,5.0
+R006,Metro,down,Stepford Victoria,Port Benton,5,Stepford East,True,7.0
+R006,Metro,down,Stepford Victoria,Port Benton,6,St Helens Bridge,True,9.0
+R006,Metro,down,Stepford Victoria,Port Benton,7,Angel Pass,True,11.0
+R006,Metro,down,Stepford Victoria,Port Benton,8,Bodin,True,12.0
+R006,Metro,down,Stepford Victoria,Port Benton,9,Coxly,True,14.0
+R006,Metro,down,Stepford Victoria,Port Benton,10,Benton,True,15.0
+R006,Metro,down,Stepford Victoria,Port Benton,11,Port Benton,True,16.0
+R006,Metro,up,Port Benton,Stepford Victoria,1,Port Benton,True,0.0
+R006,Metro,up,Port Benton,Stepford Victoria,2,Benton,True,1.0
+R006,Metro,up,Port Benton,Stepford Victoria,3,Coxly,True,2.0
+R006,Metro,up,Port Benton,Stepford Victoria,4,Bodin,True,4.0
+R006,Metro,up,Port Benton,Stepford Victoria,5,Angel Pass,True,6.0
+R006,Metro,up,Port Benton,Stepford Victoria,6,St Helens Bridge,True,7.0
+R006,Metro,up,Port Benton,Stepford Victoria,7,Stepford East,True,9.0
+R006,Metro,up,Port Benton,Stepford Victoria,8,Four Ways,True,10.0
+R006,Metro,up,Port Benton,Stepford Victoria,9,Stepford Central,True,12.0
+R006,Metro,up,Port Benton,Stepford Victoria,10,City Hospital,True,14.0
+R006,Metro,up,Port Benton,Stepford Victoria,11,Stepford Victoria,True,16.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,1,Stepford Central,True,0.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,2,Stepford East,True,2.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,3,St Helens Bridge,True,4.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,4,Elsemere Junction,True,7.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,5,Berrily,True,9.0
+R007,Stepford Connect,down,Stepford Central,Morganstown,6,Morganstown,True,12.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,1,Morganstown,True,0.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,2,Berrily,True,-3.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,3,Elsemere Junction,True,-5.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,4,St Helens Bridge,True,-7.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,5,Stepford East,True,-9.0
+R007,Stepford Connect,up,Morganstown,Stepford Central,6,Stepford Central,True,-11.0
+R008,Metro,down,Stepford Victoria,Berrily,1,Stepford Victoria,True,0.0
+R008,Metro,down,Stepford Victoria,Berrily,2,Financial Quarter,True,2.0
+R008,Metro,down,Stepford Victoria,Berrily,3,City Hospital,True,4.0
+R008,Metro,down,Stepford Victoria,Berrily,4,Stepford Central,True,6.0
+R008,Metro,down,Stepford Victoria,Berrily,5,Four Ways,True,7.0
+R008,Metro,down,Stepford Victoria,Berrily,6,Stepford East,True,9.0
+R008,Metro,down,Stepford Victoria,Berrily,7,Stepford High Street,True,10.0
+R008,Metro,down,Stepford Victoria,Berrily,8,St Helens Bridge,True,12.0
+R008,Metro,down,Stepford Victoria,Berrily,9,New Harrow,True,14.0
+R008,Metro,down,Stepford Victoria,Berrily,10,Elsemere Pond,True,15.0
+R008,Metro,down,Stepford Victoria,Berrily,11,Elsemere Junction,True,16.0
+R008,Metro,down,Stepford Victoria,Berrily,12,Berrily,True,18.0
+R008,Metro,up,Berrily,Stepford Victoria,1,Berrily,True,0.0
+R008,Metro,up,Berrily,Stepford Victoria,2,Elsemere Junction,True,2.0
+R008,Metro,up,Berrily,Stepford Victoria,3,Elsemere Pond,True,3.0
+R008,Metro,up,Berrily,Stepford Victoria,4,New Harrow,True,4.0
+R008,Metro,up,Berrily,Stepford Victoria,5,St Helens Bridge,True,6.0
+R008,Metro,up,Berrily,Stepford Victoria,6,Stepford High Street,True,7.0
+R008,Metro,up,Berrily,Stepford Victoria,7,Stepford East,True,9.0
+R008,Metro,up,Berrily,Stepford Victoria,8,Four Ways,True,10.0
+R008,Metro,up,Berrily,Stepford Victoria,9,Stepford Central,True,12.0
+R008,Metro,up,Berrily,Stepford Victoria,10,City Hospital,True,14.0
+R008,Metro,up,Berrily,Stepford Victoria,11,Financial Quarter,True,16.0
+R008,Metro,up,Berrily,Stepford Victoria,12,Stepford Victoria,True,19.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,1,Stepford Victoria,True,0.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,2,Stepford Central,True,3.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,3,Stepford East,True,5.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,4,St Helens Bridge,True,7.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,5,Bodin,True,9.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,6,Coxly,True,11.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,7,Benton,True,12.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,8,Benton Bridge,True,14.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,9,Hampton Hargate,True,16.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,10,Water Newton,True,18.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,11,Rocket Parade,True,20.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,12,Leighton Stepford Road,True,22.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,13,Leighton City,True,24.0
+R009,Stepford Connect,down,Stepford Victoria,Edgemead,14,Edgemead,True,26.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,1,Edgemead,True,0.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,2,Leighton City,True,2.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,3,Leighton Stepford Road,True,4.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,4,Rocket Parade,True,6.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,5,Water Newton,True,8.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,6,Hampton Hargate,True,10.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,7,Benton Bridge,True,13.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,8,Benton,True,16.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,9,Coxly,True,18.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,10,Bodin,True,20.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,11,St Helens Bridge,True,22.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,12,Stepford East,True,23.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,13,Stepford Central,True,25.0
+R009,Stepford Connect,up,Edgemead,Stepford Victoria,14,Stepford Victoria,True,27.0
+R010,Waterline,down,Newry,Greenslade,1,Newry,True,0.0
+R010,Waterline,down,Newry,Greenslade,2,Eden Quay,True,2.0
+R010,Waterline,down,Newry,Greenslade,3,Faraday Road,True,3.0
+R010,Waterline,down,Newry,Greenslade,4,West Benton,True,4.0
+R010,Waterline,down,Newry,Greenslade,5,Benton,True,6.0
+R010,Waterline,down,Newry,Greenslade,6,Port Benton,True,7.0
+R010,Waterline,down,Newry,Greenslade,7,Morganstown Docks,True,8.0
+R010,Waterline,down,Newry,Greenslade,8,Whitney Green,True,9.0
+R010,Waterline,down,Newry,Greenslade,9,Greenslade,True,10.0
+R010,Waterline,up,Greenslade,Newry,1,Greenslade,True,0.0
+R010,Waterline,up,Greenslade,Newry,2,Whitney Green,True,1.0
+R010,Waterline,up,Greenslade,Newry,3,Morganstown Docks,True,2.0
+R010,Waterline,up,Greenslade,Newry,4,Port Benton,True,3.0
+R010,Waterline,up,Greenslade,Newry,5,Benton,True,4.0
+R010,Waterline,up,Greenslade,Newry,6,West Benton,True,6.0
+R010,Waterline,up,Greenslade,Newry,7,Faraday Road,True,7.0
+R010,Waterline,up,Greenslade,Newry,8,Eden Quay,True,8.0
+R010,Waterline,up,Greenslade,Newry,9,Newry,True,10.0
+R011,Waterline,down,Newry,Connolly,1,Newry,True,0.0
+R011,Waterline,down,Newry,Connolly,2,Eden Quay,True,2.0
+R011,Waterline,down,Newry,Connolly,3,Faraday Road,True,3.0
+R011,Waterline,down,Newry,Connolly,4,West Benton,True,4.0
+R011,Waterline,down,Newry,Connolly,5,Benton,True,6.0
+R011,Waterline,down,Newry,Connolly,6,Cambridge Street Parkway,True,7.0
+R011,Waterline,down,Newry,Connolly,7,Ashlan Park,True,8.0
+R011,Waterline,down,Newry,Connolly,8,Connolly,True,10.0
+R011,Waterline,up,Connolly,Newry,1,Connolly,True,0.0
+R011,Waterline,up,Connolly,Newry,2,Ashlan Park,True,2.0
+R011,Waterline,up,Connolly,Newry,3,Cambridge Street Parkway,True,3.0
+R011,Waterline,up,Connolly,Newry,4,Benton,True,4.0
+R011,Waterline,up,Connolly,Newry,5,West Benton,True,6.0
+R011,Waterline,up,Connolly,Newry,6,Faraday Road,True,7.0
+R011,Waterline,up,Connolly,Newry,7,Eden Quay,True,8.0
+R011,Waterline,up,Connolly,Newry,8,Newry,True,10.0
+R012,Waterline,down,Newry Harbour,Connolly,1,Newry Harbour,True,0.0
+R012,Waterline,down,Newry Harbour,Connolly,2,Newry,True,2.0
+R012,Waterline,down,Newry Harbour,Connolly,3,Eden Quay,True,4.0
+R012,Waterline,down,Newry Harbour,Connolly,4,Faraday Road,True,5.0
+R012,Waterline,down,Newry Harbour,Connolly,5,West Benton,True,6.0
+R012,Waterline,down,Newry Harbour,Connolly,6,Benton,True,7.0
+R012,Waterline,down,Newry Harbour,Connolly,7,Cambridge Street Parkway,True,8.0
+R012,Waterline,down,Newry Harbour,Connolly,8,Ashlan Park,True,9.0
+R012,Waterline,down,Newry Harbour,Connolly,9,Connolly,True,12.0
+R012,Waterline,up,Connolly,Newry Harbour,1,Connolly,True,0.0
+R012,Waterline,up,Connolly,Newry Harbour,2,Ashlan Park,True,3.0
+R012,Waterline,up,Connolly,Newry Harbour,3,Cambridge Street Parkway,True,4.0
+R012,Waterline,up,Connolly,Newry Harbour,4,Benton,True,5.0
+R012,Waterline,up,Connolly,Newry Harbour,5,West Benton,True,6.0
+R012,Waterline,up,Connolly,Newry Harbour,6,Faraday Road,True,7.0
+R012,Waterline,up,Connolly,Newry Harbour,7,Eden Quay,True,8.0
+R012,Waterline,up,Connolly,Newry Harbour,8,Newry,True,10.0
+R012,Waterline,up,Connolly,Newry Harbour,9,Newry Harbour,True,12.0
+R013,Waterline,down,Benton,Greenslade,1,Benton,True,0.0
+R013,Waterline,down,Benton,Greenslade,2,Port Benton,True,1.0
+R013,Waterline,down,Benton,Greenslade,3,Morganstown Docks,True,2.0
+R013,Waterline,down,Benton,Greenslade,4,Whitney Green,True,3.0
+R013,Waterline,down,Benton,Greenslade,5,Greenslade,True,5.0
+R013,Waterline,up,Greenslade,Benton,1,Greenslade,True,0.0
+R013,Waterline,up,Greenslade,Benton,2,Whitney Green,True,2.0
+R013,Waterline,up,Greenslade,Benton,3,Morganstown Docks,True,3.0
+R013,Waterline,up,Greenslade,Benton,4,Port Benton,True,4.0
+R013,Waterline,up,Greenslade,Benton,5,Benton,True,5.0
+R014,Waterline,down,Newry,Esterfield,1,Newry,True,0.0
+R014,Waterline,down,Newry,Esterfield,2,Eden Quay,True,1.0
+R014,Waterline,down,Newry,Esterfield,3,Faraday Road,True,3.0
+R014,Waterline,down,Newry,Esterfield,4,West Benton,True,4.0
+R014,Waterline,down,Newry,Esterfield,5,Benton,True,5.0
+R014,Waterline,down,Newry,Esterfield,6,Cambridge Street Parkway,True,6.0
+R014,Waterline,down,Newry,Esterfield,7,Airport West,True,8.0
+R014,Waterline,down,Newry,Esterfield,8,Farleigh,True,12.0
+R014,Waterline,down,Newry,Esterfield,9,Esterfield,True,15.0
+R014,Waterline,up,Esterfield,Newry,1,Esterfield,True,0.0
+R014,Waterline,up,Esterfield,Newry,2,Farleigh,True,3.0
+R014,Waterline,up,Esterfield,Newry,3,Airport West,True,4.0
+R014,Waterline,up,Esterfield,Newry,4,Cambridge Street Parkway,True,6.0
+R014,Waterline,up,Esterfield,Newry,5,Benton,True,8.0
+R014,Waterline,up,Esterfield,Newry,6,West Benton,True,9.0
+R014,Waterline,up,Esterfield,Newry,7,Faraday Road,True,11.0
+R014,Waterline,up,Esterfield,Newry,8,Eden Quay,True,12.0
+R014,Waterline,up,Esterfield,Newry,9,Newry,True,15.0
+R015,Waterline,down,Benton,Morganstown,1,Benton,True,0.0
+R015,Waterline,down,Benton,Morganstown,2,Port Benton,True,1.0
+R015,Waterline,down,Benton,Morganstown,3,Morganstown Docks,True,2.0
+R015,Waterline,down,Benton,Morganstown,4,Morganstown,True,4.0
+R015,Waterline,up,Morganstown,Benton,1,Morganstown,True,0.0
+R015,Waterline,up,Morganstown,Benton,2,Morganstown Docks,True,2.0
+R015,Waterline,up,Morganstown,Benton,3,Port Benton,True,3.0
+R015,Waterline,up,Morganstown,Benton,4,Benton,True,4.0
+R016,Waterline,down,Benton,Esterfield,1,Benton,True,0.0
+R016,Waterline,down,Benton,Esterfield,2,Cambridge Street Parkway,True,1.0
+R016,Waterline,down,Benton,Esterfield,3,Airport West,True,3.0
+R016,Waterline,down,Benton,Esterfield,4,James Street,True,5.0
+R016,Waterline,down,Benton,Esterfield,5,Farleigh,True,6.0
+R016,Waterline,down,Benton,Esterfield,6,Rosedale Village,True,7.0
+R016,Waterline,down,Benton,Esterfield,7,Esterfield,True,9.0
+R016,Waterline,up,Esterfield,Benton,1,Esterfield,True,0.0
+R016,Waterline,up,Esterfield,Benton,2,Rosedale Village,True,2.0
+R016,Waterline,up,Esterfield,Benton,3,Farleigh,True,3.0
+R016,Waterline,up,Esterfield,Benton,4,James Street,True,5.0
+R016,Waterline,up,Esterfield,Benton,5,Airport West,True,6.0
+R016,Waterline,up,Esterfield,Benton,6,Cambridge Street Parkway,True,8.0
+R016,Waterline,up,Esterfield,Benton,7,Benton,True,10.0
+R017,Waterline,down,Newry,Airport Terminal 2,1,Newry,True,0.0
+R017,Waterline,down,Newry,Airport Terminal 2,2,Eden Quay,True,1.0
+R017,Waterline,down,Newry,Airport Terminal 2,3,Faraday Road,True,3.0
+R017,Waterline,down,Newry,Airport Terminal 2,4,West Benton,True,4.0
+R017,Waterline,down,Newry,Airport Terminal 2,5,Benton,True,6.0
+R017,Waterline,down,Newry,Airport Terminal 2,6,Cambridge Street Parkway,True,8.0
+R017,Waterline,down,Newry,Airport Terminal 2,7,Airport West,True,9.0
+R017,Waterline,down,Newry,Airport Terminal 2,8,Airport Terminal 2,True,13.0
+R017,Waterline,up,Airport Terminal 2,Newry,1,Airport Terminal 2,True,0.0
+R017,Waterline,up,Airport Terminal 2,Newry,2,Airport West,True,4.0
+R017,Waterline,up,Airport Terminal 2,Newry,3,Cambridge Street Parkway,True,5.0
+R017,Waterline,up,Airport Terminal 2,Newry,4,Benton,True,7.0
+R017,Waterline,up,Airport Terminal 2,Newry,5,West Benton,True,9.0
+R017,Waterline,up,Airport Terminal 2,Newry,6,Faraday Road,True,10.0
+R017,Waterline,up,Airport Terminal 2,Newry,7,Eden Quay,True,12.0
+R017,Waterline,up,Airport Terminal 2,Newry,8,Newry,True,12.0
+R018,Waterline,down,Newry Harbour,Farleigh,1,Newry Harbour,True,0.0
+R018,Waterline,down,Newry Harbour,Farleigh,2,Newry,True,2.0
+R018,Waterline,down,Newry Harbour,Farleigh,3,Eden Quay,True,3.0
+R018,Waterline,down,Newry Harbour,Farleigh,4,Faraday Road,True,5.0
+R018,Waterline,down,Newry Harbour,Farleigh,5,West Benton,True,6.0
+R018,Waterline,down,Newry Harbour,Farleigh,6,Benton,True,8.0
+R018,Waterline,down,Newry Harbour,Farleigh,7,Cambridge Street Parkway,True,10.0
+R018,Waterline,down,Newry Harbour,Farleigh,8,Airport West,True,11.0
+R018,Waterline,down,Newry Harbour,Farleigh,9,James Street,True,13.0
+R018,Waterline,down,Newry Harbour,Farleigh,10,Farleigh,True,15.0
+R018,Waterline,up,Farleigh,Newry Harbour,1,Farleigh,True,0.0
+R018,Waterline,up,Farleigh,Newry Harbour,2,James Street,True,2.0
+R018,Waterline,up,Farleigh,Newry Harbour,3,Airport West,True,4.0
+R018,Waterline,up,Farleigh,Newry Harbour,4,Cambridge Street Parkway,True,5.0
+R018,Waterline,up,Farleigh,Newry Harbour,5,Benton,True,7.0
+R018,Waterline,up,Farleigh,Newry Harbour,6,West Benton,True,8.0
+R018,Waterline,up,Farleigh,Newry Harbour,7,Faraday Road,True,10.0
+R018,Waterline,up,Farleigh,Newry Harbour,8,Eden Quay,True,12.0
+R018,Waterline,up,Farleigh,Newry Harbour,9,Newry,True,13.0
+R018,Waterline,up,Farleigh,Newry Harbour,10,Newry Harbour,True,15.0
+R019,Waterline,down,Benton,Connolly,1,Benton,True,0.0
+R019,Waterline,down,Benton,Connolly,2,Cambridge Street Parkway,True,1.0
+R019,Waterline,down,Benton,Connolly,3,Ashlan Park,True,2.0
+R019,Waterline,down,Benton,Connolly,4,Connolly,True,4.0
+R019,Waterline,up,Connolly,Benton,1,Connolly,True,0.0
+R019,Waterline,up,Connolly,Benton,2,Ashlan Park,True,2.0
+R019,Waterline,up,Connolly,Benton,3,Cambridge Street Parkway,True,3.0
+R019,Waterline,up,Connolly,Benton,4,Benton,True,4.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,1,Stepford Central,True,0.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,2,Stepford East,True,2.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,3,Stepford United Football Club,True,5.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,4,Woodhead Lane,True,6.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,5,Houghton Rake,True,7.0
+R020,Stepford Connect,down,Stepford Central,Whitefield,6,Whitefield,True,9.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,1,Whitefield,True,0.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,2,Houghton Rake,True,2.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,3,Woodhead Lane,True,3.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,4,Stepford United Football Club,True,4.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,5,Stepford East,True,7.0
+R020,Stepford Connect,up,Whitefield,Stepford Central,6,Stepford Central,True,9.0
+R022,Stepford Connect,down,Beechley,Whitefield,1,Beechley,True,0.0
+R022,Stepford Connect,down,Beechley,Whitefield,2,Stepford Central,True,1.0
+R022,Stepford Connect,down,Beechley,Whitefield,3,Stepford East,True,3.0
+R022,Stepford Connect,down,Beechley,Whitefield,4,Stepford United Football Club,True,5.0
+R022,Stepford Connect,down,Beechley,Whitefield,5,Woodhead Lane,True,6.0
+R022,Stepford Connect,down,Beechley,Whitefield,6,Whitefield,True,8.0
+R022,Stepford Connect,up,Whitefield,Beechley,1,Whitefield,True,0.0
+R022,Stepford Connect,up,Whitefield,Beechley,2,Woodhead Lane,True,2.0
+R022,Stepford Connect,up,Whitefield,Beechley,3,Stepford United Football Club,True,3.0
+R022,Stepford Connect,up,Whitefield,Beechley,4,Stepford East,True,5.0
+R022,Stepford Connect,up,Whitefield,Beechley,5,Stepford Central,True,7.0
+R022,Stepford Connect,up,Whitefield,Beechley,6,Beechley,True,8.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,1,Stepford Victoria,True,0.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,2,Financial Quarter,True,3.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,3,City Hospital,True,5.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,4,Stepford Central,True,7.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,5,Four Ways,True,9.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,6,Stepford East,True,10.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,7,Stepford High Street,True,12.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,8,Whitefield Lido,True,13.0
+R023,Metro,down,Stepford Victoria,Stepford United Football Club,9,Stepford United Football Club,True,15.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,1,Stepford United Football Club,True,0.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,2,Whitefield Lido,True,2.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,3,Stepford High Street,True,3.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,4,Stepford East,True,5.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,5,Four Ways,True,6.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,6,Stepford Central,True,8.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,7,City Hospital,True,10.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,8,Financial Quarter,True,12.0
+R023,Metro,up,Stepford United Football Club,Stepford Victoria,9,Stepford Victoria,True,15.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,2,Stepford East,True,2.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,3,St Helens Bridge,True,4.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,4,Bodin,True,6.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,5,Coxly,True,8.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,6,Benton,True,10.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,7,Benton Bridge,True,12.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,8,Hampton Hargate,True,14.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,9,Water Newton,True,16.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,10,Rocket Parade,True,19.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,11,Leighton Stepford Road,True,22.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,12,Leighton City,True,24.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,13,Edgemead,True,26.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,14,Faymere,True,28.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,15,Westercoast,True,31.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,16,Millcastle,True,33.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,17,Westwyvern,True,36.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,18,Starryloch,True,38.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,19,Northshore,True,40.0
+R024,Stepford Connect,down,Stepford Central,Llyn-by-the-Sea,20,Llyn-by-the-Sea,True,44.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,2,Northshore,True,-41.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,3,Starryloch,True,-39.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,4,Westwyvern,True,-37.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,5,Millcastle,True,-35.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,6,Westercoast,True,-32.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,7,Faymere,True,-30.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,8,Edgemead,True,-27.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,9,Leighton City,True,-25.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,10,Leighton Stepford Road,True,-23.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,11,Rocket Parade,True,-20.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,12,Water Newton,True,-17.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,13,Hampton Hargate,True,-15.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,14,Benton Bridge,True,-13.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,15,Benton,True,-11.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,16,Coxly,True,-9.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,17,Bodin,True,-7.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,18,St Helens Bridge,True,-4.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,19,Stepford East,True,-2.0
+R024,Stepford Connect,up,Llyn-by-the-Sea,Stepford Central,20,Stepford Central,True,0.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,1,St Helens Bridge,True,0.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,2,Bodin,True,2.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,3,Coxly,True,4.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,4,Benton,True,6.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,5,Benton Bridge,True,9.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,6,Hampton Hargate,True,11.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,7,Upper Staploe,True,13.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,8,Water Newton,True,15.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,9,Rocket Parade,True,17.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,10,Leighton Stepford Road,True,18.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,11,Leighton City,True,20.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,12,Edgemead,True,22.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,13,Faymere,True,24.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,14,Westercoast,True,27.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,15,Millcastle Racecourse,True,29.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,16,Millcastle,True,30.0
+R025,Stepford Connect,down,St Helens Bridge,Westwyvern,17,Westwyvern,True,34.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,1,Westwyvern,True,0.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,2,Millcastle,True,-28.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,3,Millcastle Racecourse,True,-27.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,4,Westercoast,True,-25.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,5,Faymere,True,-23.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,6,Edgemead,True,-21.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,7,Leighton City,True,-18.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,8,Leighton Stepford Road,True,-16.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,9,Rocket Parade,True,-15.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,10,Water Newton,True,-13.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,11,Upper Staploe,True,-11.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,12,Hampton Hargate,True,-9.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,13,Benton Bridge,True,-7.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,14,Benton,True,-5.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,15,Coxly,True,-4.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,16,Bodin,True,-2.0
+R025,Stepford Connect,up,Westwyvern,St Helens Bridge,17,St Helens Bridge,True,0.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,1,Stepford Victoria,True,0.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,2,Stepford Central,True,3.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,3,Stepford East,True,5.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,4,St Helens Bridge,True,7.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,5,Bodin,True,10.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,6,Coxly,True,12.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,7,Benton,True,14.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,8,Hampton Hargate,True,18.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,9,Water Newton,True,20.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,10,Leighton Stepford Road,True,23.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,11,Leighton City,True,25.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,12,Edgemead,True,27.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,13,Westercoast,True,29.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,14,Millcastle,True,32.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,15,Westwyvern,True,35.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,16,Northshore,True,38.0
+R026,Stepford Connect,down,Stepford Victoria,Llyn-by-the-Sea,17,Llyn-by-the-Sea,True,43.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,1,Llyn-by-the-Sea,True,0.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,2,Northshore,True,-32.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,3,Westwyvern,True,-29.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,4,Millcastle,True,-26.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,5,Westercoast,True,-23.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,6,Edgemead,True,-21.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,7,Leighton City,True,-19.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,8,Leighton Stepford Road,True,-17.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,9,Water Newton,True,-15.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,10,Hampton Hargate,True,-13.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,11,Benton,True,-11.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,12,Coxly,True,-10.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,13,Bodin,True,-8.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,14,St Helens Bridge,True,-6.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,15,Stepford East,True,-4.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,16,Stepford Central,True,-2.0
+R026,Stepford Connect,up,Llyn-by-the-Sea,Stepford Victoria,17,Stepford Victoria,True,0.0
+R027,Metro,down,Stepford Central,Berrily,1,Stepford Central,True,0.0
+R027,Metro,down,Stepford Central,Berrily,2,Four Ways,True,1.0
+R027,Metro,down,Stepford Central,Berrily,3,Stepford East,True,3.0
+R027,Metro,down,Stepford Central,Berrily,4,Stepford High Street,True,4.0
+R027,Metro,down,Stepford Central,Berrily,5,St Helens Bridge,True,6.0
+R027,Metro,down,Stepford Central,Berrily,6,New Harrow,True,8.0
+R027,Metro,down,Stepford Central,Berrily,7,Elsemere Pond,True,9.0
+R027,Metro,down,Stepford Central,Berrily,8,Elsemere Junction,True,10.0
+R027,Metro,down,Stepford Central,Berrily,9,Berrily,True,12.0
+R027,Metro,up,Berrily,Stepford Central,1,Berrily,True,0.0
+R027,Metro,up,Berrily,Stepford Central,2,Elsemere Junction,True,2.0
+R027,Metro,up,Berrily,Stepford Central,3,Elsemere Pond,True,3.0
+R027,Metro,up,Berrily,Stepford Central,4,New Harrow,True,4.0
+R027,Metro,up,Berrily,Stepford Central,5,St Helens Bridge,True,6.0
+R027,Metro,up,Berrily,Stepford Central,6,Stepford High Street,True,8.0
+R027,Metro,up,Berrily,Stepford Central,7,Stepford East,True,9.0
+R027,Metro,up,Berrily,Stepford Central,8,Four Ways,True,10.0
+R027,Metro,up,Berrily,Stepford Central,9,Stepford Central,True,12.0
+R028,Metro,down,Stepford Victoria,Willowfield,1,Stepford Victoria,True,0.0
+R028,Metro,down,Stepford Victoria,Willowfield,2,Financial Quarter,True,1.0
+R028,Metro,down,Stepford Victoria,Willowfield,3,Beechley,True,3.0
+R028,Metro,down,Stepford Victoria,Willowfield,4,Hemdon Park,True,5.0
+R028,Metro,down,Stepford Victoria,Willowfield,5,Willowfield,True,7.0
+R028,Metro,up,Willowfield,Stepford Victoria,1,Willowfield,True,0.0
+R028,Metro,up,Willowfield,Stepford Victoria,2,Hemdon Park,True,2.0
+R028,Metro,up,Willowfield,Stepford Victoria,3,Beechley,True,4.0
+R028,Metro,up,Willowfield,Stepford Victoria,4,Financial Quarter,True,6.0
+R028,Metro,up,Willowfield,Stepford Victoria,5,Stepford Victoria,True,7.0
+R029,Metro,down,Stepford Victoria,Beechley,1,Stepford Victoria,True,0.0
+R029,Metro,down,Stepford Victoria,Beechley,2,Financial Quarter,True,1.0
+R029,Metro,down,Stepford Victoria,Beechley,3,Beechley,True,3.0
+R029,Metro,up,Beechley,Stepford Victoria,1,Beechley,True,0.0
+R029,Metro,up,Beechley,Stepford Victoria,2,Financial Quarter,True,2.0
+R029,Metro,up,Beechley,Stepford Victoria,3,Stepford Victoria,True,3.0
+R030,Metro,down,Willowfield,Berrily,1,Willowfield,True,0.0
+R030,Metro,down,Willowfield,Berrily,2,Hemdon Park,True,2.0
+R030,Metro,down,Willowfield,Berrily,3,Beechley,True,4.0
+R030,Metro,down,Willowfield,Berrily,4,City Hospital,True,6.0
+R030,Metro,down,Willowfield,Berrily,5,Stepford Central,True,8.0
+R030,Metro,down,Willowfield,Berrily,6,Four Ways,True,10.0
+R030,Metro,down,Willowfield,Berrily,7,Stepford East,True,11.0
+R030,Metro,down,Willowfield,Berrily,8,Stepford High Street,True,13.0
+R030,Metro,down,Willowfield,Berrily,9,St Helens Bridge,True,14.0
+R030,Metro,down,Willowfield,Berrily,10,New Harrow,True,16.0
+R030,Metro,down,Willowfield,Berrily,11,Elsemere Pond,True,17.0
+R030,Metro,down,Willowfield,Berrily,12,Elsemere Junction,True,18.0
+R030,Metro,down,Willowfield,Berrily,13,Berrily,True,20.0
+R030,Metro,up,Berrily,Willowfield,1,Berrily,True,0.0
+R030,Metro,up,Berrily,Willowfield,2,Elsemere Junction,True,2.0
+R030,Metro,up,Berrily,Willowfield,3,Elsemere Pond,True,3.0
+R030,Metro,up,Berrily,Willowfield,4,New Harrow,True,4.0
+R030,Metro,up,Berrily,Willowfield,5,St Helens Bridge,True,6.0
+R030,Metro,up,Berrily,Willowfield,6,Stepford High Street,True,8.0
+R030,Metro,up,Berrily,Willowfield,7,Stepford East,True,9.0
+R030,Metro,up,Berrily,Willowfield,8,Four Ways,True,11.0
+R030,Metro,up,Berrily,Willowfield,9,Stepford Central,True,12.0
+R030,Metro,up,Berrily,Willowfield,10,City Hospital,True,14.0
+R030,Metro,up,Berrily,Willowfield,11,Beechley,True,16.0
+R030,Metro,up,Berrily,Willowfield,12,Hemdon Park,True,18.0
+R030,Metro,up,Berrily,Willowfield,13,Willowfield,True,20.0
+R031,Metro,down,Willowfield,Stepford United Football Club,1,Willowfield,True,0.0
+R031,Metro,down,Willowfield,Stepford United Football Club,2,Hemdon Park,True,2.0
+R031,Metro,down,Willowfield,Stepford United Football Club,3,Beechley,True,4.0
+R031,Metro,down,Willowfield,Stepford United Football Club,4,City Hospital,True,6.0
+R031,Metro,down,Willowfield,Stepford United Football Club,5,Stepford Central,True,8.0
+R031,Metro,down,Willowfield,Stepford United Football Club,6,Four Ways,True,10.0
+R031,Metro,down,Willowfield,Stepford United Football Club,7,Stepford East,True,11.0
+R031,Metro,down,Willowfield,Stepford United Football Club,8,Stepford High Street,True,13.0
+R031,Metro,down,Willowfield,Stepford United Football Club,9,Whitefield Lido,True,14.0
+R031,Metro,down,Willowfield,Stepford United Football Club,10,Stepford United Football Club,True,16.0
+R031,Metro,up,Stepford United Football Club,Willowfield,1,Stepford United Football Club,True,0.0
+R031,Metro,up,Stepford United Football Club,Willowfield,2,Whitefield Lido,True,2.0
+R031,Metro,up,Stepford United Football Club,Willowfield,3,Stepford High Street,True,3.0
+R031,Metro,up,Stepford United Football Club,Willowfield,4,Stepford East,True,5.0
+R031,Metro,up,Stepford United Football Club,Willowfield,5,Four Ways,True,6.0
+R031,Metro,up,Stepford United Football Club,Willowfield,6,Stepford Central,True,8.0
+R031,Metro,up,Stepford United Football Club,Willowfield,7,City Hospital,True,10.0
+R031,Metro,up,Stepford United Football Club,Willowfield,8,Beechley,True,12.0
+R031,Metro,up,Stepford United Football Club,Willowfield,9,Hemdon Park,True,14.0
+R031,Metro,up,Stepford United Football Club,Willowfield,10,Willowfield,True,16.0
+R032,Stepford Connect,down,Willowfield,Port Benton,1,Willowfield,True,0.0
+R032,Stepford Connect,down,Willowfield,Port Benton,2,Beechley,True,3.0
+R032,Stepford Connect,down,Willowfield,Port Benton,3,Stepford Central,True,5.0
+R032,Stepford Connect,down,Willowfield,Port Benton,4,Stepford East,True,7.0
+R032,Stepford Connect,down,Willowfield,Port Benton,5,St Helens Bridge,True,9.0
+R032,Stepford Connect,down,Willowfield,Port Benton,6,Bodin,True,11.0
+R032,Stepford Connect,down,Willowfield,Port Benton,7,Coxly,True,13.0
+R032,Stepford Connect,down,Willowfield,Port Benton,8,Benton,True,15.0
+R032,Stepford Connect,down,Willowfield,Port Benton,9,Port Benton,True,16.0
+R032,Stepford Connect,up,Port Benton,Willowfield,1,Port Benton,True,0.0
+R032,Stepford Connect,up,Port Benton,Willowfield,2,Benton,True,1.0
+R032,Stepford Connect,up,Port Benton,Willowfield,3,Coxly,True,3.0
+R032,Stepford Connect,up,Port Benton,Willowfield,4,Bodin,True,5.0
+R032,Stepford Connect,up,Port Benton,Willowfield,5,St Helens Bridge,True,7.0
+R032,Stepford Connect,up,Port Benton,Willowfield,6,Stepford East,True,9.0
+R032,Stepford Connect,up,Port Benton,Willowfield,7,Stepford Central,True,11.0
+R032,Stepford Connect,up,Port Benton,Willowfield,8,Beechley,True,13.0
+R032,Stepford Connect,up,Port Benton,Willowfield,9,Willowfield,True,16.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,1,Beechley,True,0.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,2,Stepford Central,True,2.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,3,Stepford East,True,4.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,4,St Helens Bridge,True,6.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,5,Bodin,True,8.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,6,Coxly,True,10.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,7,Benton,True,12.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,8,Benton Bridge,True,14.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,9,Stepford Airport Parkway,True,15.0
+R033,Stepford Connect,down,Beechley,Stepford Airport Central,10,Stepford Airport Central,True,18.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,1,Stepford Airport Central,True,0.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,2,Stepford Airport Parkway,True,-2.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,3,Benton Bridge,True,-4.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,4,Benton,True,-6.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,5,Coxly,True,-8.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,6,Bodin,True,-10.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,7,St Helens Bridge,True,-12.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,8,Stepford East,True,-14.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,9,Stepford Central,True,-16.0
+R033,Stepford Connect,up,Stepford Airport Central,Beechley,10,Beechley,True,-19.0
+R034,Metro,down,Beechley,Morganstown,1,Beechley,True,0.0
+R034,Metro,down,Beechley,Morganstown,2,City Hospital,True,2.0
+R034,Metro,down,Beechley,Morganstown,3,Stepford Central,True,4.0
+R034,Metro,down,Beechley,Morganstown,4,Four Ways,True,5.0
+R034,Metro,down,Beechley,Morganstown,5,Stepford East,True,7.0
+R034,Metro,down,Beechley,Morganstown,6,Stepford High Street,True,8.0
+R034,Metro,down,Beechley,Morganstown,7,St Helens Bridge,True,10.0
+R034,Metro,down,Beechley,Morganstown,8,New Harrow,True,11.0
+R034,Metro,down,Beechley,Morganstown,9,Elsemere Pond,True,12.0
+R034,Metro,down,Beechley,Morganstown,10,Elsemere Junction,True,13.0
+R034,Metro,down,Beechley,Morganstown,11,Berrily,True,15.0
+R034,Metro,down,Beechley,Morganstown,12,East Berrily,True,16.0
+R034,Metro,down,Beechley,Morganstown,13,Beaulieu Park,True,17.0
+R034,Metro,down,Beechley,Morganstown,14,Morganstown,True,20.0
+R034,Metro,up,Morganstown,Beechley,1,Morganstown,True,0.0
+R034,Metro,up,Morganstown,Beechley,2,Beaulieu Park,True,3.0
+R034,Metro,up,Morganstown,Beechley,3,East Berrily,True,4.0
+R034,Metro,up,Morganstown,Beechley,4,Berrily,True,5.0
+R034,Metro,up,Morganstown,Beechley,5,Elsemere Junction,True,7.0
+R034,Metro,up,Morganstown,Beechley,6,Elsemere Pond,True,8.0
+R034,Metro,up,Morganstown,Beechley,7,New Harrow,True,9.0
+R034,Metro,up,Morganstown,Beechley,8,St Helens Bridge,True,10.0
+R034,Metro,up,Morganstown,Beechley,9,Stepford High Street,True,12.0
+R034,Metro,up,Morganstown,Beechley,10,Stepford East,True,13.0
+R034,Metro,up,Morganstown,Beechley,11,Four Ways,True,15.0
+R034,Metro,up,Morganstown,Beechley,12,Stepford Central,True,16.0
+R034,Metro,up,Morganstown,Beechley,13,City Hospital,True,18.0
+R034,Metro,up,Morganstown,Beechley,14,Beechley,True,20.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,1,Willowfield,True,0.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,2,Beechley,True,3.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,3,Stepford Central,True,5.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,4,Stepford East,True,6.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,5,St Helens Bridge,True,7.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,6,Bodin,True,9.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,7,Coxly,True,11.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,8,Benton,True,13.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,9,Benton Bridge,True,15.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,10,Hampton Hargate,True,17.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,11,Water Newton,True,19.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,12,Leighton Stepford Road,True,22.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,13,Leighton City,True,24.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,14,Edgemead,True,26.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,15,Faymere,True,29.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,16,Westercoast,True,31.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,17,Millcastle,True,34.0
+R035,Stepford Connect,down,Willowfield,Westwyvern,18,Westwyvern,True,38.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,1,Westwyvern,True,0.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,2,Millcastle,True,-4.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,3,Westercoast,True,-7.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,4,Faymere,True,-10.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,5,Edgemead,True,-12.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,6,Leighton City,True,-14.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,7,Leighton Stepford Road,True,-16.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,8,Water Newton,True,-19.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,9,Hampton Hargate,True,-21.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,10,Benton Bridge,True,-23.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,11,Benton,True,-25.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,12,Coxly,True,-27.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,13,Bodin,True,-29.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,14,St Helens Bridge,True,-31.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,15,Stepford East,True,-32.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,16,Stepford Central,True,-33.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,17,Beechley,True,-35.0
+R035,Stepford Connect,up,Westwyvern,Willowfield,18,Willowfield,True,-38.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,1,Willowfield,True,0.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,2,Beechley,True,3.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,3,Stepford Central,True,5.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,4,Stepford East,True,7.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,5,St Helens Bridge,True,9.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,6,Bodin,True,12.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,7,Coxly,True,14.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,8,Benton,True,16.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,9,Hampton Hargate,True,20.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,10,Water Newton,True,22.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,11,Leighton Stepford Road,True,25.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,12,Leighton City,True,27.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,13,Edgemead,True,29.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,14,Westercoast,True,32.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,15,Millcastle,True,34.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,16,Westwyvern,True,37.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,17,Northshore,True,40.0
+R036,Stepford Connect,down,Willowfield,Llyn-by-the-Sea,18,Llyn-by-the-Sea,True,44.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,1,Llyn-by-the-Sea,True,0.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,2,Northshore,True,-3.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,3,Westwyvern,True,-6.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,4,Millcastle,True,-8.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,5,Westercoast,True,-10.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,6,Edgemead,True,-12.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,7,Leighton City,True,-14.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,8,Leighton Stepford Road,True,-16.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,9,Water Newton,True,-18.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,10,Hampton Hargate,True,-20.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,11,Benton,True,-22.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,12,Coxly,True,-23.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,13,Bodin,True,-25.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,14,St Helens Bridge,True,-27.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,15,Stepford East,True,-29.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,16,Stepford Central,True,-31.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,17,Beechley,True,-33.0
+R036,Stepford Connect,up,Llyn-by-the-Sea,Willowfield,18,Willowfield,True,-36.0
+R039,Stepford Connect,down,Benton,Leighton City,1,Benton,True,0.0
+R039,Stepford Connect,down,Benton,Leighton City,2,Benton Bridge,True,2.0
+R039,Stepford Connect,down,Benton,Leighton City,3,Hampton Hargate,True,4.0
+R039,Stepford Connect,down,Benton,Leighton City,4,Upper Staploe,True,6.0
+R039,Stepford Connect,down,Benton,Leighton City,5,Water Newton,True,8.0
+R039,Stepford Connect,down,Benton,Leighton City,6,Rocket Parade,True,10.0
+R039,Stepford Connect,down,Benton,Leighton City,7,Leighton Stepford Road,True,11.0
+R039,Stepford Connect,down,Benton,Leighton City,8,Leighton City,True,12.0
+R039,Stepford Connect,up,Leighton City,Benton,1,Leighton City,True,0.0
+R039,Stepford Connect,up,Leighton City,Benton,2,Leighton Stepford Road,True,-1.0
+R039,Stepford Connect,up,Leighton City,Benton,3,Rocket Parade,True,-2.0
+R039,Stepford Connect,up,Leighton City,Benton,4,Water Newton,True,-4.0
+R039,Stepford Connect,up,Leighton City,Benton,5,Upper Staploe,True,-6.0
+R039,Stepford Connect,up,Leighton City,Benton,6,Hampton Hargate,True,-8.0
+R039,Stepford Connect,up,Leighton City,Benton,7,Benton Bridge,True,-10.0
+R039,Stepford Connect,up,Leighton City,Benton,8,Benton,True,-12.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,1,Edgemead,True,0.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,2,Faymere,True,2.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,3,Westercoast,True,5.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,4,Millcastle Racecourse,True,7.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,5,Millcastle,True,9.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,6,Westwyvern,True,12.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,7,Starryloch,True,14.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,8,Northshore,True,16.0
+R040,Stepford Connect,down,Edgemead,Llyn-by-the-Sea,9,Llyn-by-the-Sea,True,20.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,1,Llyn-by-the-Sea,True,0.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,2,Northshore,True,-3.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,3,Starryloch,True,-5.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,4,Westwyvern,True,-7.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,5,Millcastle,True,-9.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,6,Millcastle Racecourse,True,-11.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,7,Westercoast,True,-13.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,8,Faymere,True,-15.0
+R040,Stepford Connect,up,Llyn-by-the-Sea,Edgemead,9,Edgemead,True,-17.0
+R041,Stepford Connect,down,Leighton West,Edgemead,1,Leighton West,True,0.0
+R041,Stepford Connect,down,Leighton West,Edgemead,2,Edgemead,True,2.0
+R041,Stepford Connect,up,Edgemead,Leighton West,1,Edgemead,True,0.0
+R041,Stepford Connect,up,Edgemead,Leighton West,2,Leighton West,True,-3.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,1,Leighton West,True,0.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,2,Edgemead,True,2.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,3,Faymere,True,4.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,4,Westercoast,True,7.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,5,Millcastle,True,9.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,6,Westwyvern,True,12.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,7,Starryloch,True,14.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,8,Northshore,True,16.0
+R042,Stepford Connect,down,Leighton West,Llyn-by-the-Sea,9,Llyn-by-the-Sea,True,20.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,1,Llyn-by-the-Sea,True,0.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,2,Northshore,True,-3.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,3,Starryloch,True,-5.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,4,Westwyvern,True,-7.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,5,Millcastle,True,-9.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,6,Westercoast,True,-11.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,7,Faymere,True,-13.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,8,Edgemead,True,-15.0
+R042,Stepford Connect,up,Llyn-by-the-Sea,Leighton West,9,Leighton West,True,-18.0
+R043,Stepford Connect,down,Leighton West,Leighton City,1,Leighton West,True,0.0
+R043,Stepford Connect,down,Leighton West,Leighton City,2,Leighton City,True,2.0
+R043,Stepford Connect,up,Leighton City,Leighton West,1,Leighton City,True,0.0
+R043,Stepford Connect,up,Leighton City,Leighton West,2,Leighton West,True,3.0
+R044,Stepford Connect,down,Benton,Leighton West,1,Benton,True,0.0
+R044,Stepford Connect,down,Benton,Leighton West,2,Benton Bridge,True,2.0
+R044,Stepford Connect,down,Benton,Leighton West,3,Hampton Hargate,True,4.0
+R044,Stepford Connect,down,Benton,Leighton West,4,Upper Staploe,True,6.0
+R044,Stepford Connect,down,Benton,Leighton West,5,Water Newton,True,8.0
+R044,Stepford Connect,down,Benton,Leighton West,6,Rocket Parade,True,10.0
+R044,Stepford Connect,down,Benton,Leighton West,7,Leighton Stepford Road,True,11.0
+R044,Stepford Connect,down,Benton,Leighton West,8,Leighton City,True,12.0
+R044,Stepford Connect,down,Benton,Leighton West,9,Leighton West,True,13.0
+R044,Stepford Connect,up,Leighton West,Benton,1,Leighton West,True,0.0
+R044,Stepford Connect,up,Leighton West,Benton,2,Leighton City,True,-1.0
+R044,Stepford Connect,up,Leighton West,Benton,3,Leighton Stepford Road,True,-2.0
+R044,Stepford Connect,up,Leighton West,Benton,4,Rocket Parade,True,-3.0
+R044,Stepford Connect,up,Leighton West,Benton,5,Water Newton,True,-5.0
+R044,Stepford Connect,up,Leighton West,Benton,6,Upper Staploe,True,-7.0
+R044,Stepford Connect,up,Leighton West,Benton,7,Hampton Hargate,True,-9.0
+R044,Stepford Connect,up,Leighton West,Benton,8,Benton Bridge,True,-11.0
+R044,Stepford Connect,up,Leighton West,Benton,9,Benton,True,-13.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,1,Stepford Victoria,True,0.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,2,Stepford Central,True,3.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,3,Stepford East,True,5.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,4,St Helens Bridge,True,7.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,5,Bodin,True,9.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,6,Coxly,True,11.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,7,Benton,True,13.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,8,Benton Bridge,True,15.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,9,Hampton Hargate,True,17.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,10,Upper Staploe,True,19.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,11,Water Newton,True,21.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,12,Rocket Parade,True,23.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,13,Leighton Stepford Road,True,24.0
+R045,Stepford Connect,down,Stepford Victoria,Leighton City,14,Leighton City,True,25.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,1,Leighton City,True,0.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,2,Leighton Stepford Road,True,-1.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,3,Rocket Parade,True,-2.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,4,Water Newton,True,-4.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,5,Upper Staploe,True,-6.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,6,Hampton Hargate,True,-8.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,7,Benton Bridge,True,-10.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,8,Benton,True,-12.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,9,Coxly,True,-14.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,10,Bodin,True,-16.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,11,St Helens Bridge,True,-19.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,12,Stepford East,True,-21.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,13,Stepford Central,True,-23.0
+R045,Stepford Connect,up,Leighton City,Stepford Victoria,14,Stepford Victoria,True,-26.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,1,Stepford Victoria,True,0.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,2,City Hospital,True,3.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,3,Stepford Central,True,4.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,4,Stepford East,True,6.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,5,St Helens Bridge,True,7.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,6,Bodin,True,10.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,7,Coxly,True,12.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,8,Benton,True,14.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,9,Benton Bridge,True,16.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,10,Stepford Airport Parkway,True,17.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,11,Stepford Airport Central,True,19.0
+R046,Stepford Connect,down,Stepford Victoria,Airport Terminal 2,12,Airport Terminal 2,True,23.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,1,Airport Terminal 2,True,0.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,2,Stepford Airport Central,True,-2.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,3,Stepford Airport Parkway,True,-4.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,4,Benton Bridge,True,-6.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,5,Benton,True,-8.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,6,Coxly,True,-10.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,7,Bodin,True,-12.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,8,St Helens Bridge,True,-14.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,9,Stepford East,True,-16.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,10,Stepford Central,True,-18.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,11,City Hospital,True,-19.0
+R046,Stepford Connect,up,Airport Terminal 2,Stepford Victoria,12,Stepford Victoria,True,-23.0
+R047,Metro,down,St Helens Bridge,Port Benton,1,St Helens Bridge,True,0.0
+R047,Metro,down,St Helens Bridge,Port Benton,2,Angel Pass,True,2.0
+R047,Metro,down,St Helens Bridge,Port Benton,3,Bodin,True,3.0
+R047,Metro,down,St Helens Bridge,Port Benton,4,Coxly,True,5.0
+R047,Metro,down,St Helens Bridge,Port Benton,5,Benton,True,7.0
+R047,Metro,down,St Helens Bridge,Port Benton,6,Port Benton,True,9.0
+R047,Metro,up,Port Benton,St Helens Bridge,1,Port Benton,True,0.0
+R047,Metro,up,Port Benton,St Helens Bridge,2,Benton,True,2.0
+R047,Metro,up,Port Benton,St Helens Bridge,3,Coxly,True,4.0
+R047,Metro,up,Port Benton,St Helens Bridge,4,Bodin,True,6.0
+R047,Metro,up,Port Benton,St Helens Bridge,5,Angel Pass,True,7.0
+R047,Metro,up,Port Benton,St Helens Bridge,6,St Helens Bridge,True,9.0
+R051,AirLink,down,Stepford Central,Stepford Airport Central,1,Stepford Central,True,0.0
+R051,AirLink,down,Stepford Central,Stepford Airport Central,2,Stepford Airport Central,True,8.0
+R051,AirLink,up,Stepford Airport Central,Stepford Central,1,Stepford Airport Central,True,0.0
+R051,AirLink,up,Stepford Airport Central,Stepford Central,2,Stepford Central,True,7.0
+R052,AirLink,down,Stepford Central,Airport Terminal 2,1,Stepford Central,True,0.0
+R052,AirLink,down,Stepford Central,Airport Terminal 2,2,Stepford Airport Central,True,7.0
+R052,AirLink,down,Stepford Central,Airport Terminal 2,3,Airport Terminal 1,True,8.0
+R052,AirLink,down,Stepford Central,Airport Terminal 2,4,Airport Terminal 2,True,12.0
+R052,AirLink,up,Airport Terminal 2,Stepford Central,1,Airport Terminal 2,True,0.0
+R052,AirLink,up,Airport Terminal 2,Stepford Central,2,Airport Terminal 1,False,
+R052,AirLink,up,Airport Terminal 2,Stepford Central,3,Stepford Airport Central,True,2.0
+R052,AirLink,up,Airport Terminal 2,Stepford Central,4,Stepford Central,True,10.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,1,Stepford Central,True,0.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,2,Stepford East,True,1.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,3,Elsemere Junction,True,4.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,4,Morganstown,True,7.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,5,Stepford Airport Central,True,10.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,6,Airport Terminal 1,True,11.0
+R053,AirLink,down,Stepford Central,Airport Terminal 2,7,Airport Terminal 2,True,15.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,1,Airport Terminal 2,True,0.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,2,Airport Terminal 1,False,
+R053,AirLink,up,Airport Terminal 2,Stepford Central,3,Stepford Airport Central,True,2.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,4,Morganstown,True,5.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,5,Elsemere Junction,True,8.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,6,Stepford East,True,11.0
+R053,AirLink,up,Airport Terminal 2,Stepford Central,7,Stepford Central,True,13.0
+R054,AirLink,down,Stepford Central,Stepford Airport Central,1,Stepford Central,True,0.0
+R054,AirLink,down,Stepford Central,Stepford Airport Central,2,St Helens Bridge,True,2.0
+R054,AirLink,down,Stepford Central,Stepford Airport Central,3,Berrily,True,5.0
+R054,AirLink,down,Stepford Central,Stepford Airport Central,4,Stepford Airport Parkway,True,8.0
+R054,AirLink,down,Stepford Central,Stepford Airport Central,5,Stepford Airport Central,True,10.0
+R054,AirLink,up,Stepford Airport Central,Stepford Central,1,Stepford Airport Central,True,0.0
+R054,AirLink,up,Stepford Airport Central,Stepford Central,2,Stepford Airport Parkway,True,2.0
+R054,AirLink,up,Stepford Airport Central,Stepford Central,3,Berrily,False,
+R054,AirLink,up,Stepford Airport Central,Stepford Central,4,St Helens Bridge,True,6.0
+R054,AirLink,up,Stepford Airport Central,Stepford Central,5,Stepford Central,True,10.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,1,Stepford Central,True,0.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,2,St Helens Bridge,True,2.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,3,Morganstown,True,6.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,4,Stepford Airport Central,True,9.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,5,Airport Terminal 1,True,10.0
+R058,AirLink,down,Stepford Central,Airport Terminal 3,6,Airport Terminal 2,False,
+R058,AirLink,down,Stepford Central,Airport Terminal 3,7,Airport Terminal 3,True,12.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,1,Airport Terminal 3,True,0.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,2,Airport Terminal 2,True,3.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,3,Airport Terminal 1,False,
+R058,AirLink,up,Airport Terminal 3,Stepford Central,4,Stepford Airport Central,True,5.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,5,Morganstown,True,8.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,6,St Helens Bridge,True,12.0
+R058,AirLink,up,Airport Terminal 3,Stepford Central,7,Stepford Central,True,15.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,1,Stepford Central,True,0.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,2,St Helens Bridge,True,2.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,3,Elsemere Junction,True,4.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,4,Stepford Airport Parkway,True,8.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,5,Stepford Airport Central,True,9.0
+R059,AirLink,down,Stepford Central,Airport Terminal 2,6,Airport Terminal 1,False,
+R059,AirLink,down,Stepford Central,Airport Terminal 2,7,Airport Terminal 2,True,13.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,1,Airport Terminal 2,True,0.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,2,Airport Terminal 1,False,
+R059,AirLink,up,Airport Terminal 2,Stepford Central,3,Stepford Airport Central,True,2.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,4,Stepford Airport Parkway,True,4.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,5,Elsemere Junction,True,8.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,6,St Helens Bridge,True,10.0
+R059,AirLink,up,Airport Terminal 2,Stepford Central,7,Stepford Central,True,13.0
+R060,AirLink,down,Stepford Airport Parkway,Airport Terminal 2,1,Stepford Airport Parkway,True,0.0
+R060,AirLink,down,Stepford Airport Parkway,Airport Terminal 2,2,Stepford Airport Central,True,2.0
+R060,AirLink,down,Stepford Airport Parkway,Airport Terminal 2,3,Airport Terminal 1,True,3.0
+R060,AirLink,down,Stepford Airport Parkway,Airport Terminal 2,4,Airport Terminal 3,True,6.0
+R060,AirLink,down,Stepford Airport Parkway,Airport Terminal 2,5,Airport Terminal 2,True,9.0
+R060,AirLink,up,Airport Terminal 2,Stepford Airport Parkway,1,Airport Terminal 2,True,0.0
+R060,AirLink,up,Airport Terminal 2,Stepford Airport Parkway,2,Airport Terminal 3,True,
+R060,AirLink,up,Airport Terminal 2,Stepford Airport Parkway,3,Airport Terminal 1,True,
+R060,AirLink,up,Airport Terminal 2,Stepford Airport Parkway,4,Stepford Airport Central,True,3.0
+R060,AirLink,up,Airport Terminal 2,Stepford Airport Parkway,5,Stepford Airport Parkway,True,5.0
+R075,Stepford Express,down,Stepford Central,Benton,1,Stepford Central,True,0.0
+R075,Stepford Express,down,Stepford Central,Benton,2,Benton,True,5.0
+R075,Stepford Express,up,Benton,Stepford Central,1,Benton,True,0.0
+R075,Stepford Express,up,Benton,Stepford Central,2,Stepford Central,True,5.0
+R076,Stepford Express,down,Stepford Central,Leighton City,1,Stepford Central,True,0.0
+R076,Stepford Express,down,Stepford Central,Leighton City,2,St Helens Bridge,True,2.0
+R076,Stepford Express,down,Stepford Central,Leighton City,3,Benton,True,5.0
+R076,Stepford Express,down,Stepford Central,Leighton City,4,Leighton Stepford Road,True,10.0
+R076,Stepford Express,down,Stepford Central,Leighton City,5,Leighton City,True,12.0
+R076,Stepford Express,up,Leighton City,Stepford Central,1,Leighton City,True,0.0
+R076,Stepford Express,up,Leighton City,Stepford Central,2,Leighton Stepford Road,True,2.0
+R076,Stepford Express,up,Leighton City,Stepford Central,3,Benton,True,7.0
+R076,Stepford Express,up,Leighton City,Stepford Central,4,St Helens Bridge,True,10.0
+R076,Stepford Express,up,Leighton City,Stepford Central,5,Stepford Central,True,12.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,2,St Helens Bridge,True,2.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,3,Benton,True,5.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,4,Leighton Stepford Road,True,10.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,5,Leighton City,True,12.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,6,Edgemead,True,14.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,7,Westwyvern,True,18.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,8,Northshore,True,20.0
+R077,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,9,Llyn-by-the-Sea,True,22.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,2,Northshore,True,3.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,3,Westwyvern,True,7.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,4,Edgemead,True,9.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,5,Leighton City,True,11.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,6,Leighton Stepford Road,True,13.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,7,Benton,True,18.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,8,St Helens Bridge,True,21.0
+R077,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,9,Stepford Central,True,24.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,2,Benton,True,5.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,3,Leighton Stepford Road,True,10.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,4,Leighton City,True,12.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,5,Westwyvern,True,16.0
+R078,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,6,Llyn-by-the-Sea,True,21.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,2,Westwyvern,True,5.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,3,Leighton City,True,9.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,4,Leighton Stepford Road,True,11.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,5,Benton,True,16.0
+R078,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,6,Stepford Central,True,21.0
+R079,Stepford Express,down,Stepford Central,Benton,1,Stepford Central,True,0.0
+R079,Stepford Express,down,Stepford Central,Benton,2,St Helens Bridge,True,2.0
+R079,Stepford Express,down,Stepford Central,Benton,3,Benton,True,5.0
+R079,Stepford Express,up,Benton,Stepford Central,1,Benton,True,0.0
+R079,Stepford Express,up,Benton,Stepford Central,2,St Helens Bridge,True,3.0
+R079,Stepford Express,up,Benton,Stepford Central,3,Stepford Central,True,5.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,2,St Helens Bridge,True,2.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,3,Morganstown,True,5.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,4,Leighton Stepford Road,True,9.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,5,Leighton City,True,11.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,6,Westwyvern,True,15.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,7,Northshore,True,17.0
+R080,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,8,Llyn-by-the-Sea,True,19.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,2,Northshore,True,2.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,3,Westwyvern,True,6.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,4,Leighton City,True,8.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,5,Leighton Stepford Road,True,12.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,6,Morganstown,True,15.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,7,St Helens Bridge,True,17.0
+R080,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,8,Stepford Central,True,19.0
+R081,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R081,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,2,Leighton City,True,9.0
+R081,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,3,Llyn-by-the-Sea,True,16.0
+R081,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R081,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,2,Leighton City,True,7.0
+R081,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,3,Stepford Central,True,16.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,1,Stepford Central,True,0.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,2,Elsemere Junction,True,4.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,3,Morganstown,True,7.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,4,Leighton Stepford Road,True,11.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,5,Leighton City,True,13.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,6,Edgemead,True,15.0
+R082,Stepford Express,down,Stepford Central,Westwyvern,7,Westwyvern,True,18.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,1,Westwyvern,True,0.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,2,Edgemead,True,3.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,3,Leighton City,True,5.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,4,Leighton Stepford Road,True,7.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,5,Morganstown,True,11.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,6,Elsemere Junction,True,14.0
+R082,Stepford Express,up,Westwyvern,Stepford Central,7,Stepford Central,True,18.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,1,Newry,True,0.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,2,Benton,True,4.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,3,Morganstown,True,7.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,4,Leighton Stepford Road,True,11.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,5,Leighton City,True,13.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,6,Westercoast,True,16.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,7,Northshore,True,20.0
+R083,Stepford Express,down,Newry,Llyn-by-the-Sea,8,Llyn-by-the-Sea,True,23.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,1,Llyn-by-the-Sea,True,0.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,2,Northshore,True,3.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,3,Westercoast,True,7.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,4,Leighton City,True,10.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,5,Leighton Stepford Road,True,12.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,6,Morganstown,True,16.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,7,Benton,True,19.0
+R083,Stepford Express,up,Llyn-by-the-Sea,Newry,8,Newry,True,23.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,1,Newry Harbour,True,0.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,2,Newry,True,2.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,3,Benton,True,7.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,4,Leighton Stepford Road,True,15.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,5,Leighton City,True,17.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,6,Westwyvern,True,21.0
+R084,Stepford Express,down,Newry Harbour,Llyn-by-the-Sea,7,Llyn-by-the-Sea,True,26.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,1,Llyn-by-the-Sea,True,0.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,2,Westwyvern,True,5.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,3,Leighton City,True,9.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,4,Leighton Stepford Road,True,17.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,5,Benton,True,19.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,6,Newry,True,24.0
+R084,Stepford Express,up,Llyn-by-the-Sea,Newry Harbour,7,Newry Harbour,True,26.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,1,Benton,True,0.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,2,Morganstown,True,4.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,3,Leighton Stepford Road,True,8.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,4,Leighton City,True,10.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,5,Northshore,True,17.0
+R085,Stepford Express,down,Benton,Llyn-by-the-Sea,6,Llyn-by-the-Sea,True,19.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,1,Llyn-by-the-Sea,True,0.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,2,Northshore,True,2.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,3,Leighton City,True,9.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,4,Leighton Stepford Road,True,11.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,5,Morganstown,True,15.0
+R085,Stepford Express,up,Llyn-by-the-Sea,Benton,6,Benton,True,19.0
+R086,Stepford Express,down,Newry,Leighton City,1,Newry,True,0.0
+R086,Stepford Express,down,Newry,Leighton City,2,Eden Quay,True,2.0
+R086,Stepford Express,down,Newry,Leighton City,3,Benton,True,5.0
+R086,Stepford Express,down,Newry,Leighton City,4,Leighton Stepford Road,True,11.0
+R086,Stepford Express,down,Newry,Leighton City,5,Leighton City,True,13.0
+R086,Stepford Express,up,Leighton City,Newry,1,Leighton City,True,0.0
+R086,Stepford Express,up,Leighton City,Newry,2,Leighton Stepford Road,True,2.0
+R086,Stepford Express,up,Leighton City,Newry,3,Benton,True,8.0
+R086,Stepford Express,up,Leighton City,Newry,4,Eden Quay,True,11.0
+R086,Stepford Express,up,Leighton City,Newry,5,Newry,True,13.0
+R087,Stepford Express,down,Rayleigh Bay,Llyn-by-the-Sea,1,Rayleigh Bay,True,0.0
+R087,Stepford Express,down,Rayleigh Bay,Llyn-by-the-Sea,2,Edgemead,True,5.0
+R087,Stepford Express,down,Rayleigh Bay,Llyn-by-the-Sea,3,Westwyvern,True,10.0
+R087,Stepford Express,down,Rayleigh Bay,Llyn-by-the-Sea,4,Northshore,True,13.0
+R087,Stepford Express,down,Rayleigh Bay,Llyn-by-the-Sea,5,Llyn-by-the-Sea,True,16.0
+R087,Stepford Express,up,Llyn-by-the-Sea,Rayleigh Bay,1,Llyn-by-the-Sea,True,0.0
+R087,Stepford Express,up,Llyn-by-the-Sea,Rayleigh Bay,2,Northshore,True,3.0
+R087,Stepford Express,up,Llyn-by-the-Sea,Rayleigh Bay,3,Westwyvern,True,7.0
+R087,Stepford Express,up,Llyn-by-the-Sea,Rayleigh Bay,4,Edgemead,True,12.0
+R087,Stepford Express,up,Llyn-by-the-Sea,Rayleigh Bay,5,Rayleigh Bay,True,15.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,1,Stepford Central,True,0.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,2,St Helens Bridge,True,2.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,3,Benton,True,5.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,4,Leighton Stepford Road,True,10.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,5,Leighton City,True,12.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,6,Edgemead,True,14.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,7,Westercoast,True,17.0
+R088,Stepford Express,down,Stepford Central,Llyn-by-the-Sea,8,Llyn-by-the-Sea,True,21.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,1,Llyn-by-the-Sea,True,0.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,2,Westercoast,True,4.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,3,Edgemead,True,7.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,4,Leighton City,True,9.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,5,Leighton Stepford Road,True,13.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,6,Benton,True,16.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,7,St Helens Bridge,True,19.0
+R088,Stepford Express,up,Llyn-by-the-Sea,Stepford Central,8,Stepford Central,True,21.0
+R120,Waterline,down,Newry Harbour,Morganstown,1,Newry Harbour,True,0.0
+R120,Waterline,down,Newry Harbour,Morganstown,2,Newry,True,2.0
+R120,Waterline,down,Newry Harbour,Morganstown,3,Eden Quay,True,4.0
+R120,Waterline,down,Newry Harbour,Morganstown,4,Faraday Road,True,6.0
+R120,Waterline,down,Newry Harbour,Morganstown,5,West Benton,True,7.0
+R120,Waterline,down,Newry Harbour,Morganstown,6,Benton,True,8.0
+R120,Waterline,down,Newry Harbour,Morganstown,7,Port Benton,True,9.0
+R120,Waterline,down,Newry Harbour,Morganstown,8,Morganstown Docks,True,10.0
+R120,Waterline,down,Newry Harbour,Morganstown,9,Morganstown,True,12.0
+R120,Waterline,up,Morganstown,Newry Harbour,1,Morganstown,True,0.0
+R120,Waterline,up,Morganstown,Newry Harbour,2,Morganstown Docks,True,2.0
+R120,Waterline,up,Morganstown,Newry Harbour,3,Port Benton,True,3.0
+R120,Waterline,up,Morganstown,Newry Harbour,4,Benton,True,4.0
+R120,Waterline,up,Morganstown,Newry Harbour,5,West Benton,True,5.0
+R120,Waterline,up,Morganstown,Newry Harbour,6,Faraday Road,True,6.0
+R120,Waterline,up,Morganstown,Newry Harbour,7,Eden Quay,True,8.0
+R120,Waterline,up,Morganstown,Newry Harbour,8,Newry,True,10.0
+R120,Waterline,up,Morganstown,Newry Harbour,9,Newry Harbour,True,12.0
+R130,Metro,down,Stepford Central,Morganstown,1,Stepford Central,True,0.0
+R130,Metro,down,Stepford Central,Morganstown,2,Four Ways,True,1.0
+R130,Metro,down,Stepford Central,Morganstown,3,Stepford East,True,3.0
+R130,Metro,down,Stepford Central,Morganstown,4,Stepford High Street,True,4.0
+R130,Metro,down,Stepford Central,Morganstown,5,St Helens Bridge,True,6.0
+R130,Metro,down,Stepford Central,Morganstown,6,New Harrow,True,8.0
+R130,Metro,down,Stepford Central,Morganstown,7,Elsemere Pond,True,9.0
+R130,Metro,down,Stepford Central,Morganstown,8,Elsemere Junction,True,10.0
+R130,Metro,down,Stepford Central,Morganstown,9,Berrily,True,12.0
+R130,Metro,down,Stepford Central,Morganstown,10,East Berrily,True,13.0
+R130,Metro,down,Stepford Central,Morganstown,11,Beaulieu Park,True,14.0
+R130,Metro,down,Stepford Central,Morganstown,12,Morganstown,True,16.0
+R130,Metro,up,Morganstown,Stepford Central,1,Morganstown,True,0.0
+R130,Metro,up,Morganstown,Stepford Central,2,Beaulieu Park,True,2.0
+R130,Metro,up,Morganstown,Stepford Central,3,East Berrily,True,3.0
+R130,Metro,up,Morganstown,Stepford Central,4,Berrily,True,5.0
+R130,Metro,up,Morganstown,Stepford Central,5,Elsemere Junction,True,7.0
+R130,Metro,up,Morganstown,Stepford Central,6,Elsemere Pond,True,8.0
+R130,Metro,up,Morganstown,Stepford Central,7,New Harrow,True,9.0
+R130,Metro,up,Morganstown,Stepford Central,8,St Helens Bridge,True,11.0
+R130,Metro,up,Morganstown,Stepford Central,9,Stepford High Street,True,12.0
+R130,Metro,up,Morganstown,Stepford Central,10,Stepford East,True,14.0
+R130,Metro,up,Morganstown,Stepford Central,11,Four Ways,True,15.0
+R130,Metro,up,Morganstown,Stepford Central,12,Stepford Central,True,16.0
+R131,Metro,down,St Helens Bridge,Morganstown,1,St Helens Bridge,True,0.0
+R131,Metro,down,St Helens Bridge,Morganstown,2,New Harrow,True,2.0
+R131,Metro,down,St Helens Bridge,Morganstown,3,Elsemere Pond,True,3.0
+R131,Metro,down,St Helens Bridge,Morganstown,4,Elsemere Junction,True,4.0
+R131,Metro,down,St Helens Bridge,Morganstown,5,Berrily,True,6.0
+R131,Metro,down,St Helens Bridge,Morganstown,6,East Berrily,True,7.0
+R131,Metro,down,St Helens Bridge,Morganstown,7,Beaulieu Park,True,8.0
+R131,Metro,down,St Helens Bridge,Morganstown,8,Morganstown,True,10.0
+R131,Metro,up,Morganstown,St Helens Bridge,1,Morganstown,True,0.0
+R131,Metro,up,Morganstown,St Helens Bridge,2,Beaulieu Park,True,2.0
+R131,Metro,up,Morganstown,St Helens Bridge,3,East Berrily,True,3.0
+R131,Metro,up,Morganstown,St Helens Bridge,4,Berrily,True,5.0
+R131,Metro,up,Morganstown,St Helens Bridge,5,Elsemere Junction,True,7.0
+R131,Metro,up,Morganstown,St Helens Bridge,6,Elsemere Pond,True,8.0
+R131,Metro,up,Morganstown,St Helens Bridge,7,New Harrow,True,9.0
+R131,Metro,up,Morganstown,St Helens Bridge,8,St Helens Bridge,True,11.0
+R132,Metro,down,Stepford Central,Barton,1,Stepford Central,True,0.0
+R132,Metro,down,Stepford Central,Barton,2,Four Ways,True,1.0
+R132,Metro,down,Stepford Central,Barton,3,Stepford East,True,3.0
+R132,Metro,down,Stepford Central,Barton,4,Stepford High Street,True,4.0
+R132,Metro,down,Stepford Central,Barton,5,St Helens Bridge,True,6.0
+R132,Metro,down,Stepford Central,Barton,6,Angel Pass,True,8.0
+R132,Metro,down,Stepford Central,Barton,7,Bodin,True,9.0
+R132,Metro,down,Stepford Central,Barton,8,Coxly Newtown,True,11.0
+R132,Metro,down,Stepford Central,Barton,9,Barton,True,12.0
+R132,Metro,up,Barton,Stepford Central,1,Barton,True,0.0
+R132,Metro,up,Barton,Stepford Central,2,Elsemere Junction,True,2.0
+R132,Metro,up,Barton,Stepford Central,3,Elsemere Pond,True,3.0
+R132,Metro,up,Barton,Stepford Central,4,New Harrow,True,4.0
+R132,Metro,up,Barton,Stepford Central,5,St Helens Bridge,True,6.0
+R132,Metro,up,Barton,Stepford Central,6,Stepford High Street,True,7.0
+R132,Metro,up,Barton,Stepford Central,7,Stepford East,True,9.0
+R132,Metro,up,Barton,Stepford Central,8,Four Ways,True,10.0
+R132,Metro,up,Barton,Stepford Central,9,Stepford Central,True,12.0
+R133,Metro,down,Willowfield,Barton,1,Willowfield,True,0.0
+R133,Metro,down,Willowfield,Barton,2,Hemdon Park,True,2.0
+R133,Metro,down,Willowfield,Barton,3,Beechley,True,5.0
+R133,Metro,down,Willowfield,Barton,4,City Hospital,True,7.0
+R133,Metro,down,Willowfield,Barton,5,Stepford Central,True,9.0
+R133,Metro,down,Willowfield,Barton,6,Four Ways,True,10.0
+R133,Metro,down,Willowfield,Barton,7,Stepford East,True,12.0
+R133,Metro,down,Willowfield,Barton,8,Stepford High Street,True,13.0
+R133,Metro,down,Willowfield,Barton,9,St Helens Bridge,True,15.0
+R133,Metro,down,Willowfield,Barton,10,Angel Pass,True,17.0
+R133,Metro,down,Willowfield,Barton,11,Bodin,True,18.0
+R133,Metro,down,Willowfield,Barton,12,Coxly Newtown,True,20.0
+R133,Metro,down,Willowfield,Barton,13,Barton,True,21.0
+R133,Metro,up,Barton,Willowfield,1,Barton,True,0.0
+R133,Metro,up,Barton,Willowfield,2,Elsemere Junction,True,2.0
+R133,Metro,up,Barton,Willowfield,3,Elsemere Pond,True,3.0
+R133,Metro,up,Barton,Willowfield,4,New Harrow,True,4.0
+R133,Metro,up,Barton,Willowfield,5,St Helens Bridge,True,6.0
+R133,Metro,up,Barton,Willowfield,6,Stepford High Street,True,7.0
+R133,Metro,up,Barton,Willowfield,7,Stepford East,True,9.0
+R133,Metro,up,Barton,Willowfield,8,Four Ways,True,10.0
+R133,Metro,up,Barton,Willowfield,9,Stepford Central,True,12.0
+R133,Metro,up,Barton,Willowfield,10,City Hospital,True,14.0
+R133,Metro,up,Barton,Willowfield,11,Beechley,True,16.0
+R133,Metro,up,Barton,Willowfield,12,Hemdon Park,True,19.0
+R133,Metro,up,Barton,Willowfield,13,Willowfield,True,21.0
+R134,Metro,down,St Helens Bridge,Barton,1,St Helens Bridge,True,0.0
+R134,Metro,down,St Helens Bridge,Barton,2,Angel Pass,True,2.0
+R134,Metro,down,St Helens Bridge,Barton,3,Bodin,True,3.0
+R134,Metro,down,St Helens Bridge,Barton,4,Coxly Newtown,True,5.0
+R134,Metro,down,St Helens Bridge,Barton,5,Barton,True,6.0
+R134,Metro,up,Barton,St Helens Bridge,1,Barton,True,0.0
+R134,Metro,up,Barton,St Helens Bridge,2,Elsemere Junction,True,2.0
+R134,Metro,up,Barton,St Helens Bridge,3,Elsemere Pond,True,3.0
+R134,Metro,up,Barton,St Helens Bridge,4,New Harrow,True,4.0
+R134,Metro,up,Barton,St Helens Bridge,5,St Helens Bridge,True,6.0
+R135,Metro,down,Beechley,Barton,1,Beechley,True,0.0
+R135,Metro,down,Beechley,Barton,2,City Hospital,True,2.0
+R135,Metro,down,Beechley,Barton,3,Stepford Central,True,4.0
+R135,Metro,down,Beechley,Barton,4,Four Ways,True,5.0
+R135,Metro,down,Beechley,Barton,5,Stepford East,True,7.0
+R135,Metro,down,Beechley,Barton,6,Stepford High Street,True,8.0
+R135,Metro,down,Beechley,Barton,7,St Helens Bridge,True,10.0
+R135,Metro,down,Beechley,Barton,8,Elsemere Pond,True,13.0
+R135,Metro,down,Beechley,Barton,9,Elsemere Junction,True,14.0
+R135,Metro,down,Beechley,Barton,10,Coxly Newtown,True,15.0
+R135,Metro,down,Beechley,Barton,11,Barton,True,16.0
+R135,Metro,up,Barton,Beechley,1,Barton,True,0.0
+R135,Metro,up,Barton,Beechley,2,Coxly Newtown,True,1.0
+R135,Metro,up,Barton,Beechley,3,Bodin,True,3.0
+R135,Metro,up,Barton,Beechley,4,Angel Pass,True,4.0
+R135,Metro,up,Barton,Beechley,5,St Helens Bridge,True,6.0
+R135,Metro,up,Barton,Beechley,6,Stepford High Street,True,7.0
+R135,Metro,up,Barton,Beechley,7,Stepford East,True,9.0
+R135,Metro,up,Barton,Beechley,8,Four Ways,True,10.0
+R135,Metro,up,Barton,Beechley,9,Stepford Central,True,12.0
+R135,Metro,up,Barton,Beechley,10,City Hospital,True,14.0
+R135,Metro,up,Barton,Beechley,11,Beechley,True,16.0
+R136,Metro,down,Stepford Victoria,Barton,1,Stepford Victoria,True,0.0
+R136,Metro,down,Stepford Victoria,Barton,2,Financial Quarter,True,2.0
+R136,Metro,down,Stepford Victoria,Barton,3,City Hospital,True,4.0
+R136,Metro,down,Stepford Victoria,Barton,4,Stepford Central,True,6.0
+R136,Metro,down,Stepford Victoria,Barton,5,Four Ways,True,7.0
+R136,Metro,down,Stepford Victoria,Barton,6,Stepford East,True,9.0
+R136,Metro,down,Stepford Victoria,Barton,7,Stepford High Street,True,10.0
+R136,Metro,down,Stepford Victoria,Barton,8,St Helens Bridge,True,12.0
+R136,Metro,down,Stepford Victoria,Barton,9,Barton,True,18.0
+R136,Metro,up,Barton,Stepford Victoria,1,Barton,True,0.0
+R136,Metro,up,Barton,Stepford Victoria,2,Coxly Newtown,True,1.0
+R136,Metro,up,Barton,Stepford Victoria,3,Bodin,True,3.0
+R136,Metro,up,Barton,Stepford Victoria,4,Angel Pass,True,4.0
+R136,Metro,up,Barton,Stepford Victoria,5,St Helens Bridge,True,6.0
+R136,Metro,up,Barton,Stepford Victoria,6,Stepford High Street,True,7.0
+R136,Metro,up,Barton,Stepford Victoria,7,Stepford East,True,9.0
+R136,Metro,up,Barton,Stepford Victoria,8,Four Ways,True,10.0
+R136,Metro,up,Barton,Stepford Victoria,9,Stepford Central,True,12.0
+R136,Metro,up,Barton,Stepford Victoria,10,City Hospital,True,14.0
+R136,Metro,up,Barton,Stepford Victoria,11,Financial Quarter,True,16.0
+R136,Metro,up,Barton,Stepford Victoria,12,Stepford Victoria,True,19.0
+R137,Metro,down,Stepford Central,Morganstown,1,Stepford Central,True,0.0
+R137,Metro,down,Stepford Central,Morganstown,2,Stepford East,True,3.0
+R137,Metro,down,Stepford Central,Morganstown,3,Stepford High Street,True,5.0
+R137,Metro,down,Stepford Central,Morganstown,4,St Helens Bridge,True,7.0
+R137,Metro,down,Stepford Central,Morganstown,5,Berrily,True,12.0
+R137,Metro,down,Stepford Central,Morganstown,6,East Berrily,True,15.0
+R137,Metro,down,Stepford Central,Morganstown,7,Beaulieu Park,True,17.0
+R137,Metro,down,Stepford Central,Morganstown,8,Morganstown,True,25.0
+R137,Metro,up,Morganstown,Stepford Central,1,Morganstown,True,0.0
+R137,Metro,up,Morganstown,Stepford Central,2,Beaulieu Park,True,8.0
+R137,Metro,up,Morganstown,Stepford Central,3,East Berrily,True,10.0
+R137,Metro,up,Morganstown,Stepford Central,4,Berrily,True,13.0
+R137,Metro,up,Morganstown,Stepford Central,5,St Helens Bridge,True,18.0
+R137,Metro,up,Morganstown,Stepford Central,6,Stepford High Street,True,20.0
+R137,Metro,up,Morganstown,Stepford Central,7,Stepford East,True,22.0
+R137,Metro,up,Morganstown,Stepford Central,8,Stepford Central,True,25.0

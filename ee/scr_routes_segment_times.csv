@@ -1,0 +1,79 @@
+route_code,direction,origin,terminus,segment_start,segment_end,time_minutes
+R001,down,Stepford Central,Stepford Airport Central,Stepford Central,Stepford East,2
+R001,down,Stepford Central,Stepford Airport Central,Stepford East,St Helens Bridge,2
+R001,down,Stepford Central,Stepford Airport Central,St Helens Bridge,Angel Pass,2
+R001,down,Stepford Central,Stepford Airport Central,Angel Pass,Bodin,1
+R001,down,Stepford Central,Stepford Airport Central,Bodin,Coxly,2
+R001,down,Stepford Central,Stepford Airport Central,Coxly,Benton,2
+R001,down,Stepford Central,Stepford Airport Central,Benton,Benton Bridge,2
+R001,down,Stepford Central,Stepford Airport Central,Benton Bridge,Stepford Airport Parkway,1
+R001,down,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,3
+R001,up,Stepford Central,Stepford Airport Central,Stepford Airport Central,Stepford Airport Parkway,2
+R001,up,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,Benton Bridge,2
+R001,up,Stepford Central,Stepford Airport Central,Benton Bridge,Benton,3
+R001,up,Stepford Central,Stepford Airport Central,Benton,Coxly,2
+R001,up,Stepford Central,Stepford Airport Central,Coxly,Bodin,2
+R001,up,Stepford Central,Stepford Airport Central,Bodin,Angel Pass,1
+R001,up,Stepford Central,Stepford Airport Central,Angel Pass,St Helens Bridge,2
+R001,up,Stepford Central,Stepford Airport Central,St Helens Bridge,Stepford East,2
+R001,up,Stepford Central,Stepford Airport Central,Stepford East,Stepford Central,2
+R130,down,Stepford Central,Morganstown,Stepford Central,Four Ways,1
+R130,down,Stepford Central,Morganstown,Four Ways,Stepford East,2
+R130,down,Stepford Central,Morganstown,Stepford East,Stepford High Street,1
+R130,down,Stepford Central,Morganstown,Stepford High Street,St Helens Bridge,2
+R130,down,Stepford Central,Morganstown,St Helens Bridge,New Harrow,2
+R130,down,Stepford Central,Morganstown,New Harrow,Elsemere Pond,1
+R130,down,Stepford Central,Morganstown,Elsemere Pond,Elsemere Junction,1
+R130,down,Stepford Central,Morganstown,Elsemere Junction,Berrily,2
+R130,down,Stepford Central,Morganstown,Berrily,East Berrily,1
+R130,down,Stepford Central,Morganstown,East Berrily,Beaulieu Park,1
+R130,down,Stepford Central,Morganstown,Beaulieu Park,Morganstown,2
+R130,up,Stepford Central,Morganstown,Morganstown,Beaulieu Park,2
+R130,up,Stepford Central,Morganstown,Beaulieu Park,East Berrily,1
+R130,up,Stepford Central,Morganstown,East Berrily,Berrily,2
+R130,up,Stepford Central,Morganstown,Berrily,Elsemere Junction,2
+R130,up,Stepford Central,Morganstown,Elsemere Junction,Elsemere Pond,1
+R130,up,Stepford Central,Morganstown,Elsemere Pond,New Harrow,1
+R130,up,Stepford Central,Morganstown,New Harrow,St Helens Bridge,2
+R130,up,Stepford Central,Morganstown,St Helens Bridge,Stepford High Street,1
+R130,up,Stepford Central,Morganstown,Stepford High Street,Stepford East,2
+R130,up,Stepford Central,Morganstown,Stepford East,Four Ways,1
+R130,up,Stepford Central,Morganstown,Four Ways,Stepford Central,1
+R131,down,St Helens Bridge,Morganstown,St Helens Bridge,New Harrow,2
+R131,down,St Helens Bridge,Morganstown,New Harrow,Elsemere Pond,1
+R131,down,St Helens Bridge,Morganstown,Elsemere Pond,Elsemere Junction,1
+R131,down,St Helens Bridge,Morganstown,Elsemere Junction,Berrily,2
+R131,down,St Helens Bridge,Morganstown,Berrily,East Berrily,1
+R131,down,St Helens Bridge,Morganstown,East Berrily,Beaulieu Park,1
+R131,down,St Helens Bridge,Morganstown,Beaulieu Park,Morganstown,2
+R131,up,St Helens Bridge,Morganstown,Morganstown,Beaulieu Park,2
+R131,up,St Helens Bridge,Morganstown,Beaulieu Park,East Berrily,1
+R131,up,St Helens Bridge,Morganstown,East Berrily,Berrily,2
+R131,up,St Helens Bridge,Morganstown,Berrily,Elsemere Junction,2
+R131,up,St Helens Bridge,Morganstown,Elsemere Junction,Elsemere Pond,1
+R131,up,St Helens Bridge,Morganstown,Elsemere Pond,New Harrow,1
+R131,up,St Helens Bridge,Morganstown,New Harrow,St Helens Bridge,2
+R085,down,Benton,Llyn-by-the-Sea,Benton,Morganstown,4
+R085,down,Benton,Llyn-by-the-Sea,Morganstown,Leighton Stepford Road,4
+R085,down,Benton,Llyn-by-the-Sea,Leighton Stepford Road,Leighton City,2
+R085,down,Benton,Llyn-by-the-Sea,Leighton City,Northshore,7
+R085,down,Benton,Llyn-by-the-Sea,Northshore,Llyn-by-the-Sea,2
+R085,up,Benton,Llyn-by-the-Sea,Llyn-by-the-Sea,Northshore,3
+R085,up,Benton,Llyn-by-the-Sea,Northshore,Leighton City,7
+R085,up,Benton,Llyn-by-the-Sea,Leighton City,Leighton Stepford Road,2
+R085,up,Benton,Llyn-by-the-Sea,Leighton Stepford Road,Morganstown,4
+R085,up,Benton,Llyn-by-the-Sea,Morganstown,Benton,4
+R051,down,Stepford Central,Stepford Airport Central,Stepford Central,Stepford Airport Central,7
+R051,up,Stepford Central,Stepford Airport Central,Stepford Airport Central,Stepford Central,8
+R079,down,Stepford Central,Benton,Stepford Central,St Helens Bridge,2
+R079,down,Stepford Central,Benton,St Helens Bridge,Benton,3
+R079,up,Stepford Central,Benton,Benton,St Helens Bridge,3
+R079,up,Stepford Central,Benton,St Helens Bridge,Stepford Central,3
+R101,down,Rayleigh Bay,Leighton City,Rayleigh Bay,Carnalea Bridge,2
+R101,down,Rayleigh Bay,Leighton City,Carnalea Bridge,Aslockby,1
+R101,down,Rayleigh Bay,Leighton City,Aslockby,Edgemead,1
+R101,down,Rayleigh Bay,Leighton City,Edgemead,Leighton City,2
+R101,up,Rayleigh Bay,Leighton City,Leighton City,Edgemead,2
+R101,up,Rayleigh Bay,Leighton City,Edgemead,Aslockby,1
+R101,up,Rayleigh Bay,Leighton City,Aslockby,Carnalea Bridge,1
+R101,up,Rayleigh Bay,Leighton City,Carnalea Bridge,Rayleigh Bay,2

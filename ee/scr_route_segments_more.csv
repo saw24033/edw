@@ -1,0 +1,95 @@
+route_code,operator,direction,origin,terminus,from_station,to_station,segment_minutes
+R003,Stepford Connect,down,Stepford Central,Leighton City,Stepford Central,Stepford East,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Stepford East,St Helens Bridge,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,St Helens Bridge,Angel Pass,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Angel Pass,Bodin,1
+R003,Stepford Connect,down,Stepford Central,Leighton City,Bodin,Coxly,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Coxly,Benton,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Benton,Benton Bridge,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Benton Bridge,Hampton Hargate,1
+R003,Stepford Connect,down,Stepford Central,Leighton City,Hampton Hargate,Upper Staploe,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Upper Staploe,Water Newton,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Water Newton,Rocket Parade,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Rocket Parade,Leighton Stepford Road,2
+R003,Stepford Connect,down,Stepford Central,Leighton City,Leighton Stepford Road,Leighton City,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Stepford East,Stepford Central,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,St Helens Bridge,Stepford East,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Angel Pass,St Helens Bridge,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Bodin,Angel Pass,1
+R003,Stepford Connect,up,Leighton City,Stepford Central,Coxly,Bodin,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Benton,Coxly,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Benton Bridge,Benton,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Hampton Hargate,Benton Bridge,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Upper Staploe,Hampton Hargate,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Water Newton,Upper Staploe,2
+R003,Stepford Connect,up,Leighton City,Stepford Central,Rocket Parade,Water Newton,1
+R003,Stepford Connect,up,Leighton City,Stepford Central,Leighton Stepford Road,Rocket Parade,1
+R003,Stepford Connect,up,Leighton City,Stepford Central,Leighton City,Leighton Stepford Road,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,St Helens Bridge,Bodin,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Bodin,Coxly,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Coxly,Benton,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Benton,Benton Bridge,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Benton Bridge,Hampton Hargate,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Hampton Hargate,Water Newton,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Water Newton,Leighton Stepford Road,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Leighton Stepford Road,Leighton City,2
+R004,Stepford Connect,down,St Helens Bridge,Edgemead,Leighton City,Edgemead,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Bodin,St Helens Bridge,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Coxly,Bodin,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Benton,Coxly,1
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Benton Bridge,Benton,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Hampton Hargate,Benton Bridge,1
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Water Newton,Hampton Hargate,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Leighton Stepford Road,Water Newton,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Leighton City,Leighton Stepford Road,2
+R004,Stepford Connect,up,Edgemead,St Helens Bridge,Edgemead,Leighton City,2
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Central,Stepford Airport Central,7
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Airport Central,Airport Terminal 1,1
+R052,AirLink,down,Stepford Central,Airport Terminal 2,Airport Terminal 1,Airport Terminal 2,4
+R052,AirLink,up,Airport Terminal 2,Stepford Central,Stepford Airport Central,Stepford Central,8
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Central,Stepford East,1
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford East,Elsemere Junction,3
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Elsemere Junction,Morganstown,3
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Morganstown,Stepford Airport Central,3
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Stepford Airport Central,Airport Terminal 1,1
+R053,AirLink,down,Stepford Central,Airport Terminal 2,Airport Terminal 1,Airport Terminal 2,4
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Stepford East,Stepford Central,2
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Elsemere Junction,Stepford East,3
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Morganstown,Elsemere Junction,3
+R053,AirLink,up,Airport Terminal 2,Stepford Central,Stepford Airport Central,Morganstown,3
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Stepford Central,St Helens Bridge,2
+R054,AirLink,down,Stepford Central,Stepford Airport Central,St Helens Bridge,Berrily,3
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Berrily,Stepford Airport Parkway,3
+R054,AirLink,down,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,2
+R054,AirLink,up,Stepford Airport Central,Stepford Central,St Helens Bridge,Stepford Central,4
+R054,AirLink,up,Stepford Airport Central,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,2
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Central,Stepford East,2
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford East,Stepford Airport Parkway,5
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Parkway,Stepford Airport Central,2
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Central,Airport Terminal 2,3
+R055,AirLink,down,Stepford Central,Airport Terminal 3,Airport Terminal 2,Airport Terminal 3,3
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford East,Stepford Central,2
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Parkway,Stepford East,6
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Central,Stepford Airport Parkway,2
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 2,Stepford Airport Central,2
+R055,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 3,Airport Terminal 2,3
+R056,AirLink,down,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Central,Stepford Airport Parkway,1
+R056,AirLink,down,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Parkway,Leighton Stepford Road,6
+R056,AirLink,up,Leighton Stepford Road,Stepford Airport Central,Stepford Airport Parkway,Stepford Airport Central,2
+R056,AirLink,up,Leighton Stepford Road,Stepford Airport Central,Leighton Stepford Road,Stepford Airport Parkway,5
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Airport Terminal 3,Airport Terminal 2,3
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Airport Terminal 2,Stepford Airport Central,4
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Stepford Airport Central,Water Newton,5
+R057,AirLink,down,Airport Terminal 3,Leighton Stepford Road,Water Newton,Leighton Stepford Road,2
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Airport Terminal 2,Airport Terminal 3,3
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Stepford Airport Central,Airport Terminal 2,4
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Water Newton,Stepford Airport Central,5
+R057,AirLink,up,Leighton Stepford Road,Airport Terminal 3,Leighton Stepford Road,Water Newton,2
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Central,St Helens Bridge,2
+R058,AirLink,down,Stepford Central,Airport Terminal 3,St Helens Bridge,Morganstown,4
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Morganstown,Stepford Airport Central,3
+R058,AirLink,down,Stepford Central,Airport Terminal 3,Stepford Airport Central,Airport Terminal 1,1
+R058,AirLink,up,Airport Terminal 3,Stepford Central,St Helens Bridge,Stepford Central,3
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Morganstown,St Helens Bridge,4
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Stepford Airport Central,Morganstown,3
+R058,AirLink,up,Airport Terminal 3,Stepford Central,Airport Terminal 3,Airport Terminal 2,3
