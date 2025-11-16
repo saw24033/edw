@@ -2981,7 +2981,7 @@
         "direction": "backward"
       },
       {
-        "to_station": "Bodin",
+        "to_station": "Angel Pass",
         "route_code": "R047",
         "operator": "Metro",
         "route_type": "Metro",
@@ -3381,6 +3381,22 @@
         "route_type": "Benton Line",
         "travel_time_minutes": 2,
         "direction": "backward"
+      },
+      {
+        "to_station": "Bodin",
+        "route_code": "R047",
+        "operator": "Metro",
+        "route_type": "Metro",
+        "travel_time_minutes": 1,
+        "direction": "forward"
+      },
+      {
+        "to_station": "St Helens Bridge",
+        "route_code": "R047",
+        "operator": "Metro",
+        "route_type": "Metro",
+        "travel_time_minutes": 2,
+        "direction": "backward"
       }
     ],
     "Bodin": [
@@ -3649,11 +3665,11 @@
         "direction": "forward"
       },
       {
-        "to_station": "St Helens Bridge",
+        "to_station": "Angel Pass",
         "route_code": "R047",
         "operator": "Metro",
         "route_type": "Metro",
-        "travel_time_minutes": 2,
+        "travel_time_minutes": 1,
         "direction": "backward"
       },
       {
@@ -4317,7 +4333,7 @@
         "direction": "backward"
       },
       {
-        "to_station": "Benton Bridge",
+        "to_station": "Port Benton",
         "route_code": "R047",
         "operator": "Metro",
         "route_type": "Metro",
@@ -4851,22 +4867,6 @@
         "route_code": "R046",
         "operator": "Stepford Connect",
         "route_type": "Airport Connect",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
-        "to_station": "Newry",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Benton",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
         "travel_time_minutes": 2,
         "direction": "backward"
       },
@@ -5777,7 +5777,7 @@
         "direction": "backward"
       },
       {
-        "to_station": "Newry Harbour",
+        "to_station": "Benton",
         "route_code": "R047",
         "operator": "Metro",
         "route_type": "Metro",
@@ -10769,22 +10769,6 @@
     ],
     "Newry": [
       {
-        "to_station": "Newry Harbour",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Benton Bridge",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
-      {
         "to_station": "Eden Quay",
         "route_code": "R010",
         "operator": "Waterline",
@@ -10898,22 +10882,6 @@
       }
     ],
     "Newry Harbour": [
-      {
-        "to_station": "Port Benton",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
-        "travel_time_minutes": 2,
-        "direction": "forward"
-      },
-      {
-        "to_station": "Newry",
-        "route_code": "R047",
-        "operator": "Metro",
-        "route_type": "Metro",
-        "travel_time_minutes": 2,
-        "direction": "backward"
-      },
       {
         "to_station": "Newry",
         "route_code": "R012",
@@ -13120,18 +13088,16 @@
       "route_type": "Metro",
       "price": "600 Points",
       "travel_time": {
-        "up": "10 minutes",
-        "down": "10 minutes"
+        "up": "9 minutes",
+        "down": "9 minutes"
       },
       "stops": 6,
       "stations": [
         "St Helens Bridge",
+        "Angel Pass",
         "Bodin",
         "Coxly",
         "Benton",
-        "Benton Bridge",
-        "Newry",
-        "Newry Harbour",
         "Port Benton"
       ]
     },

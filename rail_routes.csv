@@ -147,13 +147,6 @@ Metro,R034,St Helens Bridge,New Harrow,1.6,Morganstown Line,Beechley,Morganstown
 Metro,R034,Stepford Central,Four Ways,1.6,Morganstown Line,Beechley,Morganstown
 Metro,R034,Stepford East,Stepford High Street,1.6,Morganstown Line,Beechley,Morganstown
 Metro,R034,Stepford High Street,St Helens Bridge,1.6,Morganstown Line,Beechley,Morganstown
-Metro,R047,Benton,Benton Bridge,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,Benton Bridge,Newry,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,Bodin,Coxly,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,Coxly,Benton,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,Newry,Newry Harbour,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,Newry Harbour,Port Benton,1.4,Metro,St Helens Bridge,Port Benton
-Metro,R047,St Helens Bridge,Bodin,1.4,Metro,St Helens Bridge,Port Benton
 Metro,R130,Beaulieu Park,Morganstown,1.5,Morganstown Line,Stepford Central,Morganstown
 Metro,R130,Berrily,East Berrily,1.5,Morganstown Line,Stepford Central,Morganstown
 Metro,R130,East Berrily,Beaulieu Park,1.5,Morganstown Line,Stepford Central,Morganstown
@@ -657,3 +650,13 @@ Waterline,R120,Newry,Eden Quay,1.6,Morganstown Line,Newry Harbour,Morganstown
 Waterline,R120,Newry Harbour,Newry,1.6,Morganstown Line,Newry Harbour,Morganstown
 Waterline,R120,Port Benton,Morganstown Docks,1.6,Morganstown Line,Newry Harbour,Morganstown
 Waterline,R120,West Benton,Benton,1.6,Morganstown Line,Newry Harbour,Morganstown
+Metro,R047,St Helens Bridge,Angel Pass,2,Metro,St Helens Bridge,Port Benton
+Metro,R047,Angel Pass,Bodin,1,Metro,St Helens Bridge,Port Benton
+Metro,R047,Bodin,Coxly,2,Metro,St Helens Bridge,Port Benton
+Metro,R047,Coxly,Benton,2,Metro,St Helens Bridge,Port Benton
+Metro,R047,Benton,Port Benton,2,Metro,St Helens Bridge,Port Benton
+Metro,R047,Port Benton,Benton,2,Metro,Port Benton,St Helens Bridge
+Metro,R047,Benton,Coxly,2,Metro,Port Benton,St Helens Bridge
+Metro,R047,Coxly,Bodin,2,Metro,Port Benton,St Helens Bridge
+Metro,R047,Bodin,Angel Pass,1,Metro,Port Benton,St Helens Bridge
+Metro,R047,Angel Pass,St Helens Bridge,2,Metro,Port Benton,St Helens Bridge
