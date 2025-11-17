@@ -2,6 +2,8 @@
 
 This folder contains **everything you need** to create your Stepford County Railway Custom GPT.
 
+**🆕 Latest Updates:** See [CHANGELOG.md](CHANGELOG.md) for recent improvements including route-specific platform mapping and improved pathfinding!
+
 ---
 
 ## ✅ Files in This Folder (7 + Instructions)
@@ -112,13 +114,15 @@ Show me interesting facts about Llyn-by-the-Sea
 ## ✅ What Your GPT Will Know
 
 ### Route Planning:
-- Find routes between any two stations
+- Find routes between any two stations (prioritizes direct routes!)
 - Show all operators and lines
 - Calculate journey times with transfers
 - Visualize network maps
+- **⭐ Route-specific platform guidance** (e.g., "R001 departs from Platforms 1, 4")
 
 ### Station Details:
 - Platforms and tracks for all 82 stations
+- **⭐ Accurate operator-to-platform mapping** (handles both ranges and individual platforms)
 - Accessibility information
 - Station codes and zones
 - District locations

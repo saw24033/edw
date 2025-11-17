@@ -1,83 +1,74 @@
-═══════════════════════════════════════════════════════════════
-  CUSTOM GPT UPLOAD CHECKLIST - Check off as you go!
-═══════════════════════════════════════════════════════════════
+# 📋 Custom GPT Upload Checklist
 
-STEP 1: CREATE GPT
-──────────────────
-[ ] Go to ChatGPT → My GPTs → Create a GPT
-[ ] Switch to "Configure" tab
-[ ] Name: Stepford County Railway Expert
-[ ] Description: Complete railway assistant with route planning,
-    station details, history, and trivia for all 82 SCR stations
+## ✅ FILES TO UPLOAD (8 Knowledge Files)
 
+Upload these 8 files to your Custom GPT's Knowledge section:
 
-STEP 2: ENABLE CODE INTERPRETER (CRITICAL!)
-────────────────────────────────────────────
-[ ] Scroll to "Capabilities"
-[ ] Toggle ON: Code Interpreter ✓
+1. ✅ rail_routes.csv (61 KB) - Route network data
+2. ✅ rail_helpers.py (23 KB) - Routing functions with improved pathfinding
+3. ✅ station_coords.csv (1.8 KB) - Station coordinates
+4. ✅ plot_helpers.py (6.8 KB) - Visualization functions
+5. ✅ scr_stations_part1.md (378 KB) - Station data (part 1/2)
+6. ✅ scr_stations_part2.md (395 KB) - Station data (part 2/2)
+7. ✅ station_knowledge_helper.py (26 KB) - Station parser with directional platforms ⭐
+8. ✅ GPT_USAGE_GUIDE.md (14 KB) - Detailed examples and workflows
 
+**Total Size: ~906 KB** (well under OpenAI's limits)
 
-STEP 3: UPLOAD FILES (7 files total)
-─────────────────────────────────────
-Upload these to the "Knowledge" section:
+---
 
-Core Network Files:
-[ ] rail_routes.csv (61 KB)
-[ ] rail_helpers.py (20 KB)
-[ ] station_coords.csv (1.8 KB)
-[ ] plot_helpers.py (7 KB)
+## 📝 INSTRUCTIONS FILE (Copy/Paste to Instructions Field)
 
-Station Knowledge Files:
-[ ] scr_stations_part1.md (368 KB)
-[ ] scr_stations_part2.md (385 KB)
-[ ] station_knowledge_helper.py (6 KB)
+DO NOT upload as file - instead copy contents and paste into Instructions field:
 
-✓ Total: ~843 KB (under limit!)
+- custom_gpt_instructions_COMPACT.txt (7.3 KB, 6,680 chars)
+  ✅ Under 8,000 character limit
+  ✅ Includes bidirectional platform workflow
+  ✅ Updated with next_station parameter
 
+---
 
-STEP 4: ADD INSTRUCTIONS
-─────────────────────────
-[ ] Open: custom_gpt_instructions_with_station_knowledge.txt
-[ ] Select all text and copy (Ctrl+A, Ctrl+C)
-[ ] Paste into the "Instructions" field in GPT
+## 📚 REFERENCE DOCUMENTATION (Do Not Upload)
 
+These files are for YOUR reference only - keep them but don't upload:
 
-STEP 5: ADD CONVERSATION STARTERS
-──────────────────────────────────
-Add these 5 example prompts:
+- README.md - Setup guide and quick start
+- CHANGELOG.md - Version history (currently v2.2.0)
+- UPLOAD_CHECKLIST.txt - This file!
 
-[ ] "How do I get from Stepford Central to Benton?"
-[ ] "Tell me everything about Airport Terminal 1"
-[ ] "What's the history of Stepford Airport Central?"
-[ ] "Which stations have the most platforms?"
-[ ] "Show me interesting facts about Llyn-by-the-Sea"
+---
 
+## 🗑️ DEPRECATED/IGNORE
 
-STEP 6: SAVE & TEST
-────────────────────
-[ ] Click "Save" button
-[ ] Choose visibility (Only me / Link / Public)
-[ ] Click "View GPT" or open from My GPTs
-[ ] Test with: "Tell me about Benton station including its history"
+- custom_gpt_instructions_with_station_knowledge.txt
+  ❌ TOO LONG (14,267 chars > 8,000 limit)
+  ⚠️ Kept for reference but DO NOT USE
 
+---
 
-VERIFICATION TEST
-─────────────────
-Ask your GPT: "How many stations do you have knowledge about?"
+## 🚀 Quick Upload Process
 
-Expected: "I have comprehensive knowledge about all 82 SCR stations..."
+1. Go to ChatGPT → My GPTs → Create
+2. Switch to Configure tab
+3. Enable Code Interpreter ✅
+4. Upload the 8 knowledge files listed above
+5. Copy/paste custom_gpt_instructions_COMPACT.txt into Instructions field
+6. Save and test!
 
-If less than 82 → Check that BOTH part1.md and part2.md uploaded!
+---
 
+## ⭐ Latest Features (v2.2.0)
 
-═══════════════════════════════════════════════════════════════
-  ✅ ALL DONE! Your GPT is ready to use!
-═══════════════════════════════════════════════════════════════
+Your Custom GPT now includes:
+- ✅ Bidirectional platform mapping (R083 to Llyn vs to Newry)
+- ✅ Route-specific platforms (R001 vs R024 at Benton Bridge)
+- ✅ Direct route priority (avoids unnecessary transfers)
+- ✅ Accurate operator-platform mapping
+- ✅ Platform range handling (4-7, 10-13, etc.)
 
-Troubleshooting:
-• "File too large" → Make sure using part1.md and part2.md, NOT full_content.md
-• "Python not working" → Check Code Interpreter is enabled
-• "Missing station data" → Verify all 7 files uploaded
-• "Can't find files" → They should all be in this folder!
+See CHANGELOG.md for complete version history.
 
-═══════════════════════════════════════════════════════════════
+---
+
+**Last Updated:** 2024-11-17 (v2.2.0)
+**Ready to Upload:** YES ✅
