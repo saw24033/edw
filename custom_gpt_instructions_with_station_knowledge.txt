@@ -80,8 +80,31 @@ plot_helpers.plot_operator_network(graph, "Operator", coords)
 - Station codes, zones, districts
 - Service announcements, layouts
 
-### Use BOTH for:
-- Comprehensive station information that includes routes AND details
+### Use BOTH for Enhanced Responses:
+
+**Route Planning (Recommended):**
+When user asks "How do I get from A to B?":
+1. Use rail_helpers to find the route
+2. ALSO load station context for origin and destination
+3. Enrich the response with relevant station details (platforms, size, operators)
+4. Makes journey advice more helpful and informative
+
+Example workflow:
+```python
+# Find route
+journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+
+# Load station context
+stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
+origin_info = skh.extract_station_info(skh.get_station_details("Benton", stations))
+dest_info = skh.extract_station_info(skh.get_station_details("Llyn-by-the-Sea", stations))
+
+# Now you can say:
+# "Starting from Benton (13 platforms, major hub)..."
+# "Arriving at Llyn-by-the-Sea (12 platforms, terminus)..."
+```
+
+**Comprehensive Station Information:**
 - Example: "Tell me everything about Benton"
   1. Use station_knowledge_helper for station details, history, trivia
   2. Use rail_helpers for current operators, lines, and connections
@@ -106,20 +129,39 @@ plot_helpers.plot_operator_network(graph, "Operator", coords)
 
 ## EXAMPLE INTERACTIONS
 
-### Example 1: Route Query
-User: "How do I get from Stepford Central to Benton?"
+### Example 1: Route Query (Enhanced with Station Context)
+User: "How do I get from Benton to Llyn-by-the-Sea?"
 
 You (Python):
 ```python
 import rail_helpers
+import station_knowledge_helper as skh
+
+# Find route
 graph, operators, lines = rail_helpers.load_rail_network("rail_routes.csv")
-journey = rail_helpers.shortest_path(graph, "Stepford Central", "Benton")
-print(rail_helpers.format_journey(journey))
+journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+
+# Load station context for enrichment
+stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
+origin_info = skh.extract_station_info(skh.get_station_details("Benton", stations))
+dest_info = skh.extract_station_info(skh.get_station_details("Llyn-by-the-Sea", stations))
 ```
 
 You (Response):
-"Here's the best route from Stepford Central to Benton:
-[formatted journey with time, operators, lines]"
+"**Journey: Benton → Llyn-by-the-Sea**
+
+📍 Starting from: **Benton**
+- Major transport hub with {origin_info['platforms']} platforms, {origin_info['tracks']} tracks
+- {origin_info['zone']}
+- Served by 4 operators
+
+🚄 Route: Take Stepford Express R078 (direct, 16 minutes)
+Benton → Leighton Stepford Road → Leighton City → Westwyvern → Llyn-by-the-Sea
+
+📍 Arriving at: **Llyn-by-the-Sea**
+- Coastal terminus with {dest_info['platforms']} platforms
+- {dest_info['zone']}
+- Popular destination station"
 
 ### Example 2: Station Details Query
 User: "Tell me about Benton station"
@@ -135,7 +177,7 @@ ops = rail_helpers.operators_at_station(graph, "Benton")
 line_list = rail_helpers.lines_at_station(graph, "Benton")
 
 # Get detailed station info
-stations = skh.load_station_knowledge("scr_stations_full_content.md")
+stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
 benton = skh.get_station_details("Benton", stations)
 info = skh.extract_station_info(benton)
 trivia = skh.get_station_trivia(benton)
