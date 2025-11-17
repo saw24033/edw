@@ -124,23 +124,27 @@ class RouteCorridorCalculator:
 
         return None
 
-    def _find_physical_path_and_corridor(self, start: str, end: str) -> Tuple[List[str], Dict, List]:
+    def _find_physical_path_and_corridor(self, start: str, end: str,
+                                          route_stops: List[str] = None) -> Tuple[List[str], Dict, List]:
         """
         Find the physical path between two stations and identify all corridor stations.
 
         This handles divergent routes properly:
-        1. Find the route with the MOST intermediate stations (all-stations service)
-        2. Use that as the primary physical corridor
-        3. Identify alternative/divergent paths
-        4. Return the physical path and routes serving each station
+        1. Find ALL possible paths between the stations
+        2. If route_stops provided, determine which ACTUAL path this service uses
+        3. Use that actual path as the corridor (not just the longest)
+        4. Identify alternative/divergent paths
+        5. Return the physical path and routes serving each station
 
         Args:
             start: Starting station
             end: Ending station
+            route_stops: Optional list of all stops for the route being analyzed
+                        (used to determine which divergent path it actually takes)
 
         Returns:
             Tuple of (physical_path, routes_via_station, alternative_paths) where:
-            - physical_path: List of stations on the primary corridor (longest route)
+            - physical_path: List of stations on the actual path this service uses
             - routes_via_station: Dict mapping station -> list of route codes serving it
             - alternative_paths: List of alternative path descriptions (divergent routes)
         """
@@ -176,27 +180,65 @@ class RouteCorridorCalculator:
             except ValueError:
                 continue
 
-        # Find the longest path (most stations) - this is the all-stations corridor
-        if all_paths:
-            # Sort by length (longest first)
-            sorted_paths = sorted(all_paths.items(), key=lambda x: len(x[0]), reverse=True)
-            primary_path = list(sorted_paths[0][0])
-
-            # Identify alternative paths (different station sequences)
-            alternative_paths = []
-            for path_tuple, route_codes in sorted_paths[1:]:
-                if path_tuple != tuple(primary_path):  # Different from primary
-                    alternative_paths.append({
-                        'stations': list(path_tuple),
-                        'routes': route_codes,
-                        'length': len(path_tuple)
-                    })
-        else:
+        if not all_paths:
             # No routes found - fallback to direct
-            primary_path = [start, end]
-            alternative_paths = []
+            return [start, end], {}, []
 
-        return primary_path, dict(routes_via_station), alternative_paths
+        # Sort paths by length (longest first)
+        sorted_paths = sorted(all_paths.items(), key=lambda x: len(x[0]), reverse=True)
+
+        # Determine which path THIS route actually uses
+        actual_path = None
+
+        if route_stops:
+            # Check which path's intermediate stations match the route's stops
+            route_intermediates_segment = set(route_stops) & (set(route_stops) - {start, end})
+
+            # If the route has intermediate stops between start and end
+            if route_intermediates_segment:
+                # Find the path that includes these intermediate stops
+                for path_tuple, route_codes in sorted_paths:
+                    path_stations = set(path_tuple)
+                    intermediate_on_path = path_stations - {start, end}
+
+                    # Check if route's intermediate stops are on this path
+                    stops_on_this_path = intermediate_on_path & set(route_stops)
+
+                    if stops_on_this_path:
+                        # Check if route has stops on OTHER paths (conflicting)
+                        conflicts = False
+                        for other_path_tuple, _ in sorted_paths:
+                            if other_path_tuple != path_tuple:
+                                other_intermediates = set(other_path_tuple) - {start, end}
+                                conflicts_here = (other_intermediates - path_stations) & set(route_stops)
+                                if conflicts_here:
+                                    conflicts = True
+                                    break
+
+                        if not conflicts:
+                            actual_path = list(path_tuple)
+                            break
+            # else: No intermediate stops - fall through to use longest path
+
+        # If we couldn't determine the actual path, use the longest (all-stations corridor)
+        # This happens when:
+        # - No route_stops provided
+        # - Route has no intermediate stops (express taking direct path)
+        # - Couldn't match intermediate stops to a specific path
+        if actual_path is None:
+            actual_path = list(sorted_paths[0][0])
+
+        # Identify alternative paths (different from the actual path)
+        alternative_paths = []
+        for path_tuple, route_codes in sorted_paths:
+            if path_tuple != tuple(actual_path):
+                alternative_paths.append({
+                    'stations': list(path_tuple),
+                    'routes': route_codes,
+                    'length': len(path_tuple)
+                })
+
+        return actual_path, dict(routes_via_station), alternative_paths
 
     def calculate_route_corridor(self, route_code: str) -> Optional[Dict]:
         """
@@ -248,8 +290,11 @@ class RouteCorridorCalculator:
             origin = stops[i]
             destination = stops[i + 1]
 
-            # Find the primary physical path, routes, and alternative paths
-            physical_path, routes_via_station, alternative_paths = self._find_physical_path_and_corridor(origin, destination)
+            # Find the actual physical path this route uses, plus alternatives
+            # Pass the route's full stop list so we can determine which divergent path it takes
+            physical_path, routes_via_station, alternative_paths = self._find_physical_path_and_corridor(
+                origin, destination, route_stops=stops
+            )
 
             segment_details.append({
                 'from': origin,
