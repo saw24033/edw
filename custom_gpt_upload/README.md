@@ -29,10 +29,18 @@ This folder contains **everything you need** to create your Stepford County Rail
 7. **station_knowledge_helper.py** (6 KB) ⭐
    - Parser for station knowledge
 
-### Instructions File:
+### Instructions Files:
 
-8. **custom_gpt_instructions_with_station_knowledge.txt** (9 KB)
+8. **custom_gpt_instructions_COMPACT.txt** (6.7 KB) ⭐ **USE THIS**
+   - Streamlined instructions under 8,000 character limit
    - Copy/paste this into your GPT's Instructions field
+
+9. **GPT_USAGE_GUIDE.md** (16 KB) ⭐ **UPLOAD AS KNOWLEDGE FILE**
+   - Detailed examples, workflows, and best practices
+   - GPT references this for complex queries
+   - Offloads instruction burden from system prompt
+
+~~custom_gpt_instructions_with_station_knowledge.txt~~ (14 KB - TOO LONG, use COMPACT version instead)
 
 **Total Upload Size:** ~843 KB ✅
 
@@ -56,11 +64,19 @@ This folder contains **everything you need** to create your Stepford County Rail
 ### Step 4: Upload Files
 - Scroll to **Knowledge**
 - Click **Upload files**
-- Upload ALL 7 files from this folder (drag & drop works!)
+- Upload ALL **8 files** from this folder:
+  - rail_routes.csv
+  - rail_helpers.py
+  - station_coords.csv
+  - plot_helpers.py
+  - scr_stations_part1.md
+  - scr_stations_part2.md
+  - station_knowledge_helper.py
+  - **GPT_USAGE_GUIDE.md** ⭐ NEW - detailed examples for GPT to reference
 
 ### Step 5: Add Instructions
-1. Open `custom_gpt_instructions_with_station_knowledge.txt`
-2. Select all and copy
+1. Open `custom_gpt_instructions_COMPACT.txt`
+2. Select all and copy (6,680 characters - well under 8,000 limit!)
 3. Paste into the **Instructions** field in your GPT
 
 ### Step 6: Add Conversation Starters
