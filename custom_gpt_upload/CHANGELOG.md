@@ -4,6 +4,62 @@ All notable changes and improvements to the Stepford County Railway Custom GPT s
 
 ---
 
+## [2.2.0] - 2024-11-17
+
+### Added - Bidirectional Platform Mapping ⭐⭐⭐
+
+**Feature:** Directional (route + destination) platform lookup for bidirectional tracks.
+
+**Why This Matters:**
+At stations with bidirectional tracks, the SAME route uses DIFFERENT platforms depending on travel direction:
+- R083 TO Llyn-by-the-Sea → Platform 2
+- R083 TO Newry → Platforms 2-3
+
+Without directional mapping, the system could only say "R083 uses Platforms 2, 2-3" (ambiguous).
+Passengers wouldn't know which platform for their specific direction!
+
+**New Functions:**
+- `build_directional_platform_map(station_data)` - Parses "R### to Destination" patterns from Services section
+  - Returns: `{('R083', 'Llyn-by-the-Sea'): ['2'], ('R083', 'Newry'): ['2-3']}`
+
+- Updated `get_route_platform(station_data, route_code, next_station=None)` - Now accepts next_station parameter
+  - Priority: directional > route-specific > non-directional
+
+- Updated `get_route_context(..., next_station=None)` - Accepts next_station for directional lookup
+  - Three priority levels:
+    1. Directional (route + next_station): "R083 to Llyn → Platform 2"
+    2. Route-specific (route only): "R083 → Platforms 2, 2-3"
+    3. Operator-level (fallback): "Stepford Express → Platforms 7-10"
+
+**Usage Example:**
+```python
+# Get directional platform (most accurate)
+journey = find_best_route(graph, "Benton", "Llyn")
+next_station = journey['legs'][0]['to']  # "Leighton Stepford Road"
+ctx = get_route_context("Benton", operator, stations, route_code="R083", next_station=next_station)
+print(ctx['departure_platforms'])  # "Platform 2" (directional - exact!)
+
+# Without direction (less accurate)
+ctx = get_route_context("Benton", operator, stations, route_code="R083")
+print(ctx['departure_platforms'])  # "Platforms 2, 2-3" (ambiguous)
+```
+
+**Before vs After:**
+```
+Before: "Take R083 from Platforms 2, 2-3"  ❌ Passenger confused!
+After:  "Take R083 to Llyn from Platform 2"  ✅ Clear guidance!
+```
+
+**Technical Details:**
+- Regex pattern: `r'(R\d+)\s+to\s+([\w\s\-]+?)(?=\s+\w+\s+R\d+|$)'`
+- Handles format: "R083 to Llyn-by-the-Sea Morganstown R084..."
+- Fuzzy matching: "Llyn-by-the-Sea" matches "Llyn" or "Llyn by the Sea"
+
+**Commits:**
+- `464deb9` - Add bidirectional platform mapping for accurate directional guidance
+
+---
+
 ## [2.1.0] - 2024-11-17
 
 ### Added - Route-Specific Platform Mapping ⭐
@@ -168,7 +224,8 @@ if platform_matches:
 
 | Version | Feature | Impact |
 |---------|---------|--------|
-| 2.1.0 | Route-specific platforms | ⭐ Accurate platform guidance (R001 → Platform 1,4 vs Platforms 2,4) |
+| 2.2.0 | Bidirectional platforms | ⭐⭐⭐ Directional accuracy (R083 to Llyn → Platform 2, to Newry → 2-3) |
+| 2.1.0 | Route-specific platforms | ⭐ Route precision (R001 → Platform 1,4 vs all Connect → 2,4) |
 | 2.0.1 | Operator-platform heuristics | Fixed Llyn showing both Express and Connect platforms |
 | 2.0.0 | Direct route priority | Benton→Llyn now shows 16min direct (was 17.6min transfer) |
 | 1.1.1 | Platform count extraction | All 82 stations show correct platform count |
