@@ -453,6 +453,169 @@ class RouteCorridorCalculator:
             return corridor['skipped']
         return None
 
+    def get_all_corridors_between(self, start: str, end: str) -> Optional[Dict]:
+        """
+        Find ALL possible corridors between two stations (generic query).
+
+        This answers questions like "What stations are between A and B?"
+        by showing ALL divergent routes, grouped by corridor type.
+
+        Like asking "What's between Central and Hornsby in Sydney?"
+        - North Shore Line (via Chatswood)
+        - Western Line (via Strathfield, Epping)
+
+        Args:
+            start: Starting station name
+            end: Ending station name
+
+        Returns:
+            Dict with:
+                - start: Starting station
+                - end: Ending station
+                - corridors: List of corridor dicts, each with:
+                    - type: 'primary', 'divergent', or 'express'
+                    - stations: List of stations on this corridor
+                    - routes: List of route codes using this corridor
+                    - description: Human-readable description
+        """
+        if start not in self.stations_list or end not in self.stations_list:
+            return None
+
+        # Find ALL routes between these stations
+        all_paths = {}  # path (as tuple) -> list of route codes
+
+        for route_code, route_data in self.routes.items():
+            if 'REMOVED' in route_data.get('route_type', ''):
+                continue
+
+            stations = route_data.get('stations', [])
+
+            try:
+                start_idx = stations.index(start)
+                end_idx = stations.index(end)
+
+                if start_idx < end_idx:
+                    # Get segment
+                    segment = stations[start_idx:end_idx + 1]
+                    path_tuple = tuple(segment)
+
+                    if path_tuple not in all_paths:
+                        all_paths[path_tuple] = []
+                    all_paths[path_tuple].append(route_code)
+            except ValueError:
+                continue
+
+        if not all_paths:
+            return {
+                'start': start,
+                'end': end,
+                'corridors': [],
+                'total_unique_stations': 0
+            }
+
+        # Sort paths by length (longest first)
+        sorted_paths = sorted(all_paths.items(), key=lambda x: len(x[0]), reverse=True)
+
+        # Categorize corridors
+        corridors = []
+        all_stations = set()
+
+        # Primary corridor (longest path - all-stations service)
+        primary_path, primary_routes = sorted_paths[0]
+        all_stations.update(primary_path)
+
+        corridors.append({
+            'type': 'primary',
+            'stations': list(primary_path),
+            'routes': primary_routes,
+            'length': len(primary_path),
+            'description': f'Main corridor ({len(primary_path)} stations) - all-stations service'
+        })
+
+        # Check for divergent routes (different station sequences, not just fewer stops)
+        primary_set = set(primary_path)
+
+        for path_tuple, route_codes in sorted_paths[1:]:
+            path_set = set(path_tuple)
+            all_stations.update(path_tuple)
+
+            # Determine if this is divergent or just express
+            unique_stations = path_set - primary_set
+
+            if unique_stations:
+                # Divergent route - has stations NOT on primary corridor
+                corridors.append({
+                    'type': 'divergent',
+                    'stations': list(path_tuple),
+                    'routes': route_codes,
+                    'length': len(path_tuple),
+                    'description': f'Divergent route via {", ".join(sorted(unique_stations)[:3])}',
+                    'unique_stations': sorted(unique_stations)
+                })
+            elif len(path_tuple) <= 3:
+                # Express/direct service
+                corridors.append({
+                    'type': 'express',
+                    'stations': list(path_tuple),
+                    'routes': route_codes,
+                    'length': len(path_tuple),
+                    'description': f'Direct/express ({len(path_tuple)} stations)'
+                })
+            # Skip intermediate express services that are just subsets of primary
+
+        return {
+            'start': start,
+            'end': end,
+            'corridors': corridors,
+            'total_unique_stations': len(all_stations),
+            'all_stations': sorted(all_stations)
+        }
+
+    def format_corridor_comparison(self, corridor_data: Dict) -> str:
+        """
+        Format generic corridor query results into readable text.
+
+        Args:
+            corridor_data: Output from get_all_corridors_between()
+
+        Returns:
+            Formatted string describing all corridors
+        """
+        if not corridor_data or not corridor_data.get('corridors'):
+            return f"No routes found between {corridor_data.get('start', '?')} and {corridor_data.get('end', '?')}"
+
+        lines = []
+        lines.append(f"═══════════════════════════════════════════════════════")
+        lines.append(f"All Corridors: {corridor_data['start']} → {corridor_data['end']}")
+        lines.append(f"═══════════════════════════════════════════════════════")
+        lines.append(f"Total unique stations: {corridor_data['total_unique_stations']}")
+        lines.append(f"Number of corridors: {len(corridor_data['corridors'])}")
+        lines.append("")
+
+        for i, corridor in enumerate(corridor_data['corridors'], 1):
+            ctype = corridor['type'].upper()
+            desc = corridor['description']
+
+            lines.append(f"{i}. [{ctype}] {desc}")
+            lines.append(f"   Route: {' → '.join(corridor['stations'])}")
+
+            # Show routes using this corridor
+            routes = corridor['routes']
+            if len(routes) <= 5:
+                routes_str = ', '.join(routes)
+            else:
+                routes_str = f"{', '.join(routes[:5])} ... (+{len(routes)-5} more)"
+            lines.append(f"   Services: {routes_str} ({len(routes)} total)")
+
+            # Show unique stations for divergent routes
+            if corridor['type'] == 'divergent' and 'unique_stations' in corridor:
+                unique = corridor['unique_stations']
+                lines.append(f"   ⚠️  Unique stations: {', '.join(unique)}")
+
+            lines.append("")
+
+        return '\n'.join(lines)
+
     def compare_services(self, route_code1: str, route_code2: str) -> str:
         """
         Compare two services' corridors.
@@ -504,21 +667,35 @@ if __name__ == "__main__":
 
     # Check command line arguments
     if len(sys.argv) > 1:
-        route_code = sys.argv[1]
-        verbose = '--verbose' in sys.argv or '-v' in sys.argv
+        arg1 = sys.argv[1]
 
-        # Handle comparison mode
-        if len(sys.argv) > 2 and sys.argv[2] not in ['--verbose', '-v']:
-            route_code2 = sys.argv[2]
-            print(calc.compare_services(route_code, route_code2))
-        else:
-            # Single route analysis
-            corridor = calc.calculate_route_corridor(route_code)
-            if corridor:
-                print(calc.format_corridor_report(corridor, verbose=verbose))
+        # Check for generic corridor query (--between flag)
+        if arg1 == '--between' and len(sys.argv) >= 4:
+            start = sys.argv[2]
+            end = sys.argv[3]
+
+            result = calc.get_all_corridors_between(start, end)
+            if result:
+                print(calc.format_corridor_comparison(result))
             else:
-                print(f"Route {route_code} not found.")
-                print(f"\nAvailable routes: {', '.join(sorted(list(calc.routes.keys())[:20]))}...")
+                print(f"No routes found between '{start}' and '{end}'")
+                print(f"\nAvailable stations: {', '.join(sorted(calc.stations_list)[:20])}...")
+        else:
+            route_code = arg1
+            verbose = '--verbose' in sys.argv or '-v' in sys.argv
+
+            # Handle comparison mode
+            if len(sys.argv) > 2 and sys.argv[2] not in ['--verbose', '-v', '--between']:
+                route_code2 = sys.argv[2]
+                print(calc.compare_services(route_code, route_code2))
+            else:
+                # Single route analysis
+                corridor = calc.calculate_route_corridor(route_code)
+                if corridor:
+                    print(calc.format_corridor_report(corridor, verbose=verbose))
+                else:
+                    print(f"Route {route_code} not found.")
+                    print(f"\nAvailable routes: {', '.join(sorted(list(calc.routes.keys())[:20]))}...")
     else:
         # Default: Show R026 example
         print("Stepford County Railway - Route Corridor Calculator")
@@ -533,7 +710,9 @@ if __name__ == "__main__":
         print("  python3 route_corridor_calculator.py <ROUTE_CODE>")
         print("  python3 route_corridor_calculator.py <ROUTE_CODE> --verbose")
         print("  python3 route_corridor_calculator.py <ROUTE1> <ROUTE2>  # Compare")
+        print("  python3 route_corridor_calculator.py --between <START> <END>  # Generic corridor")
         print("\nExamples:")
         print("  python3 route_corridor_calculator.py R026")
         print("  python3 route_corridor_calculator.py R078 --verbose")
         print("  python3 route_corridor_calculator.py R026 R035  # Compare services")
+        print("  python3 route_corridor_calculator.py --between 'St Helens Bridge' 'Leighton Stepford Road'")
