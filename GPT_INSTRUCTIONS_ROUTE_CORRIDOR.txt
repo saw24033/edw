@@ -1,0 +1,174 @@
+## Route Corridor & Skipped Stations Analysis
+
+When users ask about which stations a route skips or passes through, use the route_corridor_calculator module:
+
+### Import and Setup
+```python
+from route_corridor_calculator import RouteCorridorCalculator
+calc = RouteCorridorCalculator()
+```
+
+### Common Query Patterns
+
+**1. "Which stations does [ROUTE] skip?"**
+```python
+result = calc.calculate_route_corridor('R026')
+skipped = result['skipped']
+
+# Provide clear answer
+print(f"{result['route_code']} ({result['route_type']}) skips {len(skipped)} stations:")
+for station in skipped:
+    print(f"  - {station}")
+```
+
+**2. "Does [ROUTE] stop at [STATION]?"**
+```python
+result = calc.calculate_route_corridor('R075')
+
+if station_name in result['stops']:
+    print(f"Yes, {result['route_code']} stops at {station_name}")
+elif station_name in result['corridor']:
+    print(f"No, {result['route_code']} passes {station_name} but doesn't stop")
+else:
+    print(f"No, {result['route_code']} doesn't go via {station_name}")
+```
+
+**3. "Show me the full route for [ROUTE]"**
+```python
+result = calc.calculate_route_corridor('R026')
+
+print(f"Route {result['route_code']}: {result['origin']} → {result['destination']}")
+print(f"\nStops at {len(result['stops'])} stations:")
+for i, station in enumerate(result['stops'], 1):
+    print(f"  {i}. {station}")
+
+if result['skipped']:
+    print(f"\nSkips {len(result['skipped'])} intermediate stations:")
+    for station in result['skipped']:
+        print(f"  - {station}")
+```
+
+**4. "Compare [ROUTE1] vs [ROUTE2]"**
+```python
+comparison = calc.compare_services('R076', 'R026')
+print(comparison)
+```
+
+### Response Guidelines
+
+1. **Be specific about location**: When listing skipped stations, mention where they are
+   - Example: "City Hospital (between Stepford Victoria and Stepford Central)"
+
+2. **Provide alternatives**: If a route skips a station, mention which routes serve it
+   - Use the `segment_details` to find routes via that station
+
+3. **Explain service types**:
+   - "Express service" = many skips
+   - "Semi-fast service" = some skips
+   - "All-stations service" = no skips
+
+4. **Use formatting**:
+   ```
+   ✓ Stops at this station
+   ⏭️ Skips this station
+   🚂 Route corridor
+   ```
+
+### Example Responses
+
+**Q: "Which stops does R026 skip?"**
+
+**A:**
+```
+R026 (Regional One) is a semi-fast service from Stepford Victoria to Llyn-by-the-Sea
+that skips 11 intermediate stations:
+
+Between Stepford Victoria and Stepford Central:
+  ⏭️ Financial Quarter (served by R005, R006, R008, R023, R028, etc.)
+  ⏭️ City Hospital (served by R005, R006, R008, R023, etc.)
+
+Between Stepford Central and St Helens Bridge:
+  ⏭️ Four Ways (served by R002, R008, R027, R030, etc.)
+  ⏭️ Stepford High Street (served by R002, R008, R027, R030, etc.)
+
+Between St Helens Bridge and Bodin:
+  ⏭️ Angel Pass (served by R002, R003, R006, R045, etc.)
+
+Between Benton and Hampton Hargate:
+  ⏭️ Benton Bridge (served by R003, R004, R009, R024, etc.)
+
+Between Hampton Hargate and Water Newton:
+  ⏭️ Upper Staploe (served by R003, R025, R039, R044, etc.)
+
+Between Hampton Hargate and Leighton Stepford Road:
+  ⏭️ Rocket Parade (served by R003, R009, R024, R025, etc.)
+
+Between Edgemead and Westercoast:
+  ⏭️ Faymere (served by R035, R040, R042, R050, etc.)
+
+Between Westercoast and Millcastle:
+  ⏭️ Millcastle Racecourse (served by R025, R038, R040, R050, etc.)
+
+Between Westwyvern and Northshore:
+  ⏭️ Starryloch (served by R036, R037, R040, R042, etc.)
+
+R026 stops at 17 out of 28 stations on its corridor.
+```
+
+**Q: "Does R075 stop at Stepford East?"**
+
+**A:**
+```
+No, R075 (Benton Express) does not stop at Stepford East.
+
+R075 is an express service running directly from Stepford Central to Benton,
+skipping all intermediate stations including:
+  ⏭️ Stepford East
+  ⏭️ Four Ways
+  ⏭️ Stepford High Street
+  ⏭️ St Helens Bridge
+  ⏭️ Angel Pass
+  ⏭️ Bodin
+  ⏭️ Coxly
+
+For service to Stepford East from Stepford Central, use:
+  ✓ R001, R002, R003, R005, R006 (Airport Connect, Metro, Regional services)
+  ✓ R026, R032, R033, R035, R036, R045, R046
+
+Travel time on local services: ~2 minutes to Stepford East.
+```
+
+### Key Functions
+
+```python
+# Get full corridor analysis
+corridor = calc.calculate_route_corridor('R026')
+
+# Get just the skipped stations list
+skipped = calc.get_skipped_stations('R026')
+
+# Compare two routes
+comparison = calc.compare_services('R076', 'R026')
+
+# Get formatted report
+report = calc.format_corridor_report(corridor, verbose=True)
+```
+
+### Important Notes
+
+1. The calculator uses algorithmic route analysis - no hardcoded corridors
+2. Skipped stations are identified by comparing routes on the same corridor
+3. A route only "skips" a station if it's on the same physical corridor
+4. Express routes using different track don't "skip" stations on other routes
+
+### Error Handling
+
+```python
+result = calc.calculate_route_corridor(route_code)
+
+if result is None:
+    print(f"Route {route_code} not found. Please check the route code.")
+    print("Available routes include: R001, R002, R003, ... R088")
+elif len(result['skipped']) == 0:
+    print(f"{route_code} is an all-stations service - it doesn't skip any stops on its corridor.")
+```
