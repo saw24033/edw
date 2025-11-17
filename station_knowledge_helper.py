@@ -179,6 +179,77 @@ def find_stations_by_operator(operator, stations_dict):
     return sorted(results)
 
 
+def get_platform_assignments(station_data):
+    """
+    Extract platform-by-platform assignments from station content.
+
+    Returns a list of dictionaries with platform numbers and their services.
+    Example: [
+        {'platform': '1', 'services': 'Waterline to Connolly, Airport Terminal 2...'},
+        {'platform': '2', 'services': 'Stepford Connect to...'},
+    ]
+    """
+    content = station_data['full_content']
+    platforms = []
+
+    # Look for platform assignments in the station layout section
+    # Pattern: "Platform X → Service details" or "Platform X ← Service details"
+    platform_pattern = r'Platform (\d+(?:-\d+)?)\s*[→←]\s*([^\n]+?)(?=Platform \d+|Terminating|⊢|Lift|Stairs|$)'
+
+    matches = re.findall(platform_pattern, content, re.DOTALL)
+
+    for plat_num, services in matches:
+        # Clean up the services text
+        services_clean = services.strip()
+        # Remove excessive whitespace
+        services_clean = re.sub(r'\s+', ' ', services_clean)
+
+        if services_clean and len(services_clean) > 10:  # Skip empty or very short entries
+            platforms.append({
+                'platform': plat_num,
+                'services': services_clean[:200]  # Limit length
+            })
+
+    return platforms
+
+
+def get_platform_summary(station_data):
+    """
+    Get a human-readable summary of which operators use which platforms.
+
+    Returns a dictionary mapping operators to their platform ranges.
+    Example: {
+        'Waterline': 'Platforms 1-3',
+        'Stepford Connect': 'Platforms 4, 10-13',
+        'Stepford Express': 'Platforms 6-9'
+    }
+    """
+    platforms = get_platform_assignments(station_data)
+    operator_platforms = {}
+
+    # Group platforms by operator
+    for plat_info in platforms:
+        services = plat_info['services']
+        plat_num = plat_info['platform']
+
+        # Find operators mentioned
+        operators = ['Waterline', 'Stepford Connect', 'Stepford Express', 'Metro', 'AirLink']
+        for op in operators:
+            if op in services:
+                if op not in operator_platforms:
+                    operator_platforms[op] = []
+                operator_platforms[op].append(plat_num)
+
+    # Convert to ranges
+    summary = {}
+    for op, plats in operator_platforms.items():
+        # Remove duplicates and sort
+        unique_plats = sorted(set(plats), key=lambda x: int(x.split('-')[0]))
+        summary[op] = f"Platform{'s' if len(unique_plats) > 1 else ''} {', '.join(unique_plats)}"
+
+    return summary
+
+
 # Example usage
 if __name__ == "__main__":
     # Load all station data from both parts

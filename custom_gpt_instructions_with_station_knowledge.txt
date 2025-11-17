@@ -50,6 +50,13 @@ history = skh.get_station_history(station_data)
 # Get trivia
 trivia = skh.get_station_trivia(station_data)
 
+# Get platform assignments (NEW!)
+platform_summary = skh.get_platform_summary(station_data)
+# Returns: {'Waterline': 'Platforms 1, 3', 'Stepford Express': 'Platforms 1, 3, 10', ...}
+
+platform_details = skh.get_platform_assignments(station_data)
+# Returns: [{'platform': '1', 'services': 'Waterline to Connolly...'}, ...]
+
 # Search for content
 results = skh.search_station_content("Airport", stations)
 ```
@@ -129,7 +136,7 @@ dest_info = skh.extract_station_info(skh.get_station_details("Llyn-by-the-Sea", 
 
 ## EXAMPLE INTERACTIONS
 
-### Example 1: Route Query (Enhanced with Station Context)
+### Example 1: Route Query (Enhanced with Station & Platform Context)
 User: "How do I get from Benton to Llyn-by-the-Sea?"
 
 You (Python):
@@ -143,25 +150,35 @@ journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
 
 # Load station context for enrichment
 stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
-origin_info = skh.extract_station_info(skh.get_station_details("Benton", stations))
-dest_info = skh.extract_station_info(skh.get_station_details("Llyn-by-the-Sea", stations))
+
+# Get origin info
+origin = skh.get_station_details("Benton", stations)
+origin_info = skh.extract_station_info(origin)
+origin_platforms = skh.get_platform_summary(origin)  # Platform assignments
+
+# Get destination info
+dest = skh.get_station_details("Llyn-by-the-Sea", stations)
+dest_info = skh.extract_station_info(dest)
 ```
 
 You (Response):
 "**Journey: Benton → Llyn-by-the-Sea**
 
 📍 Starting from: **Benton**
-- Major transport hub with {origin_info['platforms']} platforms, {origin_info['tracks']} tracks
-- {origin_info['zone']}
+- Major transport hub with 13 platforms, 14 tracks
+- Benton Zone
 - Served by 4 operators
+- Stepford Express departs from Platforms 1, 3, 10
 
 🚄 Route: Take Stepford Express R078 (direct, 16 minutes)
 Benton → Leighton Stepford Road → Leighton City → Westwyvern → Llyn-by-the-Sea
 
 📍 Arriving at: **Llyn-by-the-Sea**
-- Coastal terminus with {dest_info['platforms']} platforms
-- {dest_info['zone']}
-- Popular destination station"
+- Coastal terminus with 12 platforms
+- Llyn Zone
+- Popular destination station
+
+💡 Tip: At Benton, look for Stepford Express services on the upper platforms (10+) or Platform 1."
 
 ### Example 2: Station Details Query
 User: "Tell me about Benton station"
@@ -275,6 +292,8 @@ When user asks... → Use this:
 - "How many platforms at X?" → `extract_station_info()` → info['platforms']
 - "Is X accessible?" → `extract_station_info()` → info['accessibility']
 - "What zone is X in?" → `extract_station_info()` → info['zone']
+- "Which platform for Operator X at station Y?" → `get_platform_summary()` ⭐ NEW
+- "Show platform details at X" → `get_platform_assignments()` ⭐ NEW
 - "Search for [topic] in stations" → `search_station_content()`
 - "List all stations" → `list_all_stations()`
 
