@@ -356,7 +356,71 @@ def get_platform_summary(station_data):
     return operator_platforms
 
 
-def get_route_context(station_name, operator_name, stations_dict):
+def build_route_platform_map(station_data):
+    """
+    Build a mapping of route codes to their specific platforms at a station.
+
+    Returns a dictionary: {'R001': ['1', '4'], 'R003': ['2', '3'], ...}
+
+    This provides route-specific platform information (more granular than operator-level).
+    Example: At Benton Bridge, airport routes (R001, R046) use platforms 1 & 4,
+    while other Connect routes use platforms 2 & 3.
+    """
+    content = station_data['full_content']
+    route_platform_map = {}
+
+    # Parse Services section for route-platform assignments
+    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
+    if services_section:
+        services_text = services_section.group(1)
+
+        # Split by platform numbers (format: "1 Benton R001 R005...", "2 R003 R039...")
+        # Use lookahead to split before each platform number followed by station/route
+        segments = re.split(r'\s+(?=\d+\s+(?:[A-Z][a-z]+|R\d+))', services_text)
+
+        for segment in segments:
+            # Extract platform number from start of segment
+            plat_match = re.match(r'^(\d+)\s+', segment)
+            if plat_match:
+                platform = plat_match.group(1)
+
+                # Extract all route codes from this segment
+                routes = re.findall(r'R\d+', segment)
+
+                # Map each route to this platform
+                for route in routes:
+                    if route not in route_platform_map:
+                        route_platform_map[route] = []
+                    if platform not in route_platform_map[route]:
+                        route_platform_map[route].append(platform)
+
+    return route_platform_map
+
+
+def get_route_platform(station_data, route_code):
+    """
+    Get the specific platform(s) for a route at this station.
+
+    Args:
+        station_data: Station data dict from get_station_details()
+        route_code: Route code (e.g., "R001", "R078")
+
+    Returns:
+        String like "Platform 1" or "Platforms 1, 4" or None if not found
+    """
+    route_platform_map = build_route_platform_map(station_data)
+
+    if route_code in route_platform_map:
+        platforms = sorted(route_platform_map[route_code], key=int)
+        if len(platforms) == 1:
+            return f"Platform {platforms[0]}"
+        else:
+            return f"Platforms {', '.join(platforms)}"
+
+    return None
+
+
+def get_route_context(station_name, operator_name, stations_dict, route_code=None):
     """
     Get ONLY route-relevant context for a station.
     Selective loading for route planning queries.
@@ -365,12 +429,13 @@ def get_route_context(station_name, operator_name, stations_dict):
         station_name: Name of the station
         operator_name: Operator being used (e.g., "Stepford Express")
         stations_dict: Dictionary of all stations
+        route_code: Optional specific route code (e.g., "R001") for route-specific platforms
 
     Returns:
         Dictionary with minimal route-relevant info:
         - platforms: Total platform count
         - zone: Station zone
-        - departure_platforms: Platform numbers for the specific operator
+        - departure_platforms: Platform numbers (route-specific if route_code provided, else operator-level)
         - accessibility: Brief accessibility info
 
     Skips: History, trivia, full layout details
@@ -388,7 +453,14 @@ def get_route_context(station_name, operator_name, stations_dict):
         'accessibility': info.get('accessibility')
     }
 
-    # Get platform assignments for THIS operator only
+    # PRIORITY 1: Get route-specific platform if route_code provided
+    if route_code:
+        route_platform = get_route_platform(station, route_code)
+        if route_platform:
+            context['departure_platforms'] = route_platform
+            return context
+
+    # PRIORITY 2: Fall back to operator-level platforms
     platform_summary = get_platform_summary(station)
     if operator_name in platform_summary:
         context['departure_platforms'] = platform_summary[operator_name]
