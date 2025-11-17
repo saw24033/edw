@@ -398,43 +398,120 @@ def build_route_platform_map(station_data):
     return route_platform_map
 
 
-def get_route_platform(station_data, route_code):
+def build_directional_platform_map(station_data):
+    """
+    Build a mapping of (route, destination) to platforms for directional accuracy.
+
+    Returns a dictionary: {('R083', 'Llyn-by-the-Sea'): ['1-2'], ('R083', 'Newry'): ['2-3'], ...}
+
+    This handles bidirectional tracks where the same route uses different platforms
+    depending on direction. Example at Benton:
+    - R083 TO Llyn-by-the-Sea → Platforms 1-2
+    - R083 TO Newry → Platforms 2-3
+    """
+    content = station_data['full_content']
+    directional_map = {}
+
+    # Parse Services section
+    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
+    if services_section:
+        services_text = services_section.group(1)
+
+        # Split by platform ranges
+        segments = re.split(r'\s+(?=\d+(?:-\d+)?\s+[A-Z])', services_text)
+
+        for segment in segments:
+            # Extract platform range from start
+            plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
+            if plat_match:
+                platform_range = plat_match.group(1).strip()
+
+                # Find all "Route to Destination" patterns
+                # Format: "R083 to Llyn-by-the-Sea Morganstown R084..."
+                # where "Morganstown" is the previous station for the next service R084
+                # Pattern: R### to [destination] stopping before [station name] R### or end of segment
+                route_dest_pattern = r'(R\d+)\s+to\s+([\w\s\-]+?)(?=\s+\w+\s+R\d+|$)'
+                matches = re.findall(route_dest_pattern, segment)
+
+                for route_code, destination in matches:
+                    destination_clean = destination.strip()
+                    key = (route_code, destination_clean)
+
+                    if key not in directional_map:
+                        directional_map[key] = []
+                    if platform_range not in directional_map[key]:
+                        directional_map[key].append(platform_range)
+
+    return directional_map
+
+
+def get_route_platform(station_data, route_code, next_station=None):
     """
     Get the specific platform(s) for a route at this station.
 
     Args:
         station_data: Station data dict from get_station_details()
         route_code: Route code (e.g., "R001", "R078")
+        next_station: Optional next station name for directional lookup (e.g., "Llyn-by-the-Sea")
 
     Returns:
         String like "Platform 1", "Platforms 1, 4", or "Platforms 4-7" or None if not found
+
+    Examples:
+        # Non-directional (may return multiple platforms for bidirectional routes)
+        get_route_platform(benton, "R083")  # → "Platforms 1-2, 2-3"
+
+        # Directional (returns specific platform for direction)
+        get_route_platform(benton, "R083", "Llyn-by-the-Sea")  # → "Platforms 1-2"
+        get_route_platform(benton, "R083", "Newry")  # → "Platforms 2-3"
     """
+    # PRIORITY 1: Try directional lookup if next_station provided
+    if next_station:
+        directional_map = build_directional_platform_map(station_data)
+
+        # Try exact match first
+        key = (route_code, next_station)
+        if key in directional_map:
+            platforms = directional_map[key]
+            return _format_platform_list(platforms)
+
+        # Try fuzzy match (in case station names don't match exactly)
+        next_station_lower = next_station.lower()
+        for (route, dest), plats in directional_map.items():
+            if route == route_code and next_station_lower in dest.lower():
+                return _format_platform_list(plats)
+
+    # PRIORITY 2: Fall back to non-directional route lookup
     route_platform_map = build_route_platform_map(station_data)
 
     if route_code in route_platform_map:
         platforms = route_platform_map[route_code]
-
-        # Sort platforms/ranges by their starting number
-        def sort_key(p):
-            # Extract first number from range (e.g., "4-7" → 4, "11" → 11)
-            return int(p.split('-')[0])
-
-        platforms_sorted = sorted(platforms, key=sort_key)
-
-        if len(platforms_sorted) == 1:
-            plat = platforms_sorted[0]
-            # Check if it's a range (contains hyphen) or single platform
-            if '-' in plat:
-                return f"Platforms {plat}"
-            else:
-                return f"Platform {plat}"
-        else:
-            return f"Platforms {', '.join(platforms_sorted)}"
+        return _format_platform_list(platforms)
 
     return None
 
 
-def get_route_context(station_name, operator_name, stations_dict, route_code=None):
+def _format_platform_list(platforms):
+    """Helper function to format a list of platform numbers/ranges into a readable string."""
+    # Sort platforms/ranges by their starting number
+    def sort_key(p):
+        # Extract first number from range (e.g., "4-7" → 4, "11" → 11)
+        return int(p.split('-')[0])
+
+    platforms_sorted = sorted(platforms, key=sort_key)
+
+    if len(platforms_sorted) == 1:
+        plat = platforms_sorted[0]
+        # Check if it's a range (contains hyphen) or single platform
+        if '-' in plat:
+            return f"Platforms {plat}"
+        else:
+            return f"Platform {plat}"
+    else:
+        return f"Platforms {', '.join(platforms_sorted)}"
+
+
+def get_route_context(station_name, operator_name, stations_dict, route_code=None, next_station=None):
     """
     Get ONLY route-relevant context for a station.
     Selective loading for route planning queries.
@@ -444,13 +521,19 @@ def get_route_context(station_name, operator_name, stations_dict, route_code=Non
         operator_name: Operator being used (e.g., "Stepford Express")
         stations_dict: Dictionary of all stations
         route_code: Optional specific route code (e.g., "R001") for route-specific platforms
+        next_station: Optional next station in journey for directional platform lookup
 
     Returns:
         Dictionary with minimal route-relevant info:
         - platforms: Total platform count
         - zone: Station zone
-        - departure_platforms: Platform numbers (route-specific if route_code provided, else operator-level)
+        - departure_platforms: Platform numbers (directional > route-specific > operator-level)
         - accessibility: Brief accessibility info
+
+    Priority levels for platform lookup:
+        1. Directional (route + next_station): "R083 to Llyn → Platform 1-2"
+        2. Route-specific (route only): "R083 → Platforms 1-2, 2-3"
+        3. Operator-level (fallback): "Stepford Express → Platforms 7-10"
 
     Skips: History, trivia, full layout details
     """
@@ -467,9 +550,9 @@ def get_route_context(station_name, operator_name, stations_dict, route_code=Non
         'accessibility': info.get('accessibility')
     }
 
-    # PRIORITY 1: Get route-specific platform if route_code provided
+    # PRIORITY 1: Get directional platform if route_code AND next_station provided
     if route_code:
-        route_platform = get_route_platform(station, route_code)
+        route_platform = get_route_platform(station, route_code, next_station)
         if route_platform:
             context['departure_platforms'] = route_platform
             return context
