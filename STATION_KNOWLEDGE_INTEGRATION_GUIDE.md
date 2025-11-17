@@ -30,9 +30,15 @@ This guide explains how to integrate the comprehensive SCR station wiki content 
 
 ## 📦 New Files Required
 
-### 1. scr_stations_full_content.md ⭐ NEW
-**Size:** 773 KB
-**Content:** Complete text content from SCR Wiki for all 82 stations
+### 1. scr_stations_part1.md ⭐ NEW
+**Size:** 368 KB
+**Content:** Complete text content for stations 1-41 from SCR Wiki
+
+### 2. scr_stations_part2.md ⭐ NEW
+**Size:** 385 KB
+**Content:** Complete text content for stations 42-82 from SCR Wiki
+
+**Note:** The station content was split into two files to stay under Custom GPT's 512KB per-file limit.
 **Contains:**
 - Station summaries
 - Operational information (platforms, tracks, zones)
@@ -42,9 +48,9 @@ This guide explains how to integrate the comprehensive SCR station wiki content 
 - Service information
 - Gallery references
 
-### 2. station_knowledge_helper.py ⭐ NEW
+### 3. station_knowledge_helper.py ⭐ NEW
 **Size:** ~6 KB
-**Purpose:** Python helper functions to parse and query station knowledge
+**Purpose:** Python helper functions to parse and query station knowledge from both part files
 **Functions:**
 - `load_station_knowledge()` - Load all station data
 - `get_station_details()` - Get info for specific station
@@ -55,7 +61,7 @@ This guide explains how to integrate the comprehensive SCR station wiki content 
 - `list_all_stations()` - Get all station names
 - `find_stations_by_operator()` - Find stations by operator
 
-### 3. custom_gpt_instructions_with_station_knowledge.txt ⭐ UPDATED
+### 4. custom_gpt_instructions_with_station_knowledge.txt ⭐ UPDATED
 **Size:** ~9 KB
 **Purpose:** Enhanced GPT instructions that use both routing AND station knowledge
 **Changes:**
@@ -82,7 +88,7 @@ If you're creating a new Custom GPT from scratch:
 - Toggle **ON**: Code Interpreter (required)
 
 #### Step 3: Upload ALL Files
-Upload these **6 files** to the Knowledge section:
+Upload these **7 files** to the Knowledge section:
 
 **Network Data (from before):**
 1. ✅ `rail_routes.csv` (61 KB) - Route network data
@@ -91,10 +97,11 @@ Upload these **6 files** to the Knowledge section:
 4. ✅ `plot_helpers.py` (7 KB) - Visualization functions
 
 **Station Knowledge (NEW):**
-5. ✅ `scr_stations_full_content.md` (773 KB) - Complete station wiki content ⭐
-6. ✅ `station_knowledge_helper.py` (6 KB) - Station knowledge parser ⭐
+5. ✅ `scr_stations_part1.md` (368 KB) - Station wiki content (stations 1-41) ⭐
+6. ✅ `scr_stations_part2.md` (385 KB) - Station wiki content (stations 42-82) ⭐
+7. ✅ `station_knowledge_helper.py` (6 KB) - Station knowledge parser ⭐
 
-**Total:** ~869 KB (well under Custom GPT limits)
+**Total:** ~843 KB (well under Custom GPT limits)
 
 #### Step 4: Add Instructions
 Copy and paste the **ENTIRE contents** of `custom_gpt_instructions_with_station_knowledge.txt` into the Instructions field.
@@ -134,8 +141,9 @@ If you already have the basic Custom GPT:
 
 #### Step 1: Upload New Files
 In your GPT's Configure tab, upload to Knowledge:
-1. ✅ `scr_stations_full_content.md`
-2. ✅ `station_knowledge_helper.py`
+1. ✅ `scr_stations_part1.md`
+2. ✅ `scr_stations_part2.md`
+3. ✅ `station_knowledge_helper.py`
 
 #### Step 2: Replace Instructions
 - Delete old instructions

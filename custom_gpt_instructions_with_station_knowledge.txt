@@ -35,8 +35,8 @@ Use station_knowledge_helper to access the comprehensive wiki content:
 ```python
 import station_knowledge_helper as skh
 
-# Load all station knowledge
-stations = skh.load_station_knowledge("scr_stations_full_content.md")
+# Load all station knowledge (from both parts)
+stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
 
 # Get specific station details
 station_data = skh.get_station_details("Benton", stations)

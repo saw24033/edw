@@ -1,38 +1,44 @@
 """
-Station Knowledge Helper - Parse scr_stations_full_content.md for detailed station info
+Station Knowledge Helper - Parse scr_stations_part1.md and scr_stations_part2.md for detailed station info
 """
 
 import re
 
-def load_station_knowledge(filepath="scr_stations_full_content.md"):
+def load_station_knowledge(filepath1="scr_stations_part1.md", filepath2="scr_stations_part2.md"):
     """
-    Load and parse the station content markdown file.
+    Load and parse the station content markdown files (split into 2 parts).
     Returns a dictionary mapping station names to their full content.
     """
-    with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
-
     stations = {}
 
-    # Split by station headers (## Station N: Name)
-    pattern = r'## Station \d+: (.+?)\n\n\*\*Page ID:\*\* (\d+)\n\*\*URL:\*\* (.+?)\n\n\*\*Summary:\*\*\n(.+?)\n\n\*\*Full Content:\*\*\n\n(.+?)\n\n={80}'
+    # Load both parts
+    for filepath in [filepath1, filepath2]:
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                content = f.read()
 
-    matches = re.findall(pattern, content, re.DOTALL)
+            # Split by station headers (## Station N: Name)
+            pattern = r'## Station \d+: (.+?)\n\n\*\*Page ID:\*\* (\d+)\n\*\*URL:\*\* (.+?)\n\n\*\*Summary:\*\*\n(.+?)\n\n\*\*Full Content:\*\*\n\n(.+?)\n\n={80}'
 
-    for match in matches:
-        station_name = match[0].strip()
-        page_id = match[1]
-        url = match[2]
-        summary = match[3].strip()
-        full_content = match[4].strip()
+            matches = re.findall(pattern, content, re.DOTALL)
 
-        stations[station_name] = {
-            'name': station_name,
-            'page_id': page_id,
-            'url': url,
-            'summary': summary,
-            'full_content': full_content
-        }
+            for match in matches:
+                station_name = match[0].strip()
+                page_id = match[1]
+                url = match[2]
+                summary = match[3].strip()
+                full_content = match[4].strip()
+
+                stations[station_name] = {
+                    'name': station_name,
+                    'page_id': page_id,
+                    'url': url,
+                    'summary': summary,
+                    'full_content': full_content
+                }
+        except FileNotFoundError:
+            print(f"Warning: {filepath} not found")
+            continue
 
     return stations
 
@@ -175,7 +181,7 @@ def find_stations_by_operator(operator, stations_dict):
 
 # Example usage
 if __name__ == "__main__":
-    # Load all station data
+    # Load all station data from both parts
     stations = load_station_knowledge()
     print(f"Loaded {len(stations)} stations")
 
