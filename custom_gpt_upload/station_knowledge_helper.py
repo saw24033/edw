@@ -107,11 +107,18 @@ def extract_station_info(station_data):
     }
 
     # Extract common fields using improved regex patterns
+
+    # Special handling for platforms - find ALL matches and take the largest number
+    # This avoids matching "Platform 0" instead of "Platforms 12" at stations with Platform 0
+    platform_matches = re.findall(r'Platforms\s+(\d+)', content, re.IGNORECASE)
+    if platform_matches:
+        # Take the largest number (total platform count)
+        info['platforms'] = max(platform_matches, key=int)
+
+    # Handle other fields with simple patterns
     patterns = {
-        # Match "Platforms 13" or "Platforms: 13" or "13 platforms"
-        'platforms': r'(?:Platforms?[:\s]+|Platform[:\s]+)(\d+)',
         # Match "Tracks 14" or "14 tracks"
-        'tracks': r'(?:Tracks?[:\s]+|Track[:\s]+)(\d+)',
+        'tracks': r'Tracks\s+(\d+)',
         # Match zone info - be more specific to avoid matching "Zone X" in random text
         'zone': r'Zone[:\s]+([A-Z\-\s]+?)(?:\s+Platforms?|\s+Station|\s+Accessibility|Ticket|$)',
         'location': r'Location[:\s]+([^\n]+?)(?:\s+Zone|District|$)',
@@ -246,9 +253,81 @@ def get_platform_summary(station_data):
             operator_platforms[op] = f"Platforms {plats_clean}"
 
     # Strategy 2: Look in Services table for platform assignments
-    # Format: "4-7  Coxly  R001..." or "8, 10-13  Leighton..."
-    services_pattern = r'^([\d\-,\s]+)\s+\w+\s+R\d+'
-    services_matches = re.findall(services_pattern, content, re.MULTILINE)
+    # Format: "Platform(s) ... 0-6 Terminus R077 R080..." or "7-11 R024 to..."
+    # Extract platform ranges and route codes from Services section
+    if not operator_platforms:
+        services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
+        if services_section:
+            services_text = services_section.group(1)
+
+            # Find platform ranges with route codes
+            # Services section often has format: "0-6 Terminus R077... 7-11 R024..." (all on one line)
+            platform_route_map = {}
+
+            # Split by platform range patterns using lookahead
+            # This finds sections like "0-6 ... " or "7-11 ... " up to the next platform range
+            # Pattern: digit-digit followed by space, capture everything until next digit-digit or end
+            segments = re.split(r'\s+(?=\d+-\d+\s)', services_text)
+
+            for segment in segments:
+                # Extract platform range from start of segment
+                plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
+                if plat_match:
+                    plat_range = plat_match.group(1).strip()
+
+                    # Extract all route codes from this segment
+                    route_codes = re.findall(r'R\d+', segment)
+
+                    if route_codes and len(plat_range) <= 10:  # Sanity check: platform ranges shouldn't be long
+                        if plat_range not in platform_route_map:
+                            platform_route_map[plat_range] = set()
+                        platform_route_map[plat_range].update(route_codes)
+
+            # Map route codes to operators using route number heuristics and content checking
+            # Route number ranges (strong heuristics):
+            # R001-R050: Stepford Connect, Metro, Waterline
+            # R075-R099: Stepford Express
+            # R100+: Various operators
+            for plat_range, routes in platform_route_map.items():
+                # Use route number heuristics as primary signal
+                sample_routes = list(routes)[:5]  # Check more routes for better accuracy
+                operator_votes = {}
+
+                for route in sample_routes:
+                    # Extract route number
+                    route_num = int(route[1:])  # Remove 'R' prefix
+
+                    # Strong heuristic based on route number ranges
+                    if 75 <= route_num <= 99:
+                        # Express routes
+                        operator_votes['Stepford Express'] = operator_votes.get('Stepford Express', 0) + 3
+                    elif 1 <= route_num <= 50:
+                        # Connect/Metro/Waterline routes - check content for specifics
+                        # Check which operator is mentioned with this route
+                        for op in ['Stepford Connect', 'Metro', 'Waterline']:
+                            pattern = rf'{op}.{{0,150}}{route}|{route}.{{0,150}}{op}'
+                            if re.search(pattern, content[:5000]):
+                                operator_votes[op] = operator_votes.get(op, 0) + 2
+                                break
+                        else:
+                            # Default to Connect for R001-R050 range
+                            operator_votes['Stepford Connect'] = operator_votes.get('Stepford Connect', 0) + 1
+                    elif route_num >= 100:
+                        # Various operators - check content
+                        for op in ['Stepford Express', 'Stepford Connect', 'Waterline', 'Metro', 'AirLink']:
+                            pattern = rf'{op}.{{0,150}}{route}|{route}.{{0,150}}{op}'
+                            if re.search(pattern, content[:5000]):
+                                operator_votes[op] = operator_votes.get(op, 0) + 2
+
+                # Assign to operator with most votes
+                if operator_votes:
+                    best_operator = max(operator_votes, key=operator_votes.get)
+                    # Allow multiple platform ranges per operator
+                    if best_operator in operator_platforms:
+                        # Append to existing range
+                        operator_platforms[best_operator] += f", {plat_range}"
+                    else:
+                        operator_platforms[best_operator] = f"Platforms {plat_range}"
 
     # Strategy 3: Parse individual platform listings in station layout
     if not operator_platforms:
