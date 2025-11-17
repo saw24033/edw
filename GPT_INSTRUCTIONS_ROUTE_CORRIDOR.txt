@@ -54,6 +54,31 @@ comparison = calc.compare_services('R076', 'R026')
 print(comparison)
 ```
 
+**5. "What stations are between [STATION_A] and [STATION_B]?"** (Generic corridor query)
+```python
+# This shows ALL possible routes/corridors, including divergent paths
+result = calc.get_all_corridors_between('St Helens Bridge', 'Leighton Stepford Road')
+
+if result:
+    print(f"Between {result['start']} and {result['end']}:")
+    print(f"Total unique stations across all routes: {result['total_unique_stations']}")
+    print()
+
+    for corridor in result['corridors']:
+        if corridor['type'] == 'primary':
+            print(f"Main corridor ({corridor['length']} stations):")
+            print(f"  {' → '.join(corridor['stations'])}")
+            print(f"  Services: {', '.join(corridor['routes'])}")
+        elif corridor['type'] == 'divergent':
+            print(f"\nDivergent route via {', '.join(corridor['unique_stations'])}:")
+            print(f"  {' → '.join(corridor['stations'])}")
+            print(f"  Services: {', '.join(corridor['routes'])}")
+        elif corridor['type'] == 'express':
+            print(f"\nExpress route ({corridor['length']} stations):")
+            print(f"  {' → '.join(corridor['stations'])}")
+            print(f"  Services: {', '.join(corridor['routes'])}")
+```
+
 ### Response Guidelines
 
 1. **Be specific about location**: When listing skipped stations, mention where they are
@@ -67,10 +92,17 @@ print(comparison)
    - "Semi-fast service" = some skips
    - "All-stations service" = no skips
 
-4. **Use formatting**:
+4. **Distinguish between "skip" and "different route"**:
+   - A route only "skips" a station if it passes by it on the same physical corridor
+   - If a route uses a completely different path (divergent route), it doesn't "skip" those stations - it just doesn't go there
+   - Example: R080 via Morganstown doesn't "skip" Hampton Hargate (it's on a different route)
+   - Example: R076 via Hampton Hargate DOES skip Benton Bridge (passes it but doesn't stop)
+
+5. **Use formatting**:
    ```
    ✓ Stops at this station
-   ⏭️ Skips this station
+   ⏭️ Skips this station (same corridor, no stop)
+   ⚠️ Divergent route (different physical path)
    🚂 Route corridor
    ```
 
@@ -138,28 +170,73 @@ For service to Stepford East from Stepford Central, use:
 Travel time on local services: ~2 minutes to Stepford East.
 ```
 
+**Q: "What stations are between St Helens Bridge and Leighton Stepford Road?"**
+
+**A:**
+```
+There are 3 different routes between St Helens Bridge and Leighton Stepford Road,
+with a total of 12 unique stations:
+
+1. Main corridor (11 stations) - via Hampton Hargate
+   Route: St Helens Bridge → Angel Pass → Bodin → Coxly → Benton → Benton Bridge →
+          Hampton Hargate → Upper Staploe → Water Newton → Rocket Parade →
+          Leighton Stepford Road
+   Services: R003, R045 (all-stations services)
+
+2. Express route (3 stations) - direct via Benton
+   Route: St Helens Bridge → Benton → Leighton Stepford Road
+   Services: R076, R077, R088 (express services)
+
+3. ⚠️ Divergent route via Morganstown (3 stations)
+   Route: St Helens Bridge → Morganstown → Leighton Stepford Road
+   Services: R080
+   This is a completely different physical route that bypasses the Hampton Hargate corridor.
+
+The main corridor has 11 stations, but express services skip intermediate stops.
+The Morganstown route is a divergent path serving different stations.
+```
+
 ### Key Functions
 
 ```python
-# Get full corridor analysis
+# Route-specific analysis: Get full corridor analysis for a specific route
 corridor = calc.calculate_route_corridor('R026')
 
-# Get just the skipped stations list
+# Get just the skipped stations list for a route
 skipped = calc.get_skipped_stations('R026')
+
+# Generic corridor query: Find ALL routes/corridors between two stations
+all_corridors = calc.get_all_corridors_between('St Helens Bridge', 'Leighton Stepford Road')
 
 # Compare two routes
 comparison = calc.compare_services('R076', 'R026')
 
-# Get formatted report
-report = calc.format_corridor_report(corridor, verbose=True)
+# Get formatted reports
+route_report = calc.format_corridor_report(corridor, verbose=True)
+generic_report = calc.format_corridor_comparison(all_corridors)
 ```
 
 ### Important Notes
 
-1. The calculator uses algorithmic route analysis - no hardcoded corridors
-2. Skipped stations are identified by comparing routes on the same corridor
-3. A route only "skips" a station if it's on the same physical corridor
-4. Express routes using different track don't "skip" stations on other routes
+1. **Algorithmic analysis**: The calculator uses route data to compute corridors - no hardcoded corridors
+
+2. **Divergent route detection**: The algorithm correctly identifies when services use different physical paths
+   - Example: R080 via Morganstown vs R076 via Hampton Hargate
+   - Each service is analyzed on its ACTUAL corridor, not a generic one
+
+3. **"Skip" vs "Different route"**:
+   - A route **skips** a station if it passes by it on the same physical corridor without stopping
+   - A route **doesn't serve** a station if it uses a completely different physical path
+   - This matches real-world railway terminology
+
+4. **Generic corridor queries**: Use `get_all_corridors_between()` to see ALL possible routes between two stations
+   - Shows primary corridor (longest/all-stations path)
+   - Shows divergent routes (different physical paths with unique stations)
+   - Shows express routes (fewer stops on same corridor)
+
+5. **Route-specific queries**: Use `calculate_route_corridor()` to analyze what a specific route skips
+   - Only shows stations on that route's actual physical path
+   - Express routes using different track don't "skip" stations on other routes
 
 ### Error Handling
 
