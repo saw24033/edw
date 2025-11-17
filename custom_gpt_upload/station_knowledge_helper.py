@@ -106,21 +106,28 @@ def extract_station_info(station_data):
         'url': station_data['url']
     }
 
-    # Extract common fields using regex
+    # Extract common fields using improved regex patterns
     patterns = {
-        'platforms': r'Platforms?\s+(\d+)',
-        'tracks': r'Tracks?\s+(\d+)',
-        'zone': r'Zone\s+([^\n]+)',
-        'location': r'Location\s+([^\n]+?)(?:\s+Zone|$)',
-        'station_code': r'Station code\s+([A-Z]{2,4})',
-        'operator': r'(?:Served by|Operated by|Managed by)\s+([^\n]+)',
-        'accessibility': r'Accessibility\s+([^\n]+)',
+        # Match "Platforms 13" or "Platforms: 13" or "13 platforms"
+        'platforms': r'(?:Platforms?[:\s]+|Platform[:\s]+)(\d+)',
+        # Match "Tracks 14" or "14 tracks"
+        'tracks': r'(?:Tracks?[:\s]+|Track[:\s]+)(\d+)',
+        # Match zone info - be more specific to avoid matching "Zone X" in random text
+        'zone': r'Zone[:\s]+([A-Z\-\s]+?)(?:\s+Platforms?|\s+Station|\s+Accessibility|Ticket|$)',
+        'location': r'Location[:\s]+([^\n]+?)(?:\s+Zone|District|$)',
+        'station_code': r'Station code[:\s]+([A-Z]{2,4})',
+        'operator': r'(?:Served by|Operated by|Managed by)[:\s]+([^\n]+?)(?:Station Information|Operational|$)',
+        'accessibility': r'Accessibility[:\s]+([^\n]+?)(?:Ticket|Service|$)',
     }
 
     for field, pattern in patterns.items():
-        match = re.search(pattern, content, re.IGNORECASE)
+        match = re.search(pattern, content, re.IGNORECASE | re.MULTILINE)
         if match:
-            info[field] = match.group(1).strip()
+            extracted = match.group(1).strip()
+            # Clean up common artifacts
+            extracted = re.sub(r'\s+', ' ', extracted)  # Normalize whitespace
+            extracted = extracted.split('Ticket machines')[0].strip()  # Remove trailing info
+            info[field] = extracted
 
     return info
 
@@ -221,33 +228,53 @@ def get_platform_summary(station_data):
     Example: {
         'Waterline': 'Platforms 1-3',
         'Stepford Connect': 'Platforms 4, 10-13',
-        'Stepford Express': 'Platforms 6-9'
+        'Stepford Express': 'Platforms 1, 3, 10'
     }
     """
-    platforms = get_platform_assignments(station_data)
+    content = station_data['full_content']
     operator_platforms = {}
 
-    # Group platforms by operator
-    for plat_info in platforms:
-        services = plat_info['services']
-        plat_num = plat_info['platform']
+    # Strategy 1: Look for explicit platform range statements in History section
+    # Format: "Platform 1-3 are for Waterline" or "Platform 7-10 are for Stepford Express"
+    history_pattern = r'Platform[s]?\s+([\d\-,\s&]+)\s+(?:are|is)\s+for\s+(Waterline|Stepford Connect|Stepford Express|Metro|AirLink)'
+    history_matches = re.findall(history_pattern, content, re.IGNORECASE)
 
-        # Find operators mentioned
-        operators = ['Waterline', 'Stepford Connect', 'Stepford Express', 'Metro', 'AirLink']
-        for op in operators:
-            if op in services:
-                if op not in operator_platforms:
-                    operator_platforms[op] = []
-                operator_platforms[op].append(plat_num)
+    for plats, op in history_matches:
+        # Clean up the platform list
+        plats_clean = plats.strip().replace(' & ', ', ')
+        if op not in operator_platforms:
+            operator_platforms[op] = f"Platforms {plats_clean}"
 
-    # Convert to ranges
-    summary = {}
-    for op, plats in operator_platforms.items():
-        # Remove duplicates and sort
-        unique_plats = sorted(set(plats), key=lambda x: int(x.split('-')[0]))
-        summary[op] = f"Platform{'s' if len(unique_plats) > 1 else ''} {', '.join(unique_plats)}"
+    # Strategy 2: Look in Services table for platform assignments
+    # Format: "4-7  Coxly  R001..." or "8, 10-13  Leighton..."
+    services_pattern = r'^([\d\-,\s]+)\s+\w+\s+R\d+'
+    services_matches = re.findall(services_pattern, content, re.MULTILINE)
 
-    return summary
+    # Strategy 3: Parse individual platform listings in station layout
+    if not operator_platforms:
+        platforms = get_platform_assignments(station_data)
+        temp_platforms = {}
+
+        # Group platforms by operator
+        for plat_info in platforms:
+            services = plat_info['services']
+            plat_num = plat_info['platform']
+
+            # Find operators mentioned
+            operators = ['Waterline', 'Stepford Connect', 'Stepford Express', 'Metro', 'AirLink']
+            for op in operators:
+                if op in services:
+                    if op not in temp_platforms:
+                        temp_platforms[op] = []
+                    temp_platforms[op].append(plat_num)
+
+        # Convert to readable format
+        for op, plats in temp_platforms.items():
+            # Remove duplicates and sort
+            unique_plats = sorted(set(plats), key=lambda x: int(x.split('-')[0]))
+            operator_platforms[op] = f"Platform{'s' if len(unique_plats) > 1 else ''} {', '.join(unique_plats)}"
+
+    return operator_platforms
 
 
 def get_route_context(station_name, operator_name, stations_dict):
