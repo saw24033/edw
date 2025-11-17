@@ -374,25 +374,26 @@ def build_route_platform_map(station_data):
     if services_section:
         services_text = services_section.group(1)
 
-        # Split by platform numbers (format: "1 Benton R001 R005...", "2 R003 R039...")
-        # Use lookahead to split before each platform number followed by station/route
-        segments = re.split(r'\s+(?=\d+\s+(?:[A-Z][a-z]+|R\d+))', services_text)
+        # Split by platform numbers/ranges (format: "1-2 West Benton R010...", "4-7 Coxly R001...")
+        # Use lookahead to split before each platform number/range followed by station name
+        segments = re.split(r'\s+(?=\d+(?:-\d+)?\s+[A-Z])', services_text)
 
         for segment in segments:
-            # Extract platform number from start of segment
-            plat_match = re.match(r'^(\d+)\s+', segment)
+            # Extract platform number or range from start of segment
+            # Matches: "1", "2", "1-2", "4-7", "11-13", etc.
+            plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
             if plat_match:
-                platform = plat_match.group(1)
+                platform_range = plat_match.group(1).strip()
 
                 # Extract all route codes from this segment
                 routes = re.findall(r'R\d+', segment)
 
-                # Map each route to this platform
+                # Map each route to this platform/range
                 for route in routes:
                     if route not in route_platform_map:
                         route_platform_map[route] = []
-                    if platform not in route_platform_map[route]:
-                        route_platform_map[route].append(platform)
+                    if platform_range not in route_platform_map[route]:
+                        route_platform_map[route].append(platform_range)
 
     return route_platform_map
 
@@ -406,16 +407,29 @@ def get_route_platform(station_data, route_code):
         route_code: Route code (e.g., "R001", "R078")
 
     Returns:
-        String like "Platform 1" or "Platforms 1, 4" or None if not found
+        String like "Platform 1", "Platforms 1, 4", or "Platforms 4-7" or None if not found
     """
     route_platform_map = build_route_platform_map(station_data)
 
     if route_code in route_platform_map:
-        platforms = sorted(route_platform_map[route_code], key=int)
-        if len(platforms) == 1:
-            return f"Platform {platforms[0]}"
+        platforms = route_platform_map[route_code]
+
+        # Sort platforms/ranges by their starting number
+        def sort_key(p):
+            # Extract first number from range (e.g., "4-7" → 4, "11" → 11)
+            return int(p.split('-')[0])
+
+        platforms_sorted = sorted(platforms, key=sort_key)
+
+        if len(platforms_sorted) == 1:
+            plat = platforms_sorted[0]
+            # Check if it's a range (contains hyphen) or single platform
+            if '-' in plat:
+                return f"Platforms {plat}"
+            else:
+                return f"Platform {plat}"
         else:
-            return f"Platforms {', '.join(platforms)}"
+            return f"Platforms {', '.join(platforms_sorted)}"
 
     return None
 
