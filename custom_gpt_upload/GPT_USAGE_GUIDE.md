@@ -25,7 +25,7 @@ import station_knowledge_helper as skh
 
 # Step 1: Find route
 graph, operators, lines = rail_helpers.load_rail_network("rail_routes.csv")
-journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+journey = rail_helpers.find_best_route(graph, "Benton", "Llyn-by-the-Sea")
 
 # Step 2: Identify operator from journey
 operator = journey['segments'][0]['operator']  # e.g., "Stepford Express"
@@ -223,7 +223,7 @@ Identify query intent and load accordingly:
 
 ```python
 # Find route (may include transfer)
-journey = rail_helpers.shortest_path(graph, "Benton", "Airport Terminal 1")
+journey = rail_helpers.find_best_route(graph, "Benton", "Airport Terminal 1")
 
 # Check if transfer is needed
 if journey['interchanges'] > 0:
@@ -296,7 +296,7 @@ direct = rail_helpers.direct_services_between(graph, "A", "B")
 
 if not direct:
     # No direct service - find route with changes
-    journey = rail_helpers.shortest_path(graph, "A", "B")
+    journey = rail_helpers.find_best_route(graph, "A", "B")
     # Response: "No direct service found. Here's the best route with {n} changes:"
 ```
 
@@ -415,7 +415,7 @@ When sharing historical facts or trivia:
 | `load_rail_network(path)` | Load CSV data | (graph, operators, lines) |
 | `operators_at_station(graph, station)` | Which operators serve station | List of operators |
 | `lines_at_station(graph, station)` | Which lines serve station | List of line IDs |
-| `shortest_path(graph, start, end)` | Find best route | Journey dict with segments |
+| `find_best_route(graph, start, end)` | Find best route | Journey dict with segments |
 | `format_journey(journey)` | Format route for display | Formatted string |
 | `direct_services_between(graph, a, b)` | Check direct trains | List of services or empty |
 | `edges_for_operator(graph, operator)` | All segments for operator | List of edges |

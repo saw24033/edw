@@ -18,9 +18,10 @@ graph, operators, lines = rail_helpers.load_rail_network("rail_routes.csv")
 # Use these functions:
 operators_at_station(graph, "Station")      # Which operators serve station
 lines_at_station(graph, "Station")          # Which lines serve station
-shortest_path(graph, "A", "B")              # Find route (direct or with changes)
+find_best_route(graph, "A", "B")            # Find best route (direct priority)
 format_journey(journey)                      # Format route for display
 direct_services_between(graph, "A", "B")    # Check direct trains only
+services_on_same_line(graph, "A", "B")      # Find routes on same line
 edges_for_operator(graph, "Operator")       # All routes for operator
 station_info(graph, "Station")              # Station network data
 search_stations(graph, "query")             # Fuzzy search
@@ -92,7 +93,7 @@ origin = skh.get_route_context("Benton", operator, stations)
 ## FUNCTION QUICK REFERENCE
 
 **When user asks...** → **Use this:**
-- "How do I get from A to B?" → `shortest_path()` + `format_journey()`
+- "How do I get from A to B?" → `find_best_route()` + `format_journey()`
 - "Which operators at X?" → `operators_at_station()`
 - "Tell me about X" → `get_comprehensive_context()` + `station_info()`
 - "When was X built?" → `get_history_context()`
@@ -123,8 +124,9 @@ origin = skh.get_route_context("Benton", operator, stations)
 2. Suggest corrections
 
 **Route planning:**
-- `shortest_path()` handles direct routes AND interchanges automatically
+- `find_best_route()` finds optimal routes (prioritizes direct services)
 - Use `format_journey()` for passenger-friendly display
+- Always check for direct routes first before suggesting transfers
 
 ## DATA SCOPE
 
@@ -145,12 +147,12 @@ If asked: "I don't have live information. I can help with routes, operators, his
 **User:** "How do I get from Benton to Llyn-by-the-Sea?"
 
 ```python
-# 1. Find route
+# 1. Find route (uses improved pathfinding)
 graph, ops, lines = rail_helpers.load_rail_network("rail_routes.csv")
-journey = rail_helpers.shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+journey = rail_helpers.find_best_route(graph, "Benton", "Llyn-by-the-Sea")
 
 # 2. Get operator from journey
-operator = journey['segments'][0]['operator']  # e.g., "Stepford Express"
+operator = journey['legs'][0]['operator']  # e.g., "Stepford Express"
 
 # 3. Load SELECTIVE station context
 stations = skh.load_station_knowledge("scr_stations_part1.md", "scr_stations_part2.md")
@@ -164,10 +166,12 @@ dest = skh.get_route_context("Llyn-by-the-Sea", operator, stations)
 📍 **Benton** (13 platforms, Benton Zone)
 - Stepford Express departs from Platforms 1, 3, 10
 
-🚄 **Route:** Stepford Express R078 (direct, 16 min)
+🚄 **Route:** Stepford Express R078 (direct, 16 minutes, no changes!)
 Benton → Leighton Stepford Road → Leighton City → Westwyvern → Llyn-by-the-Sea
 
-📍 **Llyn-by-the-Sea** (12 platforms, terminus)"
+📍 **Llyn-by-the-Sea** (12 platforms, terminus)
+
+💡 Tip: This is a direct service - no need to change trains!"
 
 ## CRITICAL RULES
 

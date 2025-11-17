@@ -316,14 +316,18 @@ def services_on_same_line(graph: Dict, station_a: str, station_b: str) -> List[D
     Find services where both stations are on the same line (multi-segment check).
     This checks if you can travel from A to B on the same line without changing trains.
 
+    IMPROVED: Now actually traces paths on each line to verify connectivity.
+
     Args:
         graph: Network graph from load_rail_network()
         station_a: Starting station
         station_b: Destination station
 
     Returns:
-        List of line services connecting the stations
+        List of valid routes on the same line with path details
     """
+    from collections import deque
+
     if station_a not in graph or station_b not in graph:
         return []
 
@@ -338,16 +342,47 @@ def services_on_same_line(graph: Dict, station_a: str, station_b: str) -> List[D
 
     services = []
     for line_id in common_lines:
-        # For each common line, check if there's a path from A to B on that line
-        edge_a = lines_at_a[line_id]
+        # For each common line, trace a path from A to B using only edges from that line
+        # Use BFS to find the path
+        queue = deque([(station_a, [station_a], 0, [])])
+        visited = {station_a}
 
-        services.append({
-            'line': line_id,
-            'operator': edge_a['operator'],
-            'service_type': edge_a['service_type'],
-            'route_origin': edge_a.get('route_origin', ''),
-            'route_destination': edge_a.get('route_destination', '')
-        })
+        while queue:
+            current, path, total_time, legs = queue.popleft()
+
+            if current == station_b:
+                # Found a valid path on this line
+                edge_info = lines_at_a[line_id]
+                services.append({
+                    'line': line_id,
+                    'operator': edge_info['operator'],
+                    'service_type': edge_info['service_type'],
+                    'route_origin': edge_info.get('route_origin', ''),
+                    'route_destination': edge_info.get('route_destination', ''),
+                    'path': path,
+                    'total_time': total_time,
+                    'legs': legs
+                })
+                break
+
+            # Explore neighbors on this line only
+            for edge in graph[current]:
+                if edge['line'] == line_id and edge['to'] not in visited:
+                    visited.add(edge['to'])
+                    new_legs = legs + [{
+                        'from': current,
+                        'to': edge['to'],
+                        'operator': edge['operator'],
+                        'line': edge['line'],
+                        'time': edge['time'],
+                        'service_type': edge['service_type']
+                    }]
+                    queue.append((
+                        edge['to'],
+                        path + [edge['to']],
+                        total_time + edge['time'],
+                        new_legs
+                    ))
 
     return services
 
@@ -375,6 +410,51 @@ def find_interchanges(graph: Dict, station_a: str, station_b: str) -> List[str]:
     interchanges = connections_a & connections_b
 
     return sorted(interchanges)
+
+
+def find_best_route(graph: Dict, start: str, end: str) -> Optional[Dict]:
+    """
+    Find the best route between two stations.
+
+    IMPROVED: First checks for direct services on the same line, then uses Dijkstra.
+    This fixes the issue where Dijkstra would prefer routes with shorter individual
+    segments but more transfers over longer-segment direct routes.
+
+    Args:
+        graph: Network graph from load_rail_network()
+        start: Starting station name
+        end: Destination station name
+
+    Returns:
+        Dict with path details or None if no path exists (same format as shortest_path)
+    """
+    if start not in graph or end not in graph:
+        return None
+
+    if start == end:
+        return {
+            'stations': [start],
+            'total_time': 0,
+            'num_interchanges': 0,
+            'legs': []
+        }
+
+    # STEP 1: Check for direct routes on the same line
+    same_line_routes = services_on_same_line(graph, start, end)
+
+    if same_line_routes:
+        # Found routes on the same line - return the fastest one
+        best_route = min(same_line_routes, key=lambda r: r['total_time'])
+
+        return {
+            'stations': best_route['path'],
+            'total_time': best_route['total_time'],
+            'num_interchanges': 0,
+            'legs': best_route['legs']
+        }
+
+    # STEP 2: No direct route found - use Dijkstra for multi-leg journey
+    return shortest_path(graph, start, end)
 
 
 def shortest_path(graph: Dict, start: str, end: str) -> Optional[Dict]:
@@ -647,7 +727,7 @@ if __name__ == "__main__":
     print("\n" + "="*60)
     print("Example 4: Journey planning - Benton to Llyn-by-the-Sea")
     print("="*60)
-    journey = shortest_path(graph, "Benton", "Llyn-by-the-Sea")
+    journey = find_best_route(graph, "Benton", "Llyn-by-the-Sea")
     if journey:
         print(format_journey(journey))
     else:
