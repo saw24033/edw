@@ -1,0 +1,83 @@
+═══════════════════════════════════════════════════════════════
+  CUSTOM GPT UPLOAD CHECKLIST - Check off as you go!
+═══════════════════════════════════════════════════════════════
+
+STEP 1: CREATE GPT
+──────────────────
+[ ] Go to ChatGPT → My GPTs → Create a GPT
+[ ] Switch to "Configure" tab
+[ ] Name: Stepford County Railway Expert
+[ ] Description: Complete railway assistant with route planning,
+    station details, history, and trivia for all 82 SCR stations
+
+
+STEP 2: ENABLE CODE INTERPRETER (CRITICAL!)
+────────────────────────────────────────────
+[ ] Scroll to "Capabilities"
+[ ] Toggle ON: Code Interpreter ✓
+
+
+STEP 3: UPLOAD FILES (7 files total)
+─────────────────────────────────────
+Upload these to the "Knowledge" section:
+
+Core Network Files:
+[ ] rail_routes.csv (61 KB)
+[ ] rail_helpers.py (20 KB)
+[ ] station_coords.csv (1.8 KB)
+[ ] plot_helpers.py (7 KB)
+
+Station Knowledge Files:
+[ ] scr_stations_part1.md (368 KB)
+[ ] scr_stations_part2.md (385 KB)
+[ ] station_knowledge_helper.py (6 KB)
+
+✓ Total: ~843 KB (under limit!)
+
+
+STEP 4: ADD INSTRUCTIONS
+─────────────────────────
+[ ] Open: custom_gpt_instructions_with_station_knowledge.txt
+[ ] Select all text and copy (Ctrl+A, Ctrl+C)
+[ ] Paste into the "Instructions" field in GPT
+
+
+STEP 5: ADD CONVERSATION STARTERS
+──────────────────────────────────
+Add these 5 example prompts:
+
+[ ] "How do I get from Stepford Central to Benton?"
+[ ] "Tell me everything about Airport Terminal 1"
+[ ] "What's the history of Stepford Airport Central?"
+[ ] "Which stations have the most platforms?"
+[ ] "Show me interesting facts about Llyn-by-the-Sea"
+
+
+STEP 6: SAVE & TEST
+────────────────────
+[ ] Click "Save" button
+[ ] Choose visibility (Only me / Link / Public)
+[ ] Click "View GPT" or open from My GPTs
+[ ] Test with: "Tell me about Benton station including its history"
+
+
+VERIFICATION TEST
+─────────────────
+Ask your GPT: "How many stations do you have knowledge about?"
+
+Expected: "I have comprehensive knowledge about all 82 SCR stations..."
+
+If less than 82 → Check that BOTH part1.md and part2.md uploaded!
+
+
+═══════════════════════════════════════════════════════════════
+  ✅ ALL DONE! Your GPT is ready to use!
+═══════════════════════════════════════════════════════════════
+
+Troubleshooting:
+• "File too large" → Make sure using part1.md and part2.md, NOT full_content.md
+• "Python not working" → Check Code Interpreter is enabled
+• "Missing station data" → Verify all 7 files uploaded
+• "Can't find files" → They should all be in this folder!
+
+═══════════════════════════════════════════════════════════════
