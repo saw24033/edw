@@ -124,22 +124,30 @@ class RouteCorridorCalculator:
 
         return None
 
-    def _find_corridor_stations(self, start: str, end: str) -> Set[str]:
+    def _find_physical_path_and_corridor(self, start: str, end: str) -> Tuple[List[str], Dict, List]:
         """
-        Find all stations that exist on ANY route between start and end.
+        Find the physical path between two stations and identify all corridor stations.
 
-        This identifies the full corridor including stations that some services skip.
+        This handles divergent routes properly:
+        1. Find the route with the MOST intermediate stations (all-stations service)
+        2. Use that as the primary physical corridor
+        3. Identify alternative/divergent paths
+        4. Return the physical path and routes serving each station
 
         Args:
             start: Starting station
             end: Ending station
 
         Returns:
-            Set of all station names on the corridor
+            Tuple of (physical_path, routes_via_station, alternative_paths) where:
+            - physical_path: List of stations on the primary corridor (longest route)
+            - routes_via_station: Dict mapping station -> list of route codes serving it
+            - alternative_paths: List of alternative path descriptions (divergent routes)
         """
-        corridor_stations = set()
+        # Find ALL routes between these stations
+        routes_via_station = defaultdict(list)
+        all_paths = {}  # path (as tuple) -> list of route codes
 
-        # Find all routes that serve both stations
         for route_code, route_data in self.routes.items():
             if 'REMOVED' in route_data.get('route_type', ''):
                 continue
@@ -151,15 +159,44 @@ class RouteCorridorCalculator:
                 start_idx = stations.index(start)
                 end_idx = stations.index(end)
 
-                # Only consider if they're in the right order
                 if start_idx < end_idx:
-                    # Add all stations between start and end on this route
-                    corridor_stations.update(stations[start_idx:end_idx + 1])
+                    # Get all stations on this route between start and end
+                    segment = stations[start_idx:end_idx + 1]
+                    path_tuple = tuple(segment)
+
+                    # Track this path
+                    if path_tuple not in all_paths:
+                        all_paths[path_tuple] = []
+                    all_paths[path_tuple].append(route_code)
+
+                    # Track which routes serve each station
+                    for station in segment:
+                        if station not in [start, end]:
+                            routes_via_station[station].append(route_code)
             except ValueError:
-                # One or both stations not on this route
                 continue
 
-        return corridor_stations
+        # Find the longest path (most stations) - this is the all-stations corridor
+        if all_paths:
+            # Sort by length (longest first)
+            sorted_paths = sorted(all_paths.items(), key=lambda x: len(x[0]), reverse=True)
+            primary_path = list(sorted_paths[0][0])
+
+            # Identify alternative paths (different station sequences)
+            alternative_paths = []
+            for path_tuple, route_codes in sorted_paths[1:]:
+                if path_tuple != tuple(primary_path):  # Different from primary
+                    alternative_paths.append({
+                        'stations': list(path_tuple),
+                        'routes': route_codes,
+                        'length': len(path_tuple)
+                    })
+        else:
+            # No routes found - fallback to direct
+            primary_path = [start, end]
+            alternative_paths = []
+
+        return primary_path, dict(routes_via_station), alternative_paths
 
     def calculate_route_corridor(self, route_code: str) -> Optional[Dict]:
         """
@@ -203,63 +240,44 @@ class RouteCorridorCalculator:
                 'segment_details': []
             }
 
-        # For each segment, find all corridor stations
-        all_corridor_stations = []
+        # For each segment, find the physical path and corridor stations
+        full_physical_path = []
         segment_details = []
 
         for i in range(len(stops) - 1):
             origin = stops[i]
             destination = stops[i + 1]
 
-            # Find all stations on ANY route between these points
-            corridor_stations = self._find_corridor_stations(origin, destination)
-
-            # Find which specific routes serve each station
-            routes_via_station = defaultdict(list)
-            for other_route_code, other_route_data in self.routes.items():
-                if 'REMOVED' in other_route_data.get('route_type', ''):
-                    continue
-
-                other_stations = other_route_data.get('stations', [])
-                try:
-                    start_idx = other_stations.index(origin)
-                    end_idx = other_stations.index(destination)
-
-                    if start_idx < end_idx:
-                        segment = other_stations[start_idx:end_idx + 1]
-                        for station in segment:
-                            if station not in [origin, destination]:
-                                routes_via_station[station].append(other_route_code)
-                except ValueError:
-                    continue
-
-            # Convert corridor stations to ordered list
-            corridor_list = sorted(corridor_stations)
+            # Find the primary physical path, routes, and alternative paths
+            physical_path, routes_via_station, alternative_paths = self._find_physical_path_and_corridor(origin, destination)
 
             segment_details.append({
                 'from': origin,
                 'to': destination,
-                'corridor_stations': corridor_list,
-                'intermediate_count': len(corridor_stations) - 2,  # Exclude origin and destination
-                'routes_via_intermediate': dict(routes_via_station)
+                'physical_path': physical_path,
+                'intermediate_count': len(physical_path) - 2,  # Exclude origin and destination
+                'routes_via_intermediate': routes_via_station,
+                'alternative_paths': alternative_paths,
+                'has_divergent_routes': len(alternative_paths) > 0
             })
 
-            # Add to full corridor list
+            # Add to full physical path (this is what the service actually travels on)
             if i == 0:
-                all_corridor_stations.extend(corridor_list)
+                full_physical_path.extend(physical_path)
             else:
-                # Skip the first station (already added)
-                all_corridor_stations.extend([s for s in corridor_list if s != origin])
+                # Skip the first station (already added from previous segment)
+                full_physical_path.extend(physical_path[1:])
 
         # Remove duplicates while preserving order
+        # full_physical_path is now the actual route the service takes
         seen = set()
         corridor_ordered = []
-        for station in all_corridor_stations:
+        for station in full_physical_path:
             if station not in seen:
                 seen.add(station)
                 corridor_ordered.append(station)
 
-        # Find skipped stations
+        # Find skipped stations (stations on the physical path that aren't in the stop list)
         stops_set = set(stops)
         skipped = [station for station in corridor_ordered if station not in stops_set]
 
@@ -345,11 +363,12 @@ class RouteCorridorCalculator:
             for i, segment in enumerate(corridor_data['segment_details'], 1):
                 lines.append(f"\n  Segment {i}: {segment['from']} → {segment['to']}")
 
-                intermediate = [s for s in segment['corridor_stations']
+                physical_path = segment.get('physical_path', [])
+                intermediate = [s for s in physical_path
                                if s not in [segment['from'], segment['to']]]
 
                 if intermediate:
-                    lines.append(f"  Corridor stations: {' → '.join(segment['corridor_stations'])}")
+                    lines.append(f"  Physical path: {' → '.join(physical_path)}")
                     lines.append(f"  Intermediate stations: {len(intermediate)}")
 
                     # Show which routes serve each intermediate station
@@ -357,6 +376,18 @@ class RouteCorridorCalculator:
                         routes = segment.get('routes_via_intermediate', {}).get(station, [])
                         if routes:
                             lines.append(f"    • {station}: served by {', '.join(routes[:5])}")
+                        else:
+                            lines.append(f"    • {station}: (no other routes)")
+
+                    # Show if there are alternative/divergent paths
+                    alt_paths = segment.get('alternative_paths', [])
+                    if alt_paths:
+                        lines.append(f"\n  ⚠️  DIVERGENT ROUTES ({len(alt_paths)} alternative path(s)):")
+                        for j, alt in enumerate(alt_paths[:3], 1):  # Show up to 3 alternatives
+                            alt_stations = ' → '.join(alt['stations'])
+                            alt_routes = ', '.join(alt['routes'][:3])
+                            lines.append(f"    Alt {j}: {alt_stations}")
+                            lines.append(f"           via {alt_routes}")
                 else:
                     lines.append(f"  Direct connection (no intermediate stations)")
 
