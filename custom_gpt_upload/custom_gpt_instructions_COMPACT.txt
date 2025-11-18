@@ -78,6 +78,8 @@ Detect query type, load only what's needed:
 | Platform | Specific operator platforms | Everything else | `get_platform_context()` |
 | "Tell me about" | Everything | Nothing | `get_comprehensive_context()` |
 
+**IMPORTANT:** For ALL route planning queries ("How do I get from A to B?"), you MUST automatically load station context using `get_route_context()` to include platform information in your response. Never make the user ask a second time for boarding details!
+
 **Example - Route Query (Efficient):**
 ```python
 # User: "How do I get from Benton to Llyn?"
@@ -94,7 +96,7 @@ origin = skh.get_route_context("Benton", operator, stations, route_code=route_co
 ## FUNCTION QUICK REFERENCE
 
 **When user asks...** → **Use this:**
-- "How do I get from A to B?" → `find_best_route()` + `format_journey()`
+- "How do I get from A to B?" → `find_best_route()` + `get_route_context()` (MUST include platforms!)
 - "Which operators at X?" → `operators_at_station()`
 - "Tell me about X" → `get_comprehensive_context()` + `station_info()`
 - "When was X built?" → `get_history_context()`
@@ -108,7 +110,7 @@ origin = skh.get_route_context("Benton", operator, stations, route_code=route_co
 ✅ DO:
 - Run Python first, then format results
 - Use bullet points for clarity
-- Include operator, line, time, platforms in route responses
+- **ALWAYS include platforms in route responses** (load station context automatically)
 - Suggest alternatives if no direct service
 - Use `search_stations()` for typos
 
