@@ -1,0 +1,108 @@
+========================================================================
+STEPFORD COUNTY RAILWAY CUSTOM GPT - UPLOAD GUIDE v3.2
+========================================================================
+
+PRODUCTION READY - 2025-11-18
+
+========================================================================
+STEP 1: UPLOAD THESE 12 FILES TO KNOWLEDGE SECTION
+========================================================================
+
+Select all 12 files below and upload to Custom GPT Knowledge section:
+
+ 1. GPT_USAGE_GUIDE.md
+ 2. ROUTE_CORRIDOR_CALCULATOR_GUIDE.md
+ 3. SYSTEM_INSTRUCTIONS_REFERENCE.md (NEW - detailed examples/tables)
+ 4. plot_helpers.py
+ 5. rail_helpers.py
+ 6. route_corridor_calculator.py
+ 7. station_knowledge_helper.py
+ 8. rail_routes.csv
+ 9. station_coords.csv
+10. scr_stations_part1.md
+11. scr_stations_part2.md
+12. stepford_routes_with_segment_minutes_ai_knowledge_base.json
+
+Total Size: ~1.38 MB (within limits)
+
+========================================================================
+STEP 2: COPY INSTRUCTIONS TO INSTRUCTIONS FIELD
+========================================================================
+
+DO NOT upload this file - copy/paste its contents:
+
+>> custom_gpt_instructions_COMPACT.txt (4,859 chars - under 8K limit!)
+
+Open this file, select ALL (Ctrl+A), copy (Ctrl+C),
+paste into the Instructions text box in Custom GPT Configure tab.
+
+========================================================================
+WHAT'S NEW IN v3.2
+========================================================================
+
+[OK] Instructions File - Reduced from 8,532 to 4,859 characters (43% smaller!)
+[OK] New Knowledge File - SYSTEM_INSTRUCTIONS_REFERENCE.md contains:
+     - Detailed example workflows
+     - Complete function reference tables
+     - All code examples
+     - Data scope details
+[OK] Removed GPT_INSTRUCTIONS_ROUTE_CORRIDOR.txt (content merged into guides)
+[OK] Instructions now reference knowledge file for detailed examples
+
+========================================================================
+STEP 3: ENABLE CODE INTERPRETER
+========================================================================
+
+In Configure tab, make sure "Code Interpreter" is enabled (toggle ON)
+
+========================================================================
+STEP 4: TEST QUERIES
+========================================================================
+
+After saving, test with these queries:
+
+1. "How do I get from Benton to Llyn-by-the-Sea?"
+   Expected: R078, 16 min, Platform 8, direct service
+
+2. "Which stations does R026 skip?"
+   Expected: List of 11 skipped stations with alternatives
+
+3. "What stations are between St Helens Bridge and Leighton Stepford Road?"
+   Expected: 3 corridors (primary, express, divergent)
+
+4. "Tell me about Benton station"
+   Expected: 13 platforms, operator list, zone info
+
+========================================================================
+WHAT'S FIXED IN v3.1-3.2
+========================================================================
+
+[OK] Import Paths - Added sys.path.append('/mnt/data')
+[OK] File Paths - All paths now absolute /mnt/data/
+[OK] Station Coordinates - Now use actual network map topology
+[OK] Route Corridor Calculator - Uses full JSON path
+[OK] Instructions Size - Under 8K character limit (4,859 chars)
+[OK] File Count - Exactly 12 knowledge files (fits upload limit)
+
+========================================================================
+REFERENCE FILES (do not upload)
+========================================================================
+
+See _reference_only/ folder for:
+- README_UPLOAD_INSTRUCTIONS.md (complete documentation)
+- QUICK_START.txt (quick reference)
+- UPLOAD_VERIFICATION.md (detailed checklist)
+- GPT_INSTRUCTIONS_ROUTE_CORRIDOR.txt (merged into guides)
+- CHANGELOG.md (version history)
+- README.txt (brief overview)
+
+========================================================================
+STATUS: READY TO UPLOAD - ALL LIMITS MET!
+========================================================================
+
+✓ Exactly 12 knowledge files (upload limit)
+✓ Instructions under 8,000 characters (4,859 chars)
+✓ Total size ~1.38 MB (within limits)
+✓ All import paths fixed
+✓ Map-based coordinates
+✓ Production ready

@@ -1,5 +1,10 @@
 """
 Station Knowledge Helper - Parse scr_stations_part1.md and scr_stations_part2.md for detailed station info
+
+Version 3.3 - IMPROVED PLATFORM PARSING
+- Enhanced Services table parsing for directional platforms
+- Better wiki table format handling
+- More accurate route-to-platform mapping
 """
 
 import re
@@ -252,82 +257,28 @@ def get_platform_summary(station_data):
         if op not in operator_platforms:
             operator_platforms[op] = f"Platforms {plats_clean}"
 
-    # Strategy 2: Look in Services table for platform assignments
-    # Format: "Platform(s) ... 0-6 Terminus R077 R080..." or "7-11 R024 to..."
-    # Extract platform ranges and route codes from Services section
+    # Strategy 2: Parse Services table for route-platform mappings
     if not operator_platforms:
-        services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
-        if services_section:
-            services_text = services_section.group(1)
+        route_platform_map = build_route_platform_map(station_data)
 
-            # Find platform ranges with route codes
-            # Services section often has format: "0-6 Terminus R077... 7-11 R024..." (all on one line)
-            platform_route_map = {}
+        # Group routes by operator and collect their platforms
+        operator_route_platforms = {}
 
-            # Split by platform range patterns using lookahead
-            # This finds sections like "0-6 ... " or "7-11 ... " up to the next platform range
-            # Pattern: digit-digit followed by space, capture everything until next digit-digit or end
-            segments = re.split(r'\s+(?=\d+-\d+\s)', services_text)
+        for route_code, platforms in route_platform_map.items():
+            # Determine operator from route number
+            route_num = int(route_code[1:])  # Remove 'R' prefix
+            operator = _guess_operator_from_route(route_num, content)
 
-            for segment in segments:
-                # Extract platform range from start of segment
-                plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
-                if plat_match:
-                    plat_range = plat_match.group(1).strip()
+            if operator:
+                if operator not in operator_route_platforms:
+                    operator_route_platforms[operator] = set()
+                # Add all platforms for this route
+                operator_route_platforms[operator].update(platforms)
 
-                    # Extract all route codes from this segment
-                    route_codes = re.findall(r'R\d+', segment)
-
-                    if route_codes and len(plat_range) <= 10:  # Sanity check: platform ranges shouldn't be long
-                        if plat_range not in platform_route_map:
-                            platform_route_map[plat_range] = set()
-                        platform_route_map[plat_range].update(route_codes)
-
-            # Map route codes to operators using route number heuristics and content checking
-            # Route number ranges (strong heuristics):
-            # R001-R050: Stepford Connect, Metro, Waterline
-            # R075-R099: Stepford Express
-            # R100+: Various operators
-            for plat_range, routes in platform_route_map.items():
-                # Use route number heuristics as primary signal
-                sample_routes = list(routes)[:5]  # Check more routes for better accuracy
-                operator_votes = {}
-
-                for route in sample_routes:
-                    # Extract route number
-                    route_num = int(route[1:])  # Remove 'R' prefix
-
-                    # Strong heuristic based on route number ranges
-                    if 75 <= route_num <= 99:
-                        # Express routes
-                        operator_votes['Stepford Express'] = operator_votes.get('Stepford Express', 0) + 3
-                    elif 1 <= route_num <= 50:
-                        # Connect/Metro/Waterline routes - check content for specifics
-                        # Check which operator is mentioned with this route
-                        for op in ['Stepford Connect', 'Metro', 'Waterline']:
-                            pattern = rf'{op}.{{0,150}}{route}|{route}.{{0,150}}{op}'
-                            if re.search(pattern, content[:5000]):
-                                operator_votes[op] = operator_votes.get(op, 0) + 2
-                                break
-                        else:
-                            # Default to Connect for R001-R050 range
-                            operator_votes['Stepford Connect'] = operator_votes.get('Stepford Connect', 0) + 1
-                    elif route_num >= 100:
-                        # Various operators - check content
-                        for op in ['Stepford Express', 'Stepford Connect', 'Waterline', 'Metro', 'AirLink']:
-                            pattern = rf'{op}.{{0,150}}{route}|{route}.{{0,150}}{op}'
-                            if re.search(pattern, content[:5000]):
-                                operator_votes[op] = operator_votes.get(op, 0) + 2
-
-                # Assign to operator with most votes
-                if operator_votes:
-                    best_operator = max(operator_votes, key=operator_votes.get)
-                    # Allow multiple platform ranges per operator
-                    if best_operator in operator_platforms:
-                        # Append to existing range
-                        operator_platforms[best_operator] += f", {plat_range}"
-                    else:
-                        operator_platforms[best_operator] = f"Platforms {plat_range}"
+        # Convert to readable format
+        for operator, platform_set in operator_route_platforms.items():
+            platforms_sorted = sorted(platform_set, key=lambda x: int(x.split('-')[0]))
+            operator_platforms[operator] = f"Platforms {', '.join(platforms_sorted)}"
 
     # Strategy 3: Parse individual platform listings in station layout
     if not operator_platforms:
@@ -356,44 +307,66 @@ def get_platform_summary(station_data):
     return operator_platforms
 
 
+def _guess_operator_from_route(route_num, content):
+    """Helper function to guess operator from route number and content."""
+    if 75 <= route_num <= 99:
+        return 'Stepford Express'
+    elif 50 <= route_num <= 60:
+        return 'AirLink'
+    elif 100 <= route_num <= 199:
+        # Check content for operator mentions
+        for op in ['Stepford Connect', 'Metro', 'Stepford Express']:
+            if op in content[:3000]:
+                return op
+        return 'Stepford Connect'  # Default for R100+
+    else:
+        # R001-R049: Check content
+        for op in ['Waterline', 'Metro', 'Stepford Connect']:
+            if op in content[:3000]:
+                return op
+        return 'Stepford Connect'  # Default
+
+
 def build_route_platform_map(station_data):
     """
     Build a mapping of route codes to their specific platforms at a station.
 
     Returns a dictionary: {'R001': ['1', '4'], 'R003': ['2', '3'], ...}
 
-    This provides route-specific platform information (more granular than operator-level).
-    Example: At Benton Bridge, airport routes (R001, R046) use platforms 1 & 4,
-    while other Connect routes use platforms 2 & 3.
+    IMPROVED: Better wiki table parsing for Services section
     """
     content = station_data['full_content']
     route_platform_map = {}
 
-    # Parse Services section for route-platform assignments
-    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
-    if services_section:
-        services_text = services_section.group(1)
+    # Parse Services section - IMPROVED TABLE PARSING
+    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)',
+                                content, re.DOTALL | re.IGNORECASE)
+    if not services_section:
+        return route_platform_map
 
-        # Split by platform numbers/ranges (format: "1-2 West Benton R010...", "4-7 Coxly R001...")
-        # Use lookahead to split before each platform number/range followed by station name
-        segments = re.split(r'\s+(?=\d+(?:-\d+)?\s+[A-Z])', services_text)
+    services_text = services_section.group(1)
 
-        for segment in segments:
-            # Extract platform number or range from start of segment
-            # Matches: "1", "2", "1-2", "4-7", "11-13", etc.
-            plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
-            if plat_match:
-                platform_range = plat_match.group(1).strip()
+    # Parse table - handle both single-line and multi-line formats
+    # Split by platform numbers to segment the table
+    platform_segments = re.split(r'\s+(\d+(?:-\d+)?)\s+', services_text)
 
-                # Extract all route codes from this segment
-                routes = re.findall(r'R\d+', segment)
+    # After split: [before_first_platform, platform1, content1, platform2, content2, ...]
+    for i in range(1, len(platform_segments), 2):
+        if i + 1 < len(platform_segments):
+            platform_num = platform_segments[i]
+            content = platform_segments[i + 1]
 
-                # Map each route to this platform/range
-                for route in routes:
-                    if route not in route_platform_map:
-                        route_platform_map[route] = []
-                    if platform_range not in route_platform_map[route]:
-                        route_platform_map[route].append(platform_range)
+            # Skip table headers
+            if 'Platform' in content or 'Previous' in content:
+                continue
+
+            # Extract all route codes from this platform's content
+            routes = re.findall(r'R\d+', content)
+            for route in routes:
+                if route not in route_platform_map:
+                    route_platform_map[route] = []
+                if platform_num not in route_platform_map[route]:
+                    route_platform_map[route].append(platform_num)
 
     return route_platform_map
 
@@ -404,45 +377,97 @@ def build_directional_platform_map(station_data):
 
     Returns a dictionary: {('R083', 'Llyn-by-the-Sea'): ['1-2'], ('R083', 'Newry'): ['2-3'], ...}
 
-    This handles bidirectional tracks where the same route uses different platforms
-    depending on direction. Example at Benton:
-    - R083 TO Llyn-by-the-Sea → Platforms 1-2
-    - R083 TO Newry → Platforms 2-3
+    IMPROVED v3.3: Handles wiki table format where multiple routes share one destination
+    Example: "R010 R013 to Greenslade" → both R010 and R013 map to Greenslade
     """
     content = station_data['full_content']
     directional_map = {}
 
     # Parse Services section
-    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)', content, re.DOTALL | re.IGNORECASE)
-    if services_section:
-        services_text = services_section.group(1)
+    services_section = re.search(r'Services\s*\[\s*\](.+?)(?:Station announcements|History|Trivia|$)',
+                                content, re.DOTALL | re.IGNORECASE)
+    if not services_section:
+        return directional_map
 
-        # Split by platform ranges
-        segments = re.split(r'\s+(?=\d+(?:-\d+)?\s+[A-Z])', services_text)
+    services_text = services_section.group(1)
 
-        for segment in segments:
-            # Extract platform range from start
-            plat_match = re.match(r'^(\d+(?:-\d+)?(?:,\s*\d+(?:-\d+)?)*)\s+', segment)
-            if plat_match:
-                platform_range = plat_match.group(1).strip()
+    # Parse table rows
+    # Format: "Platform(s) Previous station Route Next station"
+    # NOTE: Wiki tables may be on ONE line or multiple lines
 
-                # Find all "Route to Destination" patterns
-                # Format: "R083 to Llyn-by-the-Sea Morganstown R084..."
-                # where "Morganstown" is the previous station for the next service R084
-                # Pattern: R### to [destination] stopping before [station name] R### or end of segment
-                route_dest_pattern = r'(R\d+)\s+to\s+([\w\s\-]+?)(?=\s+\w+\s+R\d+|$)'
-                matches = re.findall(route_dest_pattern, segment)
+    # Strategy: Find all occurrences of platform numbers followed by route patterns
+    # Pattern: "1 Station R### ... 2-3 Station R###" etc.
+    # Split by platform number patterns to segment the line
 
-                for route_code, destination in matches:
-                    destination_clean = destination.strip()
-                    key = (route_code, destination_clean)
+    # Split services_text into segments by platform numbers
+    # Pattern to split: digit(s) or digit-digit at start of segment (after whitespace)
+    platform_segments = re.split(r'\s+(\d+(?:-\d+)?)\s+', services_text)
 
-                    if key not in directional_map:
-                        directional_map[key] = []
-                    if platform_range not in directional_map[key]:
-                        directional_map[key].append(platform_range)
+    # After split: [before_first_platform, platform1, content1, platform2, content2, ...]
+    # Process pairs: (platform_num, content)
+    for i in range(1, len(platform_segments), 2):
+        if i + 1 < len(platform_segments):
+            platform_num = platform_segments[i]
+            content = platform_segments[i + 1]
+
+            # Skip table headers
+            if 'Platform' in content or 'Previous' in content or 'Route' in content or 'Next station' in content:
+                continue
+
+            # Extract route->destination pairs from this platform's content
+            _extract_route_destinations(content, platform_num, directional_map)
 
     return directional_map
+
+
+def _extract_route_destinations(line, platform, directional_map):
+    """
+    Helper to extract (route, destination) pairs from a Services table line.
+
+    Handles formats like:
+    - "R010 R013 to Greenslade Morganstown Docks" → (R010, Greenslade), (R013, Greenslade)
+    - "R013 R015 to Benton" → (R013, Benton), (R015, Benton)
+    - "R002 to Stepford Central Terminus" → (R002, Stepford Central)
+    """
+    # Find patterns: "R### R### ... to Destination"
+    # Pattern captures: (route codes) + "to" + (destination text)
+    pattern = r'((?:R\d+\s+)+)to\s+([A-Z][\w\s\-]+?)(?=\s+R\d+|\s+Terminus|\s+\(|$)'
+
+    matches = re.finditer(pattern, line)
+
+    for match in matches:
+        routes_text = match.group(1).strip()
+        destination = match.group(2).strip()
+
+        # Extract all route codes from the routes_text
+        routes = re.findall(r'R\d+', routes_text)
+
+        # Clean destination: Remove extra words from "Next station" column
+        # Intelligently extract station name (most are 1-2 words, some are 3)
+        dest_words = destination.split()
+
+        # If first word is a common multi-word station prefix, take 2-3 words
+        if dest_words and dest_words[0] in ['St', 'Airport', 'Upper', 'West', 'East', 'New', 'Port', 'Stepford']:
+            if len(dest_words) > 3:
+                destination_clean = ' '.join(dest_words[:3])
+            else:
+                destination_clean = destination
+        # Otherwise, take first word only (safest to avoid capturing next station column)
+        elif dest_words:
+            destination_clean = dest_words[0]
+        else:
+            continue  # Skip if no words
+
+        if len(destination_clean) < 2:  # Skip very short destinations
+            continue
+
+        # Map all routes to this destination
+        for route in routes:
+            key = (route, destination_clean)
+            if key not in directional_map:
+                directional_map[key] = []
+            if platform not in directional_map[key]:
+                directional_map[key].append(platform)
 
 
 def get_route_platform(station_data, route_code, next_station=None):

@@ -3,10 +3,23 @@
 When users ask about which stations a route skips or passes through, use the route_corridor_calculator module:
 
 ### Import and Setup
+
+**CRITICAL: Files are in /mnt/data/ in Code Interpreter environment**
+
 ```python
+import sys
+sys.path.append('/mnt/data')
+
 from route_corridor_calculator import RouteCorridorCalculator
-calc = RouteCorridorCalculator()
+
+# Initialize with FULL path to JSON file
+calc = RouteCorridorCalculator('/mnt/data/stepford_routes_with_segment_minutes_ai_knowledge_base.json')
 ```
+
+**Why this is needed:**
+- Python doesn't automatically search `/mnt/data/` for modules
+- `sys.path.append('/mnt/data')` tells Python where to find the calculator
+- The calculator needs the full path to the JSON data file
 
 ### Common Query Patterns
 

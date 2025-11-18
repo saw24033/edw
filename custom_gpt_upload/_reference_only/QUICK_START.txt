@@ -1,0 +1,96 @@
+=============================================================================
+STEPFORD COUNTY RAILWAY CUSTOM GPT - QUICK START v3.1
+=============================================================================
+
+PRODUCTION READY - Last Updated: 2025-11-18
+
+-----------------------------------------------------------------------------
+UPLOAD THESE 14 FILES TO KNOWLEDGE SECTION:
+-----------------------------------------------------------------------------
+
+[PYTHON MODULES - 5 files]
+  1. rail_helpers.py
+  2. station_knowledge_helper.py
+  3. route_corridor_calculator.py
+  4. plot_helpers.py
+  5. stepford_routes_with_segment_minutes_ai_knowledge_base.json
+
+[DATA FILES - 2 files]
+  6. rail_routes.csv
+  7. station_coords.csv (NEW - map-based coordinates)
+
+[STATION DATA - 2 files]
+  8. scr_stations_part1.md
+  9. scr_stations_part2.md
+
+[DOCUMENTATION - 5 files]
+  10. GPT_USAGE_GUIDE.md
+  11. ROUTE_CORRIDOR_CALCULATOR_GUIDE.md
+  12. GPT_INSTRUCTIONS_ROUTE_CORRIDOR.txt (FIXED - import paths)
+  13. CHANGELOG.md
+  14. README.txt
+
+-----------------------------------------------------------------------------
+COPY TO INSTRUCTIONS FIELD (DON'T UPLOAD AS FILE):
+-----------------------------------------------------------------------------
+
+  >> custom_gpt_instructions_COMPACT.txt (FIXED - import paths)
+
+  Open this file, copy ALL text, paste into Instructions text box.
+
+-----------------------------------------------------------------------------
+WHAT'S FIXED IN v3.1:
+-----------------------------------------------------------------------------
+
+  CRITICAL FIX: Python Import Paths
+  - Added: sys.path.append('/mnt/data') to all examples
+  - Fixed: All file paths now use /mnt/data/ prefix
+  - Fixed: RouteCorridorCalculator needs full JSON path
+
+  UPDATED: Station Coordinates
+  - Was: Random alphabetical grid
+  - Now: Actual network map topology
+  - File: station_coords.csv completely rewritten
+
+-----------------------------------------------------------------------------
+TEST AFTER UPLOAD:
+-----------------------------------------------------------------------------
+
+  1. "How do I get from Benton to Llyn?"
+     Expected: R078, 16 min, Platform 10
+
+  2. "Which stations does R026 skip?"
+     Expected: 11 stations with route alternatives
+
+  3. "What's between St Helens Bridge and Leighton Stepford Road?"
+     Expected: 3 corridors (primary, express, divergent)
+
+  4. "Tell me about Benton"
+     Expected: 13 platforms, major hub, operator list
+
+-----------------------------------------------------------------------------
+UPLOAD STEPS:
+-----------------------------------------------------------------------------
+
+  1. Go to ChatGPT → My GPTs → Create/Edit
+  2. Configure tab
+  3. Enable Code Interpreter ✅
+  4. Upload 14 files to Knowledge section
+  5. Copy custom_gpt_instructions_COMPACT.txt to Instructions field
+  6. Save
+  7. Test with queries above
+
+-----------------------------------------------------------------------------
+SIZE CHECK:
+-----------------------------------------------------------------------------
+
+  Total: ~1.3 MB (within limits)
+  Instructions: 8.5 KB (under 8K character limit)
+
+-----------------------------------------------------------------------------
+STATUS: READY TO UPLOAD ✅
+-----------------------------------------------------------------------------
+
+See README_UPLOAD_INSTRUCTIONS.md for complete documentation.
+
+=============================================================================

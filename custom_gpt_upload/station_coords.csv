@@ -1,72 +1,72 @@
 station,x,y
-Airport Terminal 1,0.14,-0.47
-Airport Terminal 2,1.78,-0.28
-Airport Terminal 3,4.24,0.18
-Airport West,6.39,-0.41
-Angel Pass,7.92,-0.47
-Ashlan Park,9.72,0.01
-Aslockby,11.53,-0.3
-Barton,14.15,0.04
-Beaulieu Park,15.72,0.09
-Beechley,18.31,-0.49
-Benton,20.31,0.2
-Benton Bridge,21.84,-0.34
-Berrily,0.46,1.84
-Bodin,1.59,1.6
-Cambridge Street Parkway,4.35,2.1
-Carnalea Bridge,6.31,2.23
-City Hospital,8.04,2.47
-Connolly,9.88,2.05
-Coxly,12.33,2.12
-Coxly Newtown,14.36,2.08
-East Berrily,16.2,1.55
-Eden Quay,17.73,1.79
-Edgemead,19.58,1.73
-Elsemere Junction,21.6,1.78
-Elsemere Pond,0.14,3.86
-Esterfield,1.87,3.71
-Faraday Road,3.77,4.44
-Farleigh,6.15,4.11
-Faymere,7.67,4.23
-Financial Quarter,9.66,3.88
-Four Ways,12.49,4.14
-Greenslade,14.06,4.18
-Hampton Hargate,16.34,4.28
-Hemdon Park,17.73,3.53
-Houghton Rake,19.82,3.77
-James Street,21.71,4.44
-Leighton City,0.38,5.81
-Leighton Stepford Road,2.16,5.9
-Leighton West,4.41,5.96
-Llyn-by-the-Sea,5.76,5.75
-Millcastle,8.06,5.76
-Millcastle Racecourse,10.08,6.4
-Morganstown,11.9,5.72
-Morganstown Docks,14.5,6.01
-New Harrow,15.59,5.55
-Newry,17.61,6.13
-Newry Harbour,20.29,5.92
-Northshore,21.56,5.88
-Port Benton,0.5,8.03
-Rayleigh Bay,2.47,8.36
-Rocket Parade,3.51,8.22
-Rosedale Village,6.18,8.04
-St Helens Bridge,7.77,8.14
-Starryloch,9.61,7.93
-Stepford Airport Central,11.95,8.45
-Stepford Airport Parkway,14.38,7.76
-Stepford Central,16.0,7.68
-Stepford East,18.41,8.37
-Stepford High Street,19.8,8.14
-Stepford United Football Club,22.11,7.65
-Stepford Victoria,0.26,10.04
-Upper Staploe,2.28,10.03
-Water Newton,3.5,9.82
-West Benton,5.52,10.43
-Westercoast,8.38,10.33
-Westwyvern,9.81,9.56
-Whitefield,12.38,10.45
-Whitefield Lido,13.59,9.99
-Whitney Green,15.57,10.26
-Willowfield,18.27,9.63
-Woodhead Lane,19.98,10.05
+Airport Terminal 1,26,8
+Airport Terminal 2,27,9
+Airport Terminal 3,28,10
+Airport West,25,7
+Angel Pass,9,5
+Ashlan Park,22,8
+Aslockby,19,3
+Barton,13,6
+Beaulieu Park,20,7
+Beechley,3,7
+Benton,16,6
+Benton Bridge,18,5
+Berrily,17,8
+Bodin,11,5
+Cambridge Street Parkway,19,8
+Carnalea Bridge,18,2
+City Hospital,4,7
+Connolly,21,8
+Coxly,14,5
+Coxly Newtown,15,4
+East Berrily,20,8
+Eden Quay,24,9
+Edgemead,9,3
+Elsemere Junction,17,7
+Elsemere Pond,13,7
+Esterfield,23,6
+Faraday Road,24,9
+Farleigh,28,5
+Faymere,11,3
+Financial Quarter,2,7
+Four Ways,7,7
+Greenslade,17,4
+Hampton Hargate,24,4
+Hemdon Park,3,4
+Houghton Rake,5,4
+James Street,27,6
+Leighton City,10,2
+Leighton Stepford Road,12,2
+Leighton West,8,1
+Llyn-by-the-Sea,2,1
+Millcastle,7,2
+Millcastle Racecourse,9,2
+Morganstown,18,4
+Morganstown Docks,19,4
+New Harrow,13,7
+Newry,25,9
+Newry Harbour,26,10
+Northshore,4,1
+Port Benton,15,5
+Rayleigh Bay,16,2
+Rocket Parade,26,3
+Rosedale Village,23,5
+St Helens Bridge,12,7
+Starryloch,5,1
+Stepford Airport Central,23,8
+Stepford Airport Parkway,21,7
+Stepford Central,7,7
+Stepford East,11,7
+Stepford High Street,9,7
+Stepford United Football Club,6,7
+Stepford Victoria,1,7
+Upper Staploe,25,4
+Water Newton,22,4
+West Benton,23,9
+Westercoast,8,2
+Westwyvern,6,1
+Whitefield,5,4
+Whitefield Lido,7,5
+Whitney Green,16,4
+Willowfield,2,4
+Woodhead Lane,6,4
