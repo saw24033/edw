@@ -1,0 +1,74 @@
+# 📋 Custom GPT Upload Checklist
+
+## ✅ FILES TO UPLOAD (8 Knowledge Files)
+
+Upload these 8 files to your Custom GPT's Knowledge section:
+
+1. ✅ rail_routes.csv (61 KB) - Route network data
+2. ✅ rail_helpers.py (23 KB) - Routing functions with improved pathfinding
+3. ✅ station_coords.csv (1.8 KB) - Station coordinates
+4. ✅ plot_helpers.py (6.8 KB) - Visualization functions
+5. ✅ scr_stations_part1.md (378 KB) - Station data (part 1/2)
+6. ✅ scr_stations_part2.md (395 KB) - Station data (part 2/2)
+7. ✅ station_knowledge_helper.py (26 KB) - Station parser with directional platforms ⭐
+8. ✅ GPT_USAGE_GUIDE.md (14 KB) - Detailed examples and workflows
+
+**Total Size: ~906 KB** (well under OpenAI's limits)
+
+---
+
+## 📝 INSTRUCTIONS FILE (Copy/Paste to Instructions Field)
+
+DO NOT upload as file - instead copy contents and paste into Instructions field:
+
+- custom_gpt_instructions_COMPACT.txt (7.3 KB, 6,680 chars)
+  ✅ Under 8,000 character limit
+  ✅ Includes bidirectional platform workflow
+  ✅ Updated with next_station parameter
+
+---
+
+## 📚 REFERENCE DOCUMENTATION (Do Not Upload)
+
+These files are for YOUR reference only - keep them but don't upload:
+
+- README.md - Setup guide and quick start
+- CHANGELOG.md - Version history (currently v2.2.0)
+- UPLOAD_CHECKLIST.txt - This file!
+
+---
+
+## 🗑️ DEPRECATED/IGNORE
+
+- custom_gpt_instructions_with_station_knowledge.txt
+  ❌ TOO LONG (14,267 chars > 8,000 limit)
+  ⚠️ Kept for reference but DO NOT USE
+
+---
+
+## 🚀 Quick Upload Process
+
+1. Go to ChatGPT → My GPTs → Create
+2. Switch to Configure tab
+3. Enable Code Interpreter ✅
+4. Upload the 8 knowledge files listed above
+5. Copy/paste custom_gpt_instructions_COMPACT.txt into Instructions field
+6. Save and test!
+
+---
+
+## ⭐ Latest Features (v2.2.0)
+
+Your Custom GPT now includes:
+- ✅ Bidirectional platform mapping (R083 to Llyn vs to Newry)
+- ✅ Route-specific platforms (R001 vs R024 at Benton Bridge)
+- ✅ Direct route priority (avoids unnecessary transfers)
+- ✅ Accurate operator-platform mapping
+- ✅ Platform range handling (4-7, 10-13, etc.)
+
+See CHANGELOG.md for complete version history.
+
+---
+
+**Last Updated:** 2024-11-17 (v2.2.0)
+**Ready to Upload:** YES ✅
