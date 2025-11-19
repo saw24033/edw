@@ -1,0 +1,66 @@
+# Updated Instructions for Custom GPT - Force Platform Data
+
+Replace the "Route & Network Queries" section (lines 20-31) with this:
+
+---
+
+### Route & Network Queries
+
+**MANDATORY WORKFLOW FOR EVERY ROUTE QUERY:**
+
+```python
+import sys
+sys.path.append('/mnt/data')
+
+import rail_helpers
+import station_knowledge_helper as skh
+
+# Step 1: Find the route
+graph, operators, lines = rail_helpers.load_rail_network("/mnt/data/rail_routes.csv")
+journey = rail_helpers.find_best_route(graph, "Station A", "Station B")
+
+# Step 2: ALWAYS load station knowledge for platform data
+stations = skh.load_station_knowledge("/mnt/data/scr_stations_part1.md", "/mnt/data/scr_stations_part2.md")
+
+# Step 3: Get platform info for EACH leg of the journey
+for i, leg in enumerate(journey['legs']):
+    station_name = leg['from']
+    operator = leg['operator']
+    route_code = leg['line']
+    next_station = leg['to']
+
+    # Get platform data with directional lookup
+    platform_data = skh.get_route_context(
+        station_name,
+        operator,
+        stations,
+        route_code=route_code,
+        next_station=next_station
+    )
+
+    # Display platform if available
+    if platform_data and 'departure_platforms' in platform_data:
+        print(f"Platform at {station_name}: {platform_data['departure_platforms']}")
+```
+
+**CRITICAL RULES:**
+1. ❌ NEVER skip platform lookup - ALWAYS call `get_route_context()` for every leg
+2. ✅ ALWAYS pass `next_station` parameter for directional platform lookup
+3. ✅ Display platform data in the formatted response to the user
+4. ✅ If platform data is None, still mention that platform info isn't available
+
+**Other rail_helpers functions:**
+- `operators_at_station(graph, "Station")` - Which operators serve station
+- `station_info(graph, "Station")` - Station network data
+- `search_stations(graph, "query")` - Fuzzy search for typos
+
+---
+
+This should replace lines 20-31 in the current custom_gpt_instructions_COMPACT.txt
+
+The key changes:
+1. Made it a MANDATORY WORKFLOW with step numbers
+2. Added explicit loop through all journey legs
+3. Shows exact code for calling get_route_context() with next_station
+4. Added CRITICAL RULES that forbid skipping platform lookup
+5. Made it clear that platform data should be displayed in the response

@@ -1,6 +1,18 @@
 """
 Station Knowledge Helper - Parse scr_stations_part1.md and scr_stations_part2.md for detailed station info
 
+Version 3.4.1 - INTEGRATION FIXES FOR CUSTOM GPT
+- Fixed get_route_context() to pass csv_path parameter for terminal detection
+- Added fuzzy station name matching in get_station_details() for "(Station)" suffix
+- Updated CSV path handling to work in both local and Custom GPT (/mnt/data/) environments
+- Example: get_route_context("Benton Bridge", ..., "R045", "Benton") now returns "Platform 3 (toward Stepford Victoria)"
+
+Version 3.4 - TERMINAL DETECTION FOR INTERMEDIATE STOPS
+- Added intelligent terminal detection for intermediate station lookups
+- Parser now determines direction and finds terminal to query platform data
+- Solves "intermediate station problem" where next_station isn't a terminus
+- Example: R045 at Benton Bridge → Benton now correctly returns Platform 3 (toward Stepford Victoria)
+
 Version 3.3 - IMPROVED PLATFORM PARSING
 - Enhanced Services table parsing for directional platforms
 - Better wiki table format handling
@@ -66,6 +78,18 @@ def get_station_details(station_name, stations_dict):
     # Case-insensitive search
     for name, data in stations_dict.items():
         if name.lower() == station_name.lower():
+            return data
+
+    # Fuzzy match: Try adding/removing "(Station)" suffix (v3.4)
+    # Handles "Benton Bridge" <-> "Benton Bridge (Station)"
+    def normalize_name(name):
+        return name.replace(' (Station)', '').strip()
+
+    query_normalized = normalize_name(station_name).lower()
+
+    for name, data in stations_dict.items():
+        name_normalized = normalize_name(name).lower()
+        if name_normalized == query_normalized:
             return data
 
     return None
@@ -470,7 +494,125 @@ def _extract_route_destinations(line, platform, directional_map):
                 directional_map[key].append(platform)
 
 
-def get_route_platform(station_data, route_code, next_station=None):
+def _load_route_terminals(csv_path="rail_routes.csv"):
+    """
+    Load route terminal information from rail_routes.csv.
+    Returns dict: {route_code: {'origin': station, 'destination': station, 'stops': [ordered list]}}
+    """
+    import csv
+    import os
+
+    routes = {}
+
+    # Try multiple possible paths for the CSV
+    possible_paths = [
+        csv_path,
+        f"/mnt/data/{csv_path}",
+        os.path.join(os.path.dirname(__file__), csv_path)
+    ]
+
+    csv_content = None
+    for path in possible_paths:
+        try:
+            with open(path, 'r', encoding='utf-8') as f:
+                csv_content = f.read()
+            break
+        except:
+            continue
+
+    if not csv_content:
+        return routes
+
+    # Parse CSV
+    reader = csv.DictReader(csv_content.strip().split('\n'))
+    for row in reader:
+        route_code = row['line']
+        origin = row['route_origin']
+        destination = row['route_destination']
+        from_station = row['from_station']
+        to_station = row['to_station']
+
+        if route_code not in routes:
+            routes[route_code] = {
+                'origin': origin,
+                'destination': destination,
+                'stops': []
+            }
+
+        # Build ordered stop list
+        if from_station not in routes[route_code]['stops']:
+            routes[route_code]['stops'].append(from_station)
+        if to_station not in routes[route_code]['stops']:
+            routes[route_code]['stops'].append(to_station)
+
+    return routes
+
+
+def _get_terminal_for_direction(route_code, current_station, next_station, csv_path="rail_routes.csv"):
+    """
+    Determine which terminal station (origin or destination) the train is heading toward.
+
+    Args:
+        route_code: Route code (e.g., "R045")
+        current_station: Current station name (e.g., "Benton Bridge" or "Benton Bridge (Station)")
+        next_station: Next station name (e.g., "Benton")
+        csv_path: Path to rail_routes.csv
+
+    Returns:
+        Terminal station name (e.g., "Stepford Victoria") or None
+    """
+    routes = _load_route_terminals(csv_path)
+
+    if route_code not in routes:
+        return None
+
+    route_info = routes[route_code]
+    stops = route_info['stops']
+    origin = route_info['origin']
+    destination = route_info['destination']
+
+    # Helper function to normalize station names (strip "(Station)" suffix)
+    def normalize_name(name):
+        return name.replace(' (Station)', '').strip()
+
+    # Normalize station names for comparison
+    current_normalized = normalize_name(current_station).lower()
+    next_normalized = normalize_name(next_station).lower()
+
+    # Find positions in stop list
+    current_idx = None
+    next_idx = None
+
+    for i, stop in enumerate(stops):
+        stop_normalized = normalize_name(stop).lower()
+
+        if current_idx is None and stop_normalized == current_normalized:
+            current_idx = i
+
+        if next_idx is None and stop_normalized == next_normalized:
+            next_idx = i
+
+        # Early exit if both found
+        if current_idx is not None and next_idx is not None:
+            break
+
+    # If exact matches fail, return None
+    if current_idx is None or next_idx is None:
+        return None
+
+    # Determine direction
+    if next_idx < current_idx:
+        # Going backward toward origin
+        return origin
+    elif next_idx > current_idx:
+        # Going forward toward destination
+        return destination
+    else:
+        # Same station (shouldn't happen)
+        return None
+
+
+def get_route_platform(station_data, route_code, next_station=None, csv_path="rail_routes.csv"):
     """
     Get the specific platform(s) for a route at this station.
 
@@ -478,6 +620,7 @@ def get_route_platform(station_data, route_code, next_station=None):
         station_data: Station data dict from get_station_details()
         route_code: Route code (e.g., "R001", "R078")
         next_station: Optional next station name for directional lookup (e.g., "Llyn-by-the-Sea")
+        csv_path: Path to rail_routes.csv (for terminal detection)
 
     Returns:
         String like "Platform 1", "Platforms 1, 4", or "Platforms 4-7" or None if not found
@@ -489,6 +632,9 @@ def get_route_platform(station_data, route_code, next_station=None):
         # Directional (returns specific platform for direction)
         get_route_platform(benton, "R083", "Llyn-by-the-Sea")  # → "Platforms 1-2"
         get_route_platform(benton, "R083", "Newry")  # → "Platforms 2-3"
+
+        # Intermediate station (uses terminal detection)
+        get_route_platform(benton_bridge, "R045", "Benton")  # → "Platform 3" (toward Stepford Victoria)
     """
     # PRIORITY 1: Try directional lookup if next_station provided
     if next_station:
@@ -503,8 +649,29 @@ def get_route_platform(station_data, route_code, next_station=None):
         # Try fuzzy match (in case station names don't match exactly)
         next_station_lower = next_station.lower()
         for (route, dest), plats in directional_map.items():
-            if route == route_code and next_station_lower in dest.lower():
+            dest_lower = dest.lower()
+            if route == route_code and (next_station_lower in dest_lower or dest_lower in next_station_lower):
                 return _format_platform_list(plats)
+
+        # PRIORITY 1.5: Try terminal detection for intermediate stations
+        # If next_station not in directional_map, it might be an intermediate stop
+        # Find the terminal in that direction and use that for lookup
+        current_station = station_data['name']
+        terminal = _get_terminal_for_direction(route_code, current_station, next_station, csv_path)
+
+        if terminal:
+            # Try exact terminal match
+            key = (route_code, terminal)
+            if key in directional_map:
+                platforms = directional_map[key]
+                return _format_platform_list(platforms) + f" (toward {terminal})"
+
+            # Try fuzzy terminal match
+            terminal_lower = terminal.lower()
+            for (route, dest), plats in directional_map.items():
+                dest_lower = dest.lower()
+                if route == route_code and (terminal_lower in dest_lower or dest_lower in terminal_lower):
+                    return _format_platform_list(plats) + f" (toward {dest})"
 
     # PRIORITY 2: Fall back to non-directional route lookup
     route_platform_map = build_route_platform_map(station_data)
@@ -577,7 +744,11 @@ def get_route_context(station_name, operator_name, stations_dict, route_code=Non
 
     # PRIORITY 1: Get directional platform if route_code AND next_station provided
     if route_code:
-        route_platform = get_route_platform(station, route_code, next_station)
+        # Try terminal detection with CSV path (v3.4)
+        # Use just the filename - _load_route_terminals() will try multiple paths
+        # including /mnt/data/ (Custom GPT) and local paths
+        csv_path = "rail_routes.csv"
+        route_platform = get_route_platform(station, route_code, next_station, csv_path=csv_path)
         if route_platform:
             context['departure_platforms'] = route_platform
             return context

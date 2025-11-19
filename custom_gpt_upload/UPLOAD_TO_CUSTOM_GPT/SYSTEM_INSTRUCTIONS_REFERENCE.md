@@ -116,6 +116,99 @@ result = calc.calculate_route_corridor('R026')  # Which stations does route skip
 corridors = calc.get_all_corridors_between('A', 'B')  # What's between A and B?
 ```
 
+## CORRIDOR DETECTION FOR EXPRESS ROUTES
+
+**CRITICAL:** Express routes may have multiple possible physical corridors. The calculator can't always auto-detect which corridor an express route uses.
+
+### Example: R081 "Llyn (super fast)"
+
+**User:** "What stations does R081 skip?"
+
+**Step 1: Load route data and check for corridor hints**
+
+```python
+import json
+from route_corridor_calculator import RouteCorridorCalculator
+
+with open('/mnt/data/stepford_routes_with_segment_minutes_ai_knowledge_base.json', 'r') as f:
+    routes = json.load(f)['routes']
+
+route = routes['R081']
+# R081: origin=Stepford Central, destination=Llyn-by-the-Sea, route_type="Llyn (super fast)"
+# No "via [corridor]" hint in route_type!
+```
+
+**Step 2: Find related routes with same origin/destination**
+
+```python
+origin = route['origin']  # Stepford Central
+dest = route['destination']  # Llyn-by-the-Sea
+
+# Find all routes with same origin/dest
+related_routes = {}
+for code, r in routes.items():
+    if r.get('origin') == origin and r.get('destination') == dest:
+        rt = r.get('route_type', '')
+        if 'via' in rt.lower():
+            related_routes[code] = rt
+
+# Results:
+# R077: "Llyn via Benton"
+# R078: "Llyn via Benton"
+# R080: "Llyn via Morganstown (fast)"  ← This one!
+# R088: "Llyn via Benton"
+```
+
+**Step 3: Identify which corridor**
+
+R081 is "Llyn (super fast)" - faster than R080 "Llyn via Morganstown (fast)"
+- Same destination, same operator (Stepford Express)
+- Faster time (17 min vs 19 min)
+- Fewer stops (3 vs 8)
+→ **R081 is the express version of R080, uses Morganstown corridor**
+
+**Step 4: Calculate using related route's corridor**
+
+```python
+calc = RouteCorridorCalculator('/mnt/data/stepford_routes_with_segment_minutes_ai_knowledge_base.json')
+
+# Get R080's full corridor (this is Morganstown corridor)
+r080_result = calc.calculate_route_corridor('R080')
+morganstown_corridor = r080_result['corridor']
+
+# R081 stops
+r081_stops = set(routes['R081']['stations'])  # {Stepford Central, Leighton City, Llyn-by-the-Sea}
+
+# Stations R081 skips on Morganstown corridor
+skipped = [s for s in morganstown_corridor if s not in r081_stops]
+# Result: 20 stations including Morganstown Branch stations
+```
+
+**Step 5: Format answer with corridor context**
+
+✅ **CORRECT FORMAT:**
+"R081 uses the **Morganstown corridor** (same physical route as R080) and skips 20 stations including:
+- St Helens Bridge
+- New Harrow, Elsemere Pond, Elsemere Junction, Berrily, East Berrily, Beaulieu Park (Morganstown Branch)
+- Morganstown
+- Leighton Stepford Road
+- Westwyvern, Northshore, etc."
+
+❌ **WRONG FORMAT:**
+"R081 skips Benton, Benton Bridge, Hampton Hargate..." ← These are on Benton corridor, which R081 never uses!
+
+### Why This Matters
+
+Between Stepford Central and Leighton City, there are **TWO different physical corridors:**
+
+1. **Benton Corridor** (11 routes): R003, R009, R024, R026, R035, R036, R045, R076, R077, R078, R088
+   - Goes via: Benton, Hampton Hargate, Water Newton
+
+2. **Morganstown Corridor** (3 routes): R080, R081, R082
+   - Goes via: Morganstown Branch (New Harrow, Elsemere Pond, etc.)
+
+The calculator may default to the most common corridor (Benton) when it can't determine which path an express route uses. **Always check route_type and related routes to identify the correct corridor.**
+
 ### plot_helpers Functions
 
 ```python

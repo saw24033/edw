@@ -4,6 +4,242 @@ All notable changes and improvements to the Stepford County Railway Custom GPT s
 
 ---
 
+## [3.5.0] - 2025-11-19
+
+### Added - Branch/Line Infrastructure Data & Corridor Detection ⭐⭐⭐
+
+**Major Features:**
+
+1. **Authoritative Branch/Line Data (scr_lines.json)**
+   - Added official branch/line definitions from SCR wiki
+   - 15 lines/branches with complete station lists
+   - Scraped from https://scr.fandom.com/wiki/Category:Lines
+   - **Fixes Morganstown Branch hallucination:**
+     - ❌ Before: Custom GPT invented "Stepford High Street, Whitefield" on Morganstown Branch
+     - ✅ After: Loads scr_lines.json showing correct stations: New Harrow, Elsemere Pond, Elsemere Junction, Berrily, East Berrily, Beaulieu Park, Morganstown
+
+2. **Express Route Corridor Detection**
+   - Added corridor identification for express routes without intermediate stops
+   - Detects physical route via related route analysis
+   - **Fixes R081 corridor calculation:**
+     - ❌ Before: Listed Benton corridor stations (wrong physical line!)
+     - ✅ After: Identifies Morganstown corridor via R080 relationship, lists correct 20 skipped stations
+
+**Why This Matters:**
+
+**Problem 1 - Branch Hallucination:**
+- Custom GPT had no authoritative source for branch/line station lists
+- When asked "What stations are on Morganstown Branch?", it fabricated answers
+- Mixed up Whitefield Branch stations with Morganstown Branch
+
+**Problem 2 - Corridor Confusion:**
+- Between Stepford Central and Leighton City, there are TWO different physical corridors:
+  - **Benton Corridor** (11 routes): R003, R009, R024, R026, R035, R036, R045, R076, R077, R078, R088
+  - **Morganstown Corridor** (3 routes): R080, R081, R082
+- R081 "Llyn (super fast)" has no intermediate stops, so calculator defaulted to wrong corridor
+- Listed Benton, Benton Bridge, Hampton Hargate (stations R081 never passes!)
+
+**New Files:**
+- `scr_lines.json` - 15 official SCR lines with station lists, summaries, and wiki URLs
+- `UPLOAD_TO_CUSTOM_GPT/README.md` - Upload instructions and file list
+- `DOCUMENTATION/README.md` - Setup documentation guide
+
+**Updated Files:**
+- `custom_gpt_instructions_COMPACT.txt` (7,112 chars)
+  - Added corridor detection workflow with reference to detailed guide
+  - Added mandatory scr_lines.json loading for branch queries
+  - Rule: "ALWAYS state which corridor in your answer"
+
+- `SYSTEM_INSTRUCTIONS_REFERENCE.md`
+  - Added "CORRIDOR DETECTION FOR EXPRESS ROUTES" section
+  - Step-by-step R081 example showing Morganstown corridor identification
+  - Explains two physical corridors (Benton vs Morganstown)
+  - Shows correct vs incorrect answer formats
+
+**Technical Implementation:**
+
+**Branch Query Workflow:**
+```python
+import json
+# Load authoritative branch data
+with open('/mnt/data/scr_lines.json', 'r') as f:
+    lines_data = json.load(f)
+
+# Find specific branch
+for line in lines_data:
+    if 'Morganstown Branch' in line['title']:
+        print(line['summary'])
+        print(line['content_text'])  # Contains station list
+```
+
+**Corridor Detection Workflow:**
+```python
+# Step 1: Check route_type for corridor hints
+route = routes['R081']  # "Llyn (super fast)" - no corridor specified
+
+# Step 2: Find related routes with same origin/destination
+related = {code: r['route_type'] for code, r in routes.items()
+           if r['origin'] == route['origin'] and r['destination'] == route['destination']
+           and 'via' in r['route_type'].lower()}
+# Result: R080 "Llyn via Morganstown (fast)" ← Reveals corridor!
+
+# Step 3: Use R080's corridor to determine R081's skipped stations
+r080_corridor = calc.calculate_route_corridor('R080')['corridor']
+r081_stops = set(routes['R081']['stations'])
+skipped = [s for s in r080_corridor if s not in r081_stops]
+```
+
+**Results:**
+
+**R081 Corridor Analysis (Correct):**
+- Uses Morganstown corridor (same as R080)
+- Skips 20 stations including:
+  - Four Ways, Stepford East, Stepford High Street
+  - St Helens Bridge (junction to Morganstown Branch)
+  - **Morganstown Branch stations:** New Harrow, Elsemere Pond, Elsemere Junction, Berrily, East Berrily, Beaulieu Park
+  - Morganstown, Leighton Stepford Road
+  - Edgemead, Faymere, Westercoast, Millcastle Racecourse, Millcastle, Westwyvern, Starryloch, Northshore
+
+**Folder Organization:**
+- Created `UPLOAD_TO_CUSTOM_GPT/` folder with exactly 12 knowledge files
+- Created `DOCUMENTATION/` folder with instructions and setup files
+- Moved old docs to `_reference_only/` folder
+
+**Breaking Changes:** None - backward compatible with fallback mechanisms
+
+**Commits:** Session 2025-11-19 - Branch data & corridor detection fixes
+
+---
+
+## [3.4.1] - 2025-11-19
+
+### Fixed - Integration Fixes for Custom GPT Environment ⭐
+
+**Problem:**
+- Platform detection (v3.4) wasn't working in Custom GPT
+- Terminal detection required csv_path parameter but get_route_context() wasn't passing it
+- Station name mismatches: "Benton Bridge" vs "Benton Bridge (Station)"
+
+**Solution:**
+1. **Fixed get_route_context() csv_path parameter**
+   - Now passes csv_path to get_route_platform() for terminal detection
+   - Enables terminal detection in Custom GPT environment (/mnt/data/)
+
+2. **Added fuzzy station name matching**
+   - Normalizes station names by removing "(Station)" suffix
+   - Matches "Benton Bridge" with "Benton Bridge (Station)"
+   - Prevents lookup failures due to suffix inconsistencies
+
+3. **Updated CSV path handling**
+   - Works in both local and Custom GPT (/mnt/data/) environments
+   - Automatically detects correct path format
+
+**Results:**
+- ✅ get_route_context("Benton Bridge", ..., "R045", "Benton") returns "Platform 3 (toward Stepford Victoria)"
+- ✅ Terminal detection now works in Custom GPT
+- ✅ Station name variations handled automatically
+
+**Commits:** v3.4.1 integration fixes
+
+---
+
+## [3.4.0] - 2025-11-18
+
+### Added - Terminal Detection for Intermediate Stops ⭐⭐
+
+**Problem:**
+- Directional platform lookup (v2.2.0) only worked when next_station was a terminus
+- For intermediate stations, couldn't determine direction/terminal
+- Example: R045 at Benton Bridge → Benton (Benton isn't a terminus!)
+
+**Solution:**
+- Added intelligent terminal detection using route analysis
+- Parses CSV to find route's full stop list
+- Determines which direction passenger is traveling
+- Identifies the terminal station for that direction
+
+**How It Works:**
+```python
+# Example: R045 from Benton Bridge to Benton (intermediate stop)
+# Step 1: Load route R045's full stop list from CSV
+# Step 2: Find Benton Bridge position and Benton position
+# Step 3: Determine direction (toward which end of route?)
+# Step 4: Identify terminal: Stepford Victoria
+# Step 5: Look up platform: R045 to Stepford Victoria → Platform 3
+```
+
+**New Function:**
+- `_get_terminal_for_direction(route_code, current_station, next_station, csv_path)`
+  - Determines terminal station based on travel direction
+  - Returns terminal name for platform lookup
+
+**Results:**
+- ✅ R045 at Benton Bridge → Benton: "Platform 3 (toward Stepford Victoria)"
+- ✅ Works for any intermediate station, not just termini
+- ✅ Solves "intermediate station problem"
+
+**Commits:** v3.4 terminal detection
+
+---
+
+## [3.3.0] - 2025-11-18
+
+### Improved - Platform Parsing for Wiki Table Format
+
+**Problem:**
+- Services table parsing failed on some wiki formats
+- Multiple routes sharing one destination caused parsing errors
+- Missed some route-to-platform mappings
+
+**Solution:**
+- Enhanced Services table parsing logic
+- Better handling of wiki table format variations
+- Improved regex patterns for route detection
+- More accurate route-to-platform mapping
+
+**Results:**
+- ✅ Handles edge cases in wiki formatting
+- ✅ Better coverage of route-platform relationships
+- ✅ More robust parsing
+
+**Commits:** v3.3 platform parsing improvements
+
+---
+
+## [3.1.0] - 2025-11-18
+
+### Fixed - Python Import Paths & Station Coordinates ⭐
+
+**Problem:**
+1. Import errors in Custom GPT environment
+   - Missing sys.path.append('/mnt/data')
+   - File paths not using /mnt/data/ prefix
+   - RouteCorridorCalculator couldn't find JSON file
+
+2. Station coordinates were placeholder data
+   - Random alphabetical grid layout
+   - Not reflecting actual network topology
+
+**Solution:**
+1. **Fixed all import paths**
+   - Added: `sys.path.append('/mnt/data')` to all code examples
+   - Fixed: All file paths use `/mnt/data/` prefix
+   - Fixed: RouteCorridorCalculator gets full JSON path
+
+2. **Rewrote station_coords.csv**
+   - Was: Random alphabetical grid
+   - Now: Actual network map topology
+   - Positions reflect real SCR network layout
+
+**Results:**
+- ✅ All Python imports work in Custom GPT
+- ✅ File paths resolve correctly in /mnt/data/
+- ✅ Network visualizations show realistic layout
+
+**Commits:** v3.1 import path and coordinates fixes
+
+---
+
 ## [2.2.0] - 2024-11-17
 
 ### Added - Bidirectional Platform Mapping ⭐⭐⭐
@@ -222,14 +458,19 @@ if platform_matches:
 
 ## Summary of All Improvements
 
-| Version | Feature | Impact |
-|---------|---------|--------|
-| 2.2.0 | Bidirectional platforms | ⭐⭐⭐ Directional accuracy (R083 to Llyn → Platform 2, to Newry → 2-3) |
-| 2.1.0 | Route-specific platforms | ⭐ Route precision (R001 → Platform 1,4 vs all Connect → 2,4) |
-| 2.0.1 | Operator-platform heuristics | Fixed Llyn showing both Express and Connect platforms |
-| 2.0.0 | Direct route priority | Benton→Llyn now shows 16min direct (was 17.6min transfer) |
-| 1.1.1 | Platform count extraction | All 82 stations show correct platform count |
-| 1.1.0 | Compact instructions | Fits 8,000 char limit (was 14,267 chars) |
+| Version | Date | Feature | Impact |
+|---------|------|---------|--------|
+| 3.5.0 | 2025-11-19 | Branch/line data + corridor detection | ⭐⭐⭐ Fixes hallucination & corridor errors (Morganstown Branch, R081) |
+| 3.4.1 | 2025-11-19 | Integration fixes for Custom GPT | ⭐ Terminal detection now works in Custom GPT |
+| 3.4.0 | 2025-11-18 | Terminal detection for intermediate stops | ⭐⭐ Solves intermediate station problem (Benton Bridge → Benton) |
+| 3.3.0 | 2025-11-18 | Improved platform parsing | Better wiki table format handling |
+| 3.1.0 | 2025-11-18 | Python import paths & coordinates | ⭐ Fixes Custom GPT environment, realistic map layout |
+| 2.2.0 | 2024-11-17 | Bidirectional platforms | ⭐⭐⭐ Directional accuracy (R083 to Llyn → Platform 2, to Newry → 2-3) |
+| 2.1.0 | 2024-11-17 | Route-specific platforms | ⭐ Route precision (R001 → Platform 1,4 vs all Connect → 2,4) |
+| 2.0.1 | 2024-11-17 | Operator-platform heuristics | Fixed Llyn showing both Express and Connect platforms |
+| 2.0.0 | 2024-11-17 | Direct route priority | Benton→Llyn now shows 16min direct (was 17.6min transfer) |
+| 1.1.1 | 2024-11-17 | Platform count extraction | All 82 stations show correct platform count |
+| 1.1.0 | 2024-11-17 | Compact instructions | Fits 8,000 char limit (was 14,267 chars) |
 
 ---
 
